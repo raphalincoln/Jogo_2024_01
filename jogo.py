@@ -1066,69 +1066,71 @@ class Application:
         # Opção 1
         if self.jogo.tem_trecho_a == True:
             if self.jogo.n_trecho_a > 0:
-                rd_n_trecho_a = Radiobutton(self.frame_trechos,
+                self.rd_n_trecho_a = Radiobutton(self.frame_trechos,
                                             text=self.jogo.texto_trecho_a,
                                             value=self.jogo.n_trecho_a,
                                             variable=self.destino,
                                             background="blue",
                                             anchor=W,
                                             command=self.exibe)
-                rd_n_trecho_a.place(relx=0.06,
+                self.rd_n_trecho_a.place(relx=0.06,
                                     rely=0.79,
                                     relwidth=0.88,
                                     relheight=0.03)
                 print(self.jogo.n_trecho_a)
-                rd_n_trecho_a.select()  # Setar a primeira opção como defalt
-                if self.jogo.temluta == True:
-                    rd_n_trecho_a["state"] = DISABLED
-                    self.bt_luta = Button(self.frame_trechos,
-                                          text="Lutar",
-                                          command=self.luta)
-                    self.bt_luta.place(relx=0.7,
-                                       rely=0.89,
-                                       relwidth=0.15,
-                                       relheight=0.035)
-                    self.jogo.temluta = False
-                # Pegar Item
-                if self.jogo.tem_item == True:
-                    self.bt_pegar_item = Button(self.frame_trechos,
-                                                text=f'Pegar {self.jogo.item}',
-                                                command=self.pegar_item)
-                    self.bt_pegar_item.place(relx=0.7,
-                                             rely=0.87,
-                                             relwidth=0.2,
-                                             relheight=0.03)
-                    self.jogo.tem_item = False
-                # Pegar Ouro
-                if self.jogo.tem_ouro == True:
-                    print("Tem ouro")
-                    self.bt_pegar_ouro = Button(self.frame_trechos,
-                                                text=f'Pegar {self.jogo.ouro_fase}',
-                                                command=self.pegar_ouro)
-                    self.bt_pegar_ouro.place(relx=0.7,
-                                             rely=0.87,
-                                             relwidth=0.2,
-                                             relheight=0.03)
+                self.rd_n_trecho_a.select()  # Setar a primeira opção como defalt
+            if self.jogo.temluta == True:
+                self.rd_n_trecho_a["state"] = DISABLED
+                print ("Luta A")
+                self.bt_luta = Button(self.frame_trechos,
+                                      text="Lutar",
+                                      command=self.luta)
+                self.bt_luta.place(relx=0.7,
+                                   rely=0.89,
+                                   relwidth=0.15,
+                                   relheight=0.035)
+                self.jogo.temluta = False
+                #self.jogo.temluta = False
+            # Pegar Item
+            if self.jogo.tem_item == True:
+                self.bt_pegar_item = Button(self.frame_trechos,
+                                            text=f'Pegar {self.jogo.item}',
+                                            command=self.pegar_item)
+                self.bt_pegar_item.place(relx=0.7,
+                                         rely=0.87,
+                                         relwidth=0.2,
+                                         relheight=0.03)
+                self.jogo.tem_item = False
+            # Pegar Ouro
+            if self.jogo.tem_ouro == True:
+                print("Tem ouro")
+                self.bt_pegar_ouro = Button(self.frame_trechos,
+                                            text=f'Pegar {self.jogo.ouro_fase}',
+                                            command=self.pegar_ouro)
+                self.bt_pegar_ouro.place(relx=0.7,
+                                         rely=0.87,
+                                         relwidth=0.2,
+                                         relheight=0.03)
         self.jogo.tem_trecho_a = False
-
 
         # Opção 2
         if self.jogo.tem_trecho_b == True:
             if self.jogo.n_trecho_b > 0:
-                rd_n_trecho_b = Radiobutton(self.frame_trechos,
+                self.rd_n_trecho_b = Radiobutton(self.frame_trechos,
                                             text=self.jogo.texto_trecho_b,
                                             value=self.jogo.n_trecho_b,
                                             variable=self.destino,
                                             anchor=W,
                                             background="blue",
                                             command=self.exibe)
-                rd_n_trecho_b.place(relx=0.06,
+                self.rd_n_trecho_b.place(relx=0.06,
                                     rely=0.83,
                                     relwidth=0.88,
                                     relheight=0.03)
                 print(self.jogo.n_trecho_b)
-                if self.jogo.temluta == True:
-                    rd_n_trecho_b["state"] = DISABLED
+            if self.jogo.temluta == True :
+                    self.rd_n_trecho_b["state"] = DISABLED
+                    print("Luta B")
                     self.bt_luta = Button(self.frame_trechos,
                                           text="luta",
                                           command=self.luta)
@@ -1152,19 +1154,18 @@ class Application:
         # Opção 3
         if self.jogo.tem_trecho_c == True:
             if self.jogo.n_trecho_c > 0:
-                rd_n_trecho_c = Radiobutton(self.frame_trechos,
+                self.rd_n_trecho_c = Radiobutton(self.frame_trechos,
                                             text=self.jogo.texto_trecho_c,
                                             value=self.jogo.n_trecho_c,
                                             variable=self.destino,
                                             background="blue",
                                             anchor=W,
                                             command=self.exibe)
-                rd_n_trecho_c.place(relx=0.06,
+                self.rd_n_trecho_c.place(relx=0.06,
                                     rely=0.87,
                                     relwidth=0.88,
                                     relheight=0.03)
                 if self.jogo.temluta == True:
-                    rd_n_trecho_c["state"] = DISABLED
                     self.bt_luta = Button(self.frame_trechos,
                                           text="luta",
                                           command=self.luta)
@@ -1176,20 +1177,19 @@ class Application:
         # Opção 4
         if self.jogo.tem_trecho_d == True:
             if self.jogo.n_trecho_d > 0:
-                rd_n_trecho_d = Radiobutton(self.frame_trechos,
+                self.rd_n_trecho_d = Radiobutton(self.frame_trechos,
                                             text=self.jogo.texto_trecho_d,
                                             value=self.jogo.n_trecho_d,
                                             variable=self.destino,
                                             background="blue",
                                             anchor=W,
                                             command=self.exibe)
-                rd_n_trecho_d.place(relx=0.06,
+                self.rd_n_trecho_d.place(relx=0.06,
                                     rely=0.91,
                                     relwidth=0.88,
                                     relheight=0.03)
                 print(self.jogo.n_trecho_d)
                 if self.jogo.temluta == True:
-                    rd_n_trecho_d["state"] = DISABLED
                     self.bt_luta = Button(self.frame_trechos,
                                           text="luta",
                                           command=self.luta)
@@ -1200,28 +1200,25 @@ class Application:
         # Opção 5
         if self.jogo.tem_trecho_e == True:
             if self.jogo.n_trecho_e > 0:
-                rd_n_trecho_e = Radiobutton(self.frame_trechos,
+                self.rd_n_trecho_e = Radiobutton(self.frame_trechos,
                                             text=self.jogo.texto_trecho_e,
                                             value=self.jogo.n_trecho_e,
                                             variable=self.destino,
                                             background="blue",
                                             anchor=W,
                                             command=self.exibe)
-                rd_n_trecho_e.place(relx=0.06,
+                self.rd_n_trecho_e.place(relx=0.06,
                                     rely=0.95,
                                     relwidth=0.88,
                                     relheight=0.03)
                 print(self.jogo.n_trecho_e)
                 if self.jogo.temluta == True:
-                    rd_n_trecho_e["state"] = DISABLED
                     self.bt_luta = Button(self.frame_trechos,
                                           text="luta",
                                           command=self.luta)
                     self.bt_luta.place(relx=0.7, rely=0.89, relwidth=0.2, relheight=0.035)
                     self.jogo.temluta = False
         self.jogo.tem_trecho_e = False
-
-        # Validar as Lutas:
 
         # Botões
         # Botão Cabeçalho
@@ -1694,7 +1691,7 @@ class Application:
         self.bt_testar_sorte_luta = Button(self.duelo,
                                            text="Testar a Sorte",
                                            command=self.testar_sorte_luta)
-        self.bt_testar_sorte_luta.place(relx=0.68, rely=0.8, relwidth=0.05, relheight=0.12)
+        self.bt_testar_sorte_luta.place(relx=0.57, rely=0.8, relwidth=0.18, relheight=0.12)
 
         self.calcular_round()
 
@@ -1754,14 +1751,21 @@ class Application:
 
         if self.jogo.m_energia < 1:
             print(f"{self.jogo.m_nome} morreu")
-            messagebox.showinfo(title="Vitória", message=f"Vitória de {self.jogador01.j_nome}!\n"
-                                                         f"O {self.jogo.m_nome} Morreu")
+            messagebox.showinfo(title="Vitória",
+                                message=f"Vitória de {self.jogador01.j_nome}!\n"
+                                f"O {self.jogo.m_nome} Morreu")
+            self.rd_n_trecho_a["stat"] = NORMAL
+            self.rd_n_trecho_b["stat"] = NORMAL
+            self.rd_n_trecho_c["stat"] = NORMAL
+            self.rd_n_trecho_d["stat"] = NORMAL
+            self.rd_n_trecho_e["stat"] = NORMAL
+
             self.duelo.destroy()
 
         if self.jogador01.j_energia < 1:
             print(f"{self.jogador01.j_nome} morreu \n Tente de Novo")
             messagebox.showinfo(title="Game Over", message=f"{self.jogo.m_nome} Venceu!\n Tente Novamente!")
-            # self.j_status = "Morto"
+            self.j_status = "Morto"
             self.trecho.destroy()
             self.duelo.destroy()
             self.criar_personagem()

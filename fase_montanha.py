@@ -91,14 +91,14 @@ class Fase:
                                 "Com determinação, retiras um kit de arrombamento \n" \
                                 "e inicia o trabalho na fechadura."
             self.n_trecho_a = 9
-            self.n_trecho_b = 3.1
+            self.n_trecho_b = 19
             self.tem_trecho_a = True
             self.tem_trecho_b = True
             self.texto_trecho_a = f"Se tiver sucesso vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f"Se falhar vá para {self.n_trecho_b}?"
 
-        elif self.n_trecho == 3.1:
-            self.texto_trecho = "Texto do trecho 003.1\n" \
+        elif self.n_trecho == 19:
+            self.texto_trecho = "Texto do trecho 0019\n" \
                                 "Ao atravessar o portão, este produz um estrondo mais \n" \
                                 "alto do que antecipavas. \n" \
                                 "O barulho atrai a atenção de outra fera voadora que \n" \
@@ -213,12 +213,9 @@ class Fase:
             self.m_nome = "Fera Voadora"
             self.m_energia = 10
             self.m_habilidade = 8
-            self.n_trecho_a = 4
-            self.n_trecho_b = 6
+            self.n_trecho_a = 17
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
             self.texto_trecho_a = f"Ir para {self.n_trecho_a}?"
-            self.texto_trecho_b = f"Ir para {self.n_trecho_b}?"
 
         elif self.n_trecho == 11:
             self.texto_trecho = "Texto do Trecho 011\n" \
@@ -232,7 +229,7 @@ class Fase:
                                 "\n" \
                                 "Teste de sorte:"
             self.n_trecho_a = 12
-            self.n_trecho_b = 15.1
+            self.n_trecho_b = 20
             self.tem_trecho_a = True
             self.tem_trecho_b = True
             self.texto_trecho_a = f"Se tiver sucesso vá para  {self.n_trecho_a}?"
@@ -249,7 +246,7 @@ class Fase:
             self.texto_trecho_a = f"Lute contra o Demonio - avance para {self.n_trecho_a}?"
 
         elif self.n_trecho == 13:
-            self.texto_trecho = "Texto do Trecho 0013\n" \
+            self.texto_trecho = "Texto do Trecho 013\n" \
                                 "Morte pela Besta Voadora."
 
         elif self.n_trecho == 14:
@@ -262,7 +259,7 @@ class Fase:
                                 "Se morreres, é o fim da tua aventura."
             self.n_trecho_a = 16
             self.temluta = True
-            self.m_nome = "Demonio das Sombras"
+            self.m_nome = "Demonio Nécro"
             self.m_habilidade = 12
             self.m_energia = 6
             self.tem_trecho_a = True
@@ -272,8 +269,8 @@ class Fase:
             self.texto_trecho = "Texto do Trecho 001\n" \
                                 "A Morte pelo Demônio."
 
-        elif self.n_trecho == 15.1:
-            self.texto_trecho = "Texto do Trecho 015.1\n" \
+        elif self.n_trecho == 20:
+            self.texto_trecho = "Texto do Trecho 020\n" \
                                 "Sem perceber, pisas numa alavanca que \n" \
                                 "aciona uma armadilha mortal. Estacas \n" \
                                 "surgem das paredes, perfurando teu \n" \
@@ -283,11 +280,11 @@ class Fase:
 
         elif self.n_trecho == 16:
             self.texto_trecho = "Texto do Trecho 001\n" \
-                                "Percebes uma pequena bolsa de couro preto " \
-                                "presa à cintura do demônio." \
-                                "Ao abri-la, encontra uma pequena " \
+                                "Percebes uma pequena bolsa de couro preto \n" \
+                                "presa à cintura do demônio.\n" \
+                                "Ao abri-la, encontra uma pequena \n" \
                                 "chave de cobre."
-            self.n_trecho_a = 16
+            self.n_trecho_a = 17
             self.tem_item = True
             self.item = "Chave de Cobre"
             self.tem_trecho_a = True
