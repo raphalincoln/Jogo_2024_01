@@ -13,7 +13,6 @@ class Jogador:
     j_ouro = None
     j_provisao = None
     j_pocao = None
-
     def __init__(self,
                  j_nome="TestJão",
                  j_energia=12 + random.randint(1, 6) + random.randint(1, 6),

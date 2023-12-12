@@ -24,6 +24,7 @@ class Luta:
         self.m_habilidade = m_habilidade
         self.m_status = m_status
 
+
     def dado(self):
         self.dado1 = randint(1, 6)
         return self.dado1

@@ -12,8 +12,8 @@ root = Tk()
 
 
 def dado():
-    dado = randint(1, 6)
-    return dado
+    jogar_dado = randint(1, 6)
+    return jogar_dado
 
 
 class Application:
@@ -32,7 +32,7 @@ class Application:
         self.tela()
         self.batalha = None
         self.frames_da_tela()
-        self.criandoInterface()
+        self.criando_interface()
         self.lbfra_inventario = None
         # criando o Loop
         root.mainloop()
@@ -60,23 +60,23 @@ class Application:
                              highlightthickness=6)
         self.frame_2.place(relx=0.51, rely=0.026, relwidth=0.475, relheight=0.96)
 
-    def tela_regras_batalhas(self):
+    def tela_regras_batal(self):
         self.batalha = tkinter.Toplevel()
         self.batalha.title("Regras de Batalhas")
         self.batalha.geometry("500x580+10+15")
         self.batalha.configure(background='white')
         self.batalha.resizable(False, False)
         # Titulo das Regras de batalha
-        lb_regras_Batalha_Titulo = Label(self.batalha,
+        lb_regras_batalha_titulo = Label(self.batalha,
                                          text="Regras de Batalha",
                                          background="white")
-        lb_regras_Batalha_Titulo.place(relx=0.25,
+        lb_regras_batalha_titulo.place(relx=0.25,
                                        rely=0.01,
                                        relwidth=0.5,
                                        relheight=0.045)
 
         # Texto da Ajuda de Batalha
-        lb_regras_Batalha_Ajuda = Label(self.batalha,
+        lb_regras_batalha_ajuda = Label(self.batalha,
                                         text="Quando for instruído a lutar com uma criatura, a batalha será descrita\n "
                                              "informando o nome da criatura. Primeiro, observe os valores de \n"
                                              "HABILIDADE e ENERGIA da criatura (como apresentados na página \n"
@@ -115,7 +115,7 @@ class Application:
                                              "da covardia. Você pode usar a SORTE neste ferimento \n"
                                              "normalmente (veja Usando a sorte em batalhas).\n",
                                         background="white")
-        lb_regras_Batalha_Ajuda.place(relx=0.005,
+        lb_regras_batalha_ajuda.place(relx=0.005,
                                       rely=0.067,
                                       relwidth=1,
                                       relheight=0.83)
@@ -126,23 +126,23 @@ class Application:
                                  command=self.batalha.destroy)
         self.bt_batalha.place(relx=0.35, rely=0.90, relwidth=0.25, relheight=0.065)
 
-    def tela_regras_Itens(self):
+    def tela_regras_itens(self):
         self.itens = tkinter.Toplevel()
         self.itens.configure(background='white')
         self.itens.geometry("500x580+10+15")
         self.itens.title("Regras de Batalhas")
         self.itens.resizable(False, False)
         # Titulo das Regras de Itens
-        lb_regras_Itens_Titulo = Label(self.itens,
+        lb_regras_itens_titulo = Label(self.itens,
                                        text="Regras de Itens",
                                        background="white")
-        lb_regras_Itens_Titulo.place(relx=0.25,
+        lb_regras_itens_titulo.place(relx=0.25,
                                      rely=0.01,
                                      relwidth=0.5,
                                      relheight=0.045)
 
         # Texto da Ajuda de Itens
-        lb_regras_Itens_Ajuda = Label(self.itens,
+        lb_regras_itens_ajuda = Label(self.itens,
                                       text="Você começa a aventura com uma espada, uma armadura de couro, um escudo,\n "
                                            "uma mochila com dez provisões para a viagem e um lampião para iluminar o\n"
                                            " caminho. \n"
@@ -163,34 +163,34 @@ class Application:
                                            "Cada poção só pode ser usada uma vez durante uma aventura.\n"
                                            "Quando usar uma poção, isso será anotado em Cabeçalho.",
                                       background="white")
-        lb_regras_Itens_Ajuda.place(relx=0.005,
+        lb_regras_itens_ajuda.place(relx=0.005,
                                     rely=0.067,
                                     relwidth=1,
                                     relheight=0.83)
 
         # Botão de Cancelar
-        self.bt_Itens = Button(self.itens,
+        self.bt_itens = Button(self.itens,
                                text="Cancelar",
                                command=self.itens.destroy)
-        self.bt_Itens.place(relx=0.35, rely=0.90, relwidth=0.25, relheight=0.065)
+        self.bt_itens.place(relx=0.35, rely=0.90, relwidth=0.25, relheight=0.065)
 
-    def tela_regras_Atributos(self):
+    def tela_regras_atributos(self):
         self.atributos = tkinter.Toplevel()
         self.atributos.title("Regras de Atributos")
         self.atributos.geometry("500x580+10+15")
         self.atributos.configure(background='white')
         self.atributos.resizable(False, False)
         # Titulo das Regras de Itens
-        lb_regras_Atributos_Titulo = Label(self.atributos,
+        lb_regras_atributos_titulo = Label(self.atributos,
                                            text="Regras de Atributos",
                                            background="white")
-        lb_regras_Atributos_Titulo.place(relx=0.25,
+        lb_regras_atributos_titulo.place(relx=0.25,
                                          rely=0.01,
                                          relwidth=0.5,
                                          relheight=0.045)
 
         # Texto da Ajuda de Itens
-        lb_regras_Atributos_Ajuda = Label(self.atributos,
+        lb_regras_atributos_ajuda = Label(self.atributos,
                                           text="Habilidade\n"
                                                "Seu valor de Habilidade não mudará muito durante sua aventura.\n"
                                                "Ocasionalmente, uma página trará instruções para que você altere o "
@@ -234,34 +234,34 @@ class Application:
                                                "inicial de SORTE em 1 ponto.\n",
 
                                           background="white")
-        lb_regras_Atributos_Ajuda.place(relx=0.005,
+        lb_regras_atributos_ajuda.place(relx=0.005,
                                         rely=0.067,
                                         relwidth=1,
                                         relheight=0.83)
 
         # Botão de Cancelar
-        self.bt_Atributos = Button(self.atributos,
+        self.bt_atributos = Button(self.atributos,
                                    text="Cancelar",
                                    command=self.atributos.destroy)
-        self.bt_Atributos.place(relx=0.35, rely=0.90, relwidth=0.25, relheight=0.065)
+        self.bt_atributos.place(relx=0.35, rely=0.90, relwidth=0.25, relheight=0.065)
 
-    def tela_regras_Sorte(self):
+    def tela_regras_sorte(self):
         self.sorte = tkinter.Toplevel()
         self.sorte.title("Regras de Atributos")
         self.sorte.geometry("500x580+10+15")
         self.sorte.configure(background='white')
         self.sorte.resizable(False, False)
         # Titulo das Regras de Itens
-        lb_regras_Sorte_Titulo = Label(self.sorte,
+        lb_regras_sorte_titulo = Label(self.sorte,
                                        text="Regras de Sorte",
                                        background="white")
-        lb_regras_Sorte_Titulo.place(relx=0.25,
+        lb_regras_sorte_titulo.place(relx=0.25,
                                      rely=0.01,
                                      relwidth=0.5,
                                      relheight=0.045)
 
         # Texto da Ajuda de Sorte
-        lb_regras_Sorte_Ajuda = Label(self.sorte,
+        lb_regras_sorte_ajuda = Label(self.sorte,
                                       text="Sorte\n"
                                            "Algumas vezes você terá de testar a sorte. Como você vai descobrir,\n"
                                            "usar a sorte é um negócio arriscado.\n"
@@ -296,18 +296,18 @@ class Application:
                                            "Não esqueça, será diminuído 1 ponto do seu valor de \n"
                                            "SORTE cada vez que testar a sorte.",
                                       background="white")
-        lb_regras_Sorte_Ajuda.place(relx=0.005,
+        lb_regras_sorte_ajuda.place(relx=0.005,
                                     rely=0.067,
                                     relwidth=1,
                                     relheight=0.83)
 
         # Botão de Cancelar
-        self.bt_Sorte = Button(self.sorte,
+        self.bt_sorte = Button(self.sorte,
                                text="Cancelar",
                                command=self.sorte.destroy)
-        self.bt_Sorte.place(relx=0.35, rely=0.90, relwidth=0.25, relheight=0.065)
+        self.bt_sorte.place(relx=0.35, rely=0.90, relwidth=0.25, relheight=0.065)
 
-    def abrirRegras(self):
+    def abrir_regras(self):
         self.regra = tkinter.Toplevel()
         self.regra.title("Regras")
         self.regra.geometry("200x580+20+25")
@@ -316,15 +316,15 @@ class Application:
         self.regra.maxsize(width=800, height=700)
         self.regra.minsize(width=500, height=300)
         # Titulo das Regras
-        lb_regras_Titulo = Label(self.regra,
+        lb_regras_titulo = Label(self.regra,
                                  text="Regras",
                                  background="white")
-        lb_regras_Titulo.place(relx=0.25,
+        lb_regras_titulo.place(relx=0.25,
                                rely=0.01,
                                relwidth=0.5,
                                relheight=0.035)
         # Apresentação das Regras
-        lb_regras_Apresentacao = Label(self.regra,
+        lb_regras_apresentacao = Label(self.regra,
                                        text="O Feiticeiro da Montanha de Fogo é uma aventura de fantasia em que "
                                             "você é o herói.\n "
                                             "Mas antes de começar,você deve criar seu personagem, rolando dados para \n"
@@ -334,24 +334,24 @@ class Application:
                                             "acompanhar sua evolução na espaço Cabeçalho, mas, fique atento, "
                                             "a variação \n"
                                             "nunca será maior que o valor inicial de cada atributo, excetoem momento \n"
-                                            "bem especial e estará claramente descrito na página.",
+                                            "bem especial e estará claramente descrito na página. ",
                                        background="white")
-        lb_regras_Apresentacao.place(relx=0.05,
+        lb_regras_apresentacao.place(relx=0.05,
                                      rely=0.055,
                                      relwidth=0.90,
                                      relheight=0.20)
 
         # Titulo da criação de Personagem
-        lb_regras_Criacao = Label(self.regra,
+        lb_regras_criacao = Label(self.regra,
                                   text="Criação de Personagem",
                                   background="white")
-        lb_regras_Criacao.place(relx=0.25,
+        lb_regras_criacao.place(relx=0.25,
                                 rely=0.26,
                                 relwidth=0.5,
                                 relheight=0.035)
 
         # Apresentação da Criação do Personagem
-        lb_regras_Apresentacao2 = Label(self.regra,
+        lb_regras_apresentacao2 = Label(self.regra,
                                         text="Determinando Habilidade, Energia e Sorte\n"
                                              "Para definir seus valores iniciais de HABILIDADE, ENERGIA e SORTE:\n"
                                              "Vamos rolar um dado e somar 6 ao resultado e esta será a sua Habilidade\n"
@@ -366,40 +366,40 @@ class Application:
                                              "de fantasia que você está prestes a explorar.\n"
                                              "Para criar o personagem, clique em “Criar” na tela inicial",
                                         background="white")
-        lb_regras_Apresentacao2.place(relx=0.05,
+        lb_regras_apresentacao2.place(relx=0.05,
                                       rely=0.30,
                                       relwidth=0.9,
                                       relheight=0.30)
 
         # Botão de Batalhas
-        bt_regras_Batalhas = Button(self.regra,
-                                    text="Batalhas",
-                                    command=self.tela_regras_batalhas)
-        bt_regras_Batalhas.place(relx=0.17, rely=0.65, relwidth=0.2, relheight=0.035)
+        bt_regras_batal = Button(self.regra,
+                                 text="Batalhas",
+                                 command=self.tela_regras_batal)
+        bt_regras_batal.place(relx=0.17, rely=0.65, relwidth=0.2, relheight=0.035)
 
         # Botão de Sorte
-        bt_regras_Sorte = Button(self.regra,
+        bt_regras_sorte = Button(self.regra,
                                  text="Sorte",
-                                 command=self.tela_regras_Sorte)
-        bt_regras_Sorte.place(relx=0.57, rely=0.85, relwidth=0.2, relheight=0.035)
+                                 command=self.tela_regras_sorte)
+        bt_regras_sorte.place(relx=0.57, rely=0.85, relwidth=0.2, relheight=0.035)
 
         # Botão de Atributos
-        bt_regras_Atributos = Button(self.regra,
+        bt_regras_atributos = Button(self.regra,
                                      text="Atributos",
-                                     command=self.tela_regras_Atributos)
-        bt_regras_Atributos.place(relx=0.17, rely=0.85, relwidth=0.2, relheight=0.035)
+                                     command=self.tela_regras_atributos)
+        bt_regras_atributos.place(relx=0.17, rely=0.85, relwidth=0.2, relheight=0.035)
 
         # Botão de Itens
-        bt_regras_Itens = Button(self.regra,
+        bt_regras_itens = Button(self.regra,
                                  text="Itens",
-                                 command=self.tela_regras_Itens)
-        bt_regras_Itens.place(relx=0.57, rely=0.65, relwidth=0.2, relheight=0.035)
+                                 command=self.tela_regras_itens)
+        bt_regras_itens.place(relx=0.57, rely=0.65, relwidth=0.2, relheight=0.035)
 
         # Botão de Cancelar
-        self.bt_Cancelar_Regra = Button(self.regra,
+        self.bt_cancelar_Regra = Button(self.regra,
                                         text="Cancelar",
                                         command=self.regra.destroy)
-        self.bt_Cancelar_Regra.place(relx=0.35, rely=0.93, relwidth=0.2, relheight=0.035)
+        self.bt_cancelar_Regra.place(relx=0.35, rely=0.93, relwidth=0.2, relheight=0.035)
 
     def criar_personagem_tela(self):
         # Criar a tela de criação de personagem
@@ -411,31 +411,31 @@ class Application:
         self.personagem.resizable(False, False)
 
         # Titulo da Criação de Persongem
-        lb_j_Titulo_Sorte = Label(self.personagem,
+        lb_j_titulo_sorte = Label(self.personagem,
                                   text="Crie Seu Personagem",
                                   background="#98d37e",
                                   font="arial")
-        lb_j_Titulo_Sorte.place(relx=0.25,
+        lb_j_titulo_sorte.place(relx=0.25,
                                 rely=0.01,
                                 relwidth=0.5,
                                 relheight=0.045)
 
         # Fundo do Cabeçalho
-        cabecalho_Imagem = PhotoImage(file=pastaApp + "\\FundoCabeçalhoPNG.png")
-        lb_j_Cabecalho_Imagem = Label(self.personagem,
-                                      image=cabecalho_Imagem,
+        cabecalho_imagem = PhotoImage(file=pastaApp + "\\FundoCabeçalhoPNG.png")
+        lb_j_cabecalho_imagem = Label(self.personagem,
+                                      image=cabecalho_imagem,
                                       background="#98d37e")
-        lb_j_Cabecalho_Imagem.photo = cabecalho_Imagem
-        lb_j_Cabecalho_Imagem.place(relx=0.02,
+        lb_j_cabecalho_imagem.photo = cabecalho_imagem
+        lb_j_cabecalho_imagem.place(relx=0.02,
                                     rely=0.1,
                                     relwidth=0.96,
                                     relheight=0.25)
 
         # Descrição do Nome
-        lb_j_Descricao_Nome = Label(self.personagem,
+        lb_j_descricao_nome = Label(self.personagem,
                                     text='Qual será o nome do seu Guerreiro',
                                     background="#98d37e")
-        lb_j_Descricao_Nome.place(relx=0.1,
+        lb_j_descricao_nome.place(relx=0.1,
                                   rely=0.37,
                                   relwidth=0.5,
                                   relheight=0.045)
@@ -448,76 +448,76 @@ class Application:
                               relheight=0.045)
 
         # Botão de Validação do nome
-        bt_j_Validar_Nome = Button(self.personagem,
+        bt_j_validar_nome = Button(self.personagem,
                                    text="OK",
-                                   command=self.pNome)
-        bt_j_Validar_Nome.place(relx=0.85,
+                                   command=self.p_nome)
+        bt_j_validar_nome.place(relx=0.85,
                                 rely=0.37,
                                 relwidth=0.05,
                                 relheight=0.045)
 
         # Descrição de Energia
-        lb_j_Descricao_Energia = Label(self.personagem,
+        lb_j_descricao_energia = Label(self.personagem,
                                        text='Para Definir sua Energia\n'
                                             'Vamos jogar 2 dados e somar 12 a eles',
                                        background="#98d37e")
-        lb_j_Descricao_Energia.place(relx=0.1,
+        lb_j_descricao_energia.place(relx=0.1,
                                      rely=0.5,
                                      relwidth=0.4,
                                      relheight=0.06)
 
         # Descrição de Habilidade
-        lb_j_Descricao_Habilidade = Label(self.personagem,
+        lb_j_descricao_habilidade = Label(self.personagem,
                                           text='Para Definir sua Habilidade\n'
                                                'Vamos jogar 1 dado e somar 6 a ele',
                                           background="#98d37e")
-        lb_j_Descricao_Habilidade.place(relx=0.1,
+        lb_j_descricao_habilidade.place(relx=0.1,
                                         rely=0.6,
                                         relwidth=0.4,
                                         relheight=0.06)
 
         # Descrição de Sorte
-        lb_j_Descricao_Sorte = Label(self.personagem,
+        lb_j_descricao_sorte = Label(self.personagem,
                                      text='Para Definir sua Sorte\n'
                                           'Vamos jogar 1 dado e somar 6 a ele',
                                      background="#98d37e")
-        lb_j_Descricao_Sorte.place(relx=0.1,
+        lb_j_descricao_sorte.place(relx=0.1,
                                    rely=0.7,
                                    relwidth=0.4,
                                    relheight=0.06)
 
         # Botão de Jogar Dados de Energia
-        self.bt_Calcular_Energia = Button(self.personagem,
+        self.bt_Calcular_energia = Button(self.personagem,
                                           text="Calcular Energia",
-                                          command=self.calcularEnergia)
-        self.bt_Calcular_Energia.place(relx=0.70,
+                                          command=self.calcular_energia)
+        self.bt_Calcular_energia.place(relx=0.70,
                                        rely=0.5,
                                        relwidth=0.24,
                                        relheight=0.045)
 
         # Botão de Jogar Dado de Habilidade
-        self.bt_Calcular_Habilidade = Button(self.personagem,
+        self.bt_Calcular_habilidade = Button(self.personagem,
                                              text="Calcular Habilidade",
-                                             command=self.calcularHabilidade)
-        self.bt_Calcular_Habilidade.place(relx=0.70,
+                                             command=self.calcular_habilidade)
+        self.bt_Calcular_habilidade.place(relx=0.70,
                                           rely=0.6,
                                           relwidth=0.24,
                                           relheight=0.045)
 
         # Botão de Jogar Dados de Sorte
-        self.bt_Calcular_Sorte = Button(self.personagem,
+        self.bt_Calcular_sorte = Button(self.personagem,
                                         text="Calcular Sorte",
-                                        command=self.calcularSorte)
-        self.bt_Calcular_Sorte.place(relx=0.70,
+                                        command=self.calcular_sorte)
+        self.bt_Calcular_sorte.place(relx=0.70,
                                      rely=0.7,
                                      relwidth=0.24,
                                      relheight=0.045)
 
         # Apresentação Botão Radio de Poção
-        lb_EscolhaPocao = Label(self.personagem,
+        lb_escolhapocao = Label(self.personagem,
                                 text="Escolha uma Poção",
                                 background="#98d37e")
-        lb_EscolhaPocao.place(relx=0.3,
+        lb_escolhapocao.place(relx=0.3,
                               rely=0.80,
                               relwidth=0.25,
                               relheight=0.06)
@@ -566,16 +566,16 @@ class Application:
         bt_criar.place(relx=0.15, rely=0.95, relwidth=0.2, relheight=0.035)
 
         # Botão de Salvar Personagem
-        bt_Salvar = Button(self.personagem,
+        bt_salvar = Button(self.personagem,
                            text="Salvar",
                            command=self.salvar_personagem)
-        bt_Salvar.place(relx=0.42, rely=0.95, relwidth=0.2, relheight=0.035)
+        bt_salvar.place(relx=0.42, rely=0.95, relwidth=0.2, relheight=0.035)
 
         # Botão de sair da Criação de Personagem
-        bt_Cancelar = Button(self.personagem,
+        bt_cancelar = Button(self.personagem,
                              text="Cancelar",
                              command=self.personagem.destroy)
-        bt_Cancelar.place(relx=0.70, rely=0.95, relwidth=0.2, relheight=0.035)
+        bt_cancelar.place(relx=0.70, rely=0.95, relwidth=0.2, relheight=0.035)
 
     def criar_personagem(self):  # Com classe
         # Criando Personagem na Classe
@@ -589,52 +589,52 @@ class Application:
         lb_j_nome.place(relx=0.31, rely=0.171, relwidth=0.17, relheight=0.032)
 
         # Exibir dados de Energia
-        lb_Valor_Energia = Label(self.personagem,
+        lb_valor_energia = Label(self.personagem,
                                  text=self.jogador01.j_energia,
                                  background="#98d37e")
-        lb_Valor_Energia.place(relx=0.31, rely=0.21, relwidth=0.17, relheight=0.029)
+        lb_valor_energia.place(relx=0.31, rely=0.21, relwidth=0.17, relheight=0.029)
 
         # Exibir dados de Habilidade
-        lb_Valor_Habilidade = Label(self.personagem,
+        lb_valor_habilidade = Label(self.personagem,
                                     text=self.jogador01.j_habilidade,
                                     background="#98d37e")
-        lb_Valor_Habilidade.place(relx=0.31, rely=0.25, relwidth=0.17, relheight=0.029)
+        lb_valor_habilidade.place(relx=0.31, rely=0.25, relwidth=0.17, relheight=0.029)
 
         # Exibir dados de Sorte
-        lb_Valor_Sorte = Label(self.personagem,
+        lb_valor_sorte = Label(self.personagem,
                                text=self.jogador01.j_sorte,
                                background="#98d37e")
-        lb_Valor_Sorte.place(relx=0.31, rely=0.29, relwidth=0.17, relheight=0.029)
+        lb_valor_sorte.place(relx=0.31, rely=0.29, relwidth=0.17, relheight=0.029)
 
         # Exibir Status
         self.jogador01.j_status = 'Vivo'
-        lb_j_Status = Label(self.personagem,
+        lb_j_status = Label(self.personagem,
                             text=self.jogador01.j_status,
                             background="#98d37e")  # 98d37e
-        lb_j_Status.place(relx=0.66, rely=0.171, relwidth=0.20, relheight=0.032)
+        lb_j_status.place(relx=0.66, rely=0.171, relwidth=0.20, relheight=0.032)
 
         # Exibir Ouro
         self.jogador01.j_ouro = int(600)
-        lb_j_Ouro = Label(self.personagem,
+        lb_j_ouro = Label(self.personagem,
                           text=f'{self.jogador01.j_ouro} Peças',
                           background="#98d37e")  # 98d37e
-        lb_j_Ouro.place(relx=0.66, rely=0.21, relwidth=0.20, relheight=0.032)
+        lb_j_ouro.place(relx=0.66, rely=0.21, relwidth=0.20, relheight=0.032)
 
         # Exibir Provisões
         self.jogador01.j_provisao = int(10)
-        lb_j_Provisoes = Label(self.personagem,
+        lb_j_provisoes = Label(self.personagem,
                                text=self.jogador01.j_provisao,
                                background="#98d37e")  # 98d37e
-        lb_j_Provisoes.place(relx=0.66, rely=0.25, relwidth=0.20, relheight=0.032)
+        lb_j_provisoes.place(relx=0.66, rely=0.25, relwidth=0.20, relheight=0.032)
 
         # Exibir Poção
         self.jogador01.j_pocao = self.pocao.get()
-        lb_j_Pocao = Label(self.personagem,
+        lb_j_pocao = Label(self.personagem,
                            text=self.jogador01.j_pocao,
                            background="#98d37e")  # 98d37e
-        lb_j_Pocao.place(relx=0.66, rely=0.29, relwidth=0.20, relheight=0.032)
+        lb_j_pocao.place(relx=0.66, rely=0.29, relwidth=0.20, relheight=0.032)
 
-    def calcularEnergia(self):
+    def calcular_energia(self):
         # Dados de Energia
         self.j_dado_energia1 = int(randint(1, 6))
         self.j_dado_energia2 = int(randint(1, 6))
@@ -643,50 +643,50 @@ class Application:
         self.jogador01.j_energia_inicial = self.jogador01.j_energia
 
         # Escrever no Label de Energia
-        lb_Valor_Energia = Label(self.personagem,
+        lb_valor_energia = Label(self.personagem,
                                  text=self.jogador01.j_energia,
                                  background="#98d37e")
 
         # Escrever dado
-        lb_Valor_Energia = Label(self.personagem,
+        lb_valor_energia = Label(self.personagem,
                                  text=f"1º dado: {self.j_dado_energia1}\n"
                                       f"2º dado: {self.j_dado_energia2}",
                                  background="#98d37e")
-        lb_Valor_Energia.place(relx=0.55,
+        lb_valor_energia.place(relx=0.55,
                                rely=0.5,
                                relwidth=0.12,
                                relheight=0.06)
 
-        self.bt_Calcular_Energia.configure(state=DISABLED)
+        self.bt_Calcular_energia.configure(state=DISABLED)
 
         return self.jogador01.j_energia
 
-    def calcularHabilidade(self):
+    def calcular_habilidade(self):
         # Calcular Habilidade
         self.j_dado_habilidade = int(randint(1, 6))
         self.jogador01.j_habilidade = self.j_dado_habilidade + 6
         print("Habilidade: ", self.jogador01.j_habilidade)
 
         # Escrever no Label de Habilidade
-        lb_Valor_Habilidade = Label(self.personagem,
+        lb_valor_habilidade = Label(self.personagem,
                                     text=self.jogador01.j_habilidade,
                                     background="#98d37e")
-        # lb_Valor_Habilidade.place(relx=0.30, rely=0.25, relwidth=0.193, relheight=0.029)
+        # lb_valor_habilidade.place(relx=0.30, rely=0.25, relwidth=0.193, relheight=0.029)
 
         # Escrever dado
-        lb_Valor_Habilidade = Label(self.personagem,
+        lb_valor_habilidade = Label(self.personagem,
                                     text=f"Dado: {self.j_dado_habilidade}\n",
                                     background="#98d37e")  # 98d37e"
-        lb_Valor_Habilidade.place(relx=0.55,
+        lb_valor_habilidade.place(relx=0.55,
                                   rely=0.6,
                                   relwidth=0.12,
                                   relheight=0.06)
-        self.bt_Calcular_Habilidade.configure(state=DISABLED)
+        self.bt_Calcular_habilidade.configure(state=DISABLED)
         self.jogador01.j_habilidade_inicial = self.jogador01.j_habilidade
 
         return self.jogador01.j_habilidade
 
-    def calcularSorte(self):
+    def calcular_sorte(self):
         # Calcular Sorte
         self.j_dado_sorte = int(randint(1, 6))
         self.jogador01.j_sorte = self.j_dado_sorte + 6
@@ -694,25 +694,25 @@ class Application:
         self.jogador01.j_sorte_inicial = self.jogador01.j_sorte
 
         # Escrever no Label de Sorte
-        lb_Valor_Sorte = Label(self.personagem,
+        lb_valor_sorte = Label(self.personagem,
                                text=self.jogador01.j_sorte,
                                background="#98d37e")
-        # lb_Valor_Sorte.place(relx=0.30, rely=0.29, relwidth=0.193, relheight=0.029)
+        # lb_valor_sorte.place(relx=0.30, rely=0.29, relwidth=0.193, relheight=0.029)
 
         # Escrever dado
-        lb_Valor_Sorte = Label(self.personagem,
+        lb_valor_sorte = Label(self.personagem,
                                text=f"Dado: {self.j_dado_sorte}\n",
                                background="#98d37e",  # 98d37e"
                                anchor="center")
-        lb_Valor_Sorte.place(relx=0.55,
+        lb_valor_sorte.place(relx=0.55,
                              rely=0.7,
                              relwidth=0.12,
                              relheight=0.06)
-        self.bt_Calcular_Sorte.configure(state=DISABLED)
+        self.bt_Calcular_sorte.configure(state=DISABLED)
 
         return
 
-    def pNome(self):
+    def p_nome(self):
         # Capturar Nome do personagem
         self.jogador01.j_nome = (self.ent_j_nome.get())
         lb_j_nome = Label(self.personagem,
@@ -792,7 +792,7 @@ class Application:
             print("Vida ja esta no maximo")
             messagebox.showinfo(title="Vida no Maximo", message=f"Sua vida ja esta no maximo", )
 
-    def exibirCabecalho(self):
+    def exibir_cabecalho(self):
         # Exibir a imgagem
         self.cabecalho = tkinter.Toplevel()
         self.cabecalho.title("Dados do Personagem")
@@ -801,83 +801,83 @@ class Application:
         # self.cabecalho.resizable(False, False)
 
         # Cabeçalho
-        cabecalho_Imagem = PhotoImage(file=pastaApp + "\\Tela de Cabeçalho.png")
-        lb_j_Cabecalho_Imagem = Label(self.cabecalho,
-                                      image=cabecalho_Imagem,
+        cabecalho_imagem = PhotoImage(file=pastaApp + "\\Tela de Cabeçalho.png")
+        lb_j_cabecalho_imagem = Label(self.cabecalho,
+                                      image=cabecalho_imagem,
                                       background="#DBBF9B",
                                       anchor="n")
-        lb_j_Cabecalho_Imagem.photo = cabecalho_Imagem
-        lb_j_Cabecalho_Imagem.place(relx=0,
+        lb_j_cabecalho_imagem.photo = cabecalho_imagem
+        lb_j_cabecalho_imagem.place(relx=0,
                                     rely=0,
                                     relwidth=1,
                                     relheight=1)
 
         # Mostrar Nome
-        lb_Nome = Label(self.cabecalho,
+        lb_nome = Label(self.cabecalho,
                         text=self.jogador01.j_nome,
                         background="#D4B795",  # 98d37e"
                         font="arial")
-        lb_Nome.place(relx=0.20,
+        lb_nome.place(relx=0.20,
                       rely=0.23,
                       relwidth=0.25,
                       relheight=0.10)
 
         # Mostrar Energia
-        lb_Energia = Label(self.cabecalho,
+        lb_energia = Label(self.cabecalho,
                            text=self.jogador01.j_energia,
                            font="arial",
                            background="#D4B795")  # 98d37e"
-        lb_Energia.place(relx=0.23,
+        lb_energia.place(relx=0.23,
                          rely=0.365,
                          relwidth=0.2,
                          relheight=0.10)
 
         # Mostrar Habilidade
-        lb_Habilidade = Label(self.cabecalho,
+        lb_habilidade = Label(self.cabecalho,
                               text=self.jogador01.j_habilidade,
                               font="arial",
                               background="#D4B795")  # 98d37e"
-        lb_Habilidade.place(relx=0.23,
+        lb_habilidade.place(relx=0.23,
                             rely=0.5,
                             relwidth=0.2,
                             relheight=0.10)
 
         # Mostrar Sorte
-        lb_Sorte = Label(self.cabecalho,
+        lb_sorte = Label(self.cabecalho,
                          text=self.jogador01.j_sorte,
                          font="arial",
                          background="#D4B795")  # 98d37e"
-        lb_Sorte.place(relx=0.23,
+        lb_sorte.place(relx=0.23,
                        rely=0.65,
                        relwidth=0.2,
                        relheight=0.10)
 
         # Mostrar status
-        lb_Status = Label(self.cabecalho,
+        lb_status = Label(self.cabecalho,
                           text=self.jogador01.j_status,
                           font="arial",
                           background="#D4B795")  # 98d37e"
-        lb_Status.place(relx=0.65,
+        lb_status.place(relx=0.65,
                         rely=0.23,
                         relwidth=0.25,
                         relheight=0.12)
 
         # Mostrar ouro
-        lb_Ouro = Label(self.cabecalho,
+        lb_ouro = Label(self.cabecalho,
                         text=self.jogador01.j_ouro,
                         font="arial",
                         background="#D4B795")  # 98d37e"
-        lb_Ouro.place(relx=0.65,
+        lb_ouro.place(relx=0.65,
                       rely=0.365,
                       relwidth=0.25,
                       relheight=0.10)
 
         # Mostrar provisão
-        lb_Provisao = Label(self.cabecalho,
+        lb_provisao = Label(self.cabecalho,
                             text=self.jogador01.j_provisao,
                             font="arial",
                             background="#D4B795")  # 98d37e"
-        lb_Provisao.place(relx=0.65,
+        lb_provisao.place(relx=0.65,
                           rely=0.500,
                           relwidth=0.25,
                           relheight=0.10)
@@ -902,22 +902,22 @@ class Application:
                            relwidth=0.25,
                            relheight=0.12)
 
-    def criandoInterface(self):
+    def criando_interface(self):
         # Apresentação
-        lb_Apresentacao = Label(self.frame_1,
+        lb_apresentacao = Label(self.frame_1,
                                 text="Apresentando o Jogo",
                                 background='#dfe3ee')
-        lb_Apresentacao.place(relx=0.25, rely=0.01, relwidth=0.5, relheight=0.035)
+        lb_apresentacao.place(relx=0.25, rely=0.01, relwidth=0.5, relheight=0.035)
 
         # Titulo
-        lb_Titulo = Label(self.frame_1,
+        lb_titulo = Label(self.frame_1,
                           text="O Feiticeiro da Montanha \nde Fogo",
                           background='#dfe3ee',
                           font="arial")
-        lb_Titulo.place(relx=0.25, rely=0.08, relwidth=0.57, relheight=0.09)
+        lb_titulo.place(relx=0.25, rely=0.08, relwidth=0.57, relheight=0.09)
 
         # Descrição
-        lb_Descricao = Label(self.frame_1,
+        lb_descricao = Label(self.frame_1,
                              text="Nas cavernas da Montanha de Fogo há um grande\n"
                                   "tesouro, guardado por um poderoso e maligno \n"
                                   "Feiticeiro. Ou, pelo menos, é o que dizem os rumores.\n "
@@ -926,10 +926,10 @@ class Application:
                                   "nenhum jamais retornou\n "
                                   "Você ousa tentar?\n",
                              background='#dfe3ee')
-        lb_Descricao.place(relx=0.05, rely=0.20, relwidth=0.90, relheight=0.22)
+        lb_descricao.place(relx=0.05, rely=0.20, relwidth=0.90, relheight=0.22)
 
         # O Jogo
-        lbO_Jogo = Label(self.frame_1,
+        lbO_jogo = Label(self.frame_1,
                          text="Parte história, parte jogo, \n"
                               "este é um tipo diferente de \n "
                               "livro aqui, você é o herói você precisa \n"
@@ -938,25 +938,25 @@ class Application:
                               "nesta fantástica aventura.\n "
                          ,
                          background='#dfe3ee')
-        lbO_Jogo.place(relx=0.05, rely=0.4, relwidth=0.90, relheight=0.24)
+        lbO_jogo.place(relx=0.05, rely=0.4, relwidth=0.90, relheight=0.24)
 
         # O Jogo
-        lbO_Personagem = Label(self.frame_1,
+        lbO_personagem = Label(self.frame_1,
                                text="Se estiver preparado para a Glória.\n"
                                     "Se tiver coragem para o Desconhecido.\n"
                                     "Se desejar ouro e Poder\n"
                                     "Crie seu personagem e vamos à Luta",
                                background='#dfe3ee')
-        lbO_Personagem.place(relx=0.05, rely=0.6, relwidth=0.90, relheight=0.15)
+        lbO_personagem.place(relx=0.05, rely=0.6, relwidth=0.90, relheight=0.15)
 
         # Imagem do Feiticeiro
 
-        feiticeiro_Imagem = PhotoImage(file=pastaApp + "\\Feiticeiro.png")
-        lb_feiticeiro_Imagem = Label(self.frame_1,
-                                     image=feiticeiro_Imagem,
+        feiticeiro_imagem = PhotoImage(file=pastaApp + "\\Feiticeiro.png")
+        lb_feiticeiro_imagem = Label(self.frame_1,
+                                     image=feiticeiro_imagem,
                                      background="blue")
-        lb_feiticeiro_Imagem.photo = feiticeiro_Imagem
-        lb_feiticeiro_Imagem.place(relx=0.40, rely=0.74, relwidth=0.25, relheight=0.22)
+        lb_feiticeiro_imagem.photo = feiticeiro_imagem
+        lb_feiticeiro_imagem.place(relx=0.40, rely=0.74, relwidth=0.25, relheight=0.22)
 
         # Inicio da História
         lb_intuducao = Label(self.frame_2,
@@ -1013,19 +1013,19 @@ class Application:
         # Botão de Regras
         self.bt_Regras = Button(self.frame_1,
                                 text="Regras",
-                                command=self.abrirRegras)
+                                command=self.abrir_regras)
         self.bt_Regras.place(relx=0.45, rely=0.95, relwidth=0.2, relheight=0.035)
         # Botão de Cancelar
-        self.bt_Cancelar = Button(self.frame_1,
+        self.bt_cancelar = Button(self.frame_1,
                                   text="Cancelar",
                                   command=root.quit)
-        self.bt_Cancelar.place(relx=0.75, rely=0.95, relwidth=0.2, relheight=0.035)
+        self.bt_cancelar.place(relx=0.75, rely=0.95, relwidth=0.2, relheight=0.035)
 
         # Botão de Exibir cabeçalho
-        self.bt_Cabecalho = Button(self.frame_2,
+        self.bt_cabecalho = Button(self.frame_2,
                                    text="Cabeçalho",
-                                   command=self.exibirCabecalho)
-        self.bt_Cabecalho.place(relx=0.2, rely=0.95, relwidth=0.2, relheight=0.035)
+                                   command=self.exibir_cabecalho)
+        self.bt_cabecalho.place(relx=0.2, rely=0.95, relwidth=0.2, relheight=0.035)
         # Botão de Iniciar História
         self.bt_Iniciar = Button(self.frame_2,
                                  text="Iniciar",
@@ -1075,7 +1075,7 @@ class Application:
                                             command=self.exibe)
                 rd_n_trecho_a.place(relx=0.06,
                                     rely=0.79,
-                                    relwidth=0.4,
+                                    relwidth=0.88,
                                     relheight=0.03)
                 print(self.jogo.n_trecho_a)
                 rd_n_trecho_a.select()  # Setar a primeira opção como defalt
@@ -1111,6 +1111,7 @@ class Application:
                                              relheight=0.03)
         self.jogo.tem_trecho_a = False
 
+
         # Opção 2
         if self.jogo.tem_trecho_b == True:
             if self.jogo.n_trecho_b > 0:
@@ -1123,7 +1124,7 @@ class Application:
                                             command=self.exibe)
                 rd_n_trecho_b.place(relx=0.06,
                                     rely=0.83,
-                                    relwidth=0.4,
+                                    relwidth=0.88,
                                     relheight=0.03)
                 print(self.jogo.n_trecho_b)
                 if self.jogo.temluta == True:
@@ -1131,7 +1132,10 @@ class Application:
                     self.bt_luta = Button(self.frame_trechos,
                                           text="luta",
                                           command=self.luta)
-                    self.bt_luta.place(relx=0.7, rely=0.89, relwidth=0.2, relheight=0.035)
+                    self.bt_luta.place(relx=0.7,
+                                       rely=0.89,
+                                       relwidth=0.2,
+                                       relheight=0.035)
                     self.jogo.temluta = False
                     # Pegar Ouro
                     if self.jogo.tem_ouro == True:
@@ -1143,7 +1147,7 @@ class Application:
                                                  rely=0.87,
                                                  relwidth=0.2,
                                                  relheight=0.03)
-        self.jogo.tem_trecho_a = False
+        self.jogo.tem_trecho_b = False
 
         # Opção 3
         if self.jogo.tem_trecho_c == True:
@@ -1157,7 +1161,7 @@ class Application:
                                             command=self.exibe)
                 rd_n_trecho_c.place(relx=0.06,
                                     rely=0.87,
-                                    relwidth=0.4,
+                                    relwidth=0.88,
                                     relheight=0.03)
                 if self.jogo.temluta == True:
                     rd_n_trecho_c["state"] = DISABLED
@@ -1181,7 +1185,7 @@ class Application:
                                             command=self.exibe)
                 rd_n_trecho_d.place(relx=0.06,
                                     rely=0.91,
-                                    relwidth=0.4,
+                                    relwidth=0.88,
                                     relheight=0.03)
                 print(self.jogo.n_trecho_d)
                 if self.jogo.temluta == True:
@@ -1205,7 +1209,7 @@ class Application:
                                             command=self.exibe)
                 rd_n_trecho_e.place(relx=0.06,
                                     rely=0.95,
-                                    relwidth=0.4,
+                                    relwidth=0.88,
                                     relheight=0.03)
                 print(self.jogo.n_trecho_e)
                 if self.jogo.temluta == True:
@@ -1218,14 +1222,15 @@ class Application:
         self.jogo.tem_trecho_e = False
 
         # Validar as Lutas:
-        print("test")
 
         # Botões
         # Botão Cabeçalho
-        self.bt_Cabecalho = Button(self.frame_trechos,
+
+
+        self.bt_cabecalho = Button(self.frame_trechos,
                                    text="Cabeçalho",
-                                   command=self.exibirCabecalho)
-        self.bt_Cabecalho.place(relx=0.2, rely=0.93, relwidth=0.2, relheight=0.035)
+                                   command=self.exibir_cabecalho)
+        self.bt_cabecalho.place(relx=0.2, rely=0.93, relwidth=0.2, relheight=0.035)
 
         # Botão Inventario
         self.bt_inventario = Button(self.frame_trechos,
