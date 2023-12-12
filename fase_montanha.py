@@ -24,6 +24,8 @@ class Fase:
                 tem_item=False,
                 lista_item=[""],
                 item="",
+                tem_ouro=False,
+                ouro_fase = 0,
                 contador=0):
        self.n_trecho = n_trecho
        self.texto_trecho = texto_trecho
@@ -50,6 +52,8 @@ class Fase:
        self.lista_item = lista_item
        self.item = item
        self.contador = contador
+       self.tem_ouro = tem_ouro
+       self.ouro_fase = ouro_fase
 
    def livro(self):
        if self.n_trecho == 1:
@@ -87,9 +91,12 @@ class Fase:
 
        elif self.n_trecho == 4:
            self.texto_trecho = "Texto do trecho 004\n" \
+                               "Voce achou 100 moedas de ouro\n" \
                                "voce pode ir para o trecho 7 ou para o trecho 8"
            self.n_trecho_a = 7
            self.n_trecho_b = 8
+           self.tem_ouro = True
+           self.ouro_fase = 100
            self.tem_trecho_a = True
            self.tem_trecho_b = True
            self.texto_trecho_a = f"Ir para {self.n_trecho_a}?"
@@ -157,9 +164,11 @@ class Fase:
 
        elif self.n_trecho == 10:
            self.texto_trecho = "Texto do trecho 010\n" \
-                               "voce pode ir para o trecho 4 ou para o trecho 6"
+                               "Você precisa pagar taxa"
            self.n_trecho_a = 4
            self.n_trecho_b = 6
+           self.tem_item = True
+           self.item = "Escudo"
            self.tem_trecho_a = True
            self.tem_trecho_b = True
            self.texto_trecho_a = f"Ir para {self.n_trecho_a}?"
