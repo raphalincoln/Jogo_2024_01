@@ -26,7 +26,9 @@ class Fase:
                  item="",
                  tem_ouro=False,
                  ouro_fase=0,
-                 contador=0):
+                 contador=0,
+                 livro_titulo="",
+                 tem_testar_sorte=False):
         self.n_trecho = n_trecho
         self.texto_trecho = texto_trecho
         self.n_trecho_a = n_trecho_a
@@ -54,12 +56,16 @@ class Fase:
         self.contador = contador
         self.tem_ouro = tem_ouro
         self.ouro_fase = ouro_fase
+        self.livro_titulo = livro_titulo
+        self.tem_testar_sorte = tem_testar_sorte
 
+        self.livro_titulo = "O Feiticeiro da Montanha \n" \
+                        "de Fogo!"
     def livro(self):
         if self.n_trecho == 1:
             self.texto_trecho = "Texto do Trecho 001\n" \
-                                "Diante de ti ergue-se um colossal portão de ferro. \n" \
-                                "Ao examinar a fechadura, percebes sua complexidade. \n" \
+                                "Diante de você se ergue um colossal portão de ferro. \n" \
+                                "Ao examinar a fechadura, percebe sua alta complexidade. \n" \
                                 "O portão, adornado com pontas afiadas, desafia-te a \n" \
                                 "superá-lo com opções igualmente desafiadoras."
             self.n_trecho_a = 3
@@ -94,6 +100,7 @@ class Fase:
             self.n_trecho_b = 19
             self.tem_trecho_a = True
             self.tem_trecho_b = True
+            self.tem_testar_sorte = True
             self.texto_trecho_a = f"Se tiver sucesso vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f"Se falhar vá para {self.n_trecho_b}?"
 
@@ -108,7 +115,7 @@ class Fase:
                                 "Teste de sorte:"
             self.n_trecho_a = 11
             self.n_trecho_b = 10
-            self.tem_ouro = True
+            self.tem_testar_sorte = True
             self.ouro_fase = 100
             self.tem_trecho_a = True
             self.tem_trecho_b = True
@@ -157,6 +164,7 @@ class Fase:
                                 "Teste a sorte"
             self.tem_trecho_a = True
             self.tem_trecho_b = True
+            self.tem_testar_sorte = True
             self.n_trecho_a = 7
             self.n_trecho_b = 8
             self.texto_trecho_a = f"Se tiver sucesso vá para {self.n_trecho_a}?"
@@ -200,6 +208,7 @@ class Fase:
             self.n_trecho_b = 11
             self.tem_trecho_a = True
             self.tem_trecho_b = True
+            self.tem_testar_sorte = True
             self.texto_trecho_a = f"Falha - Vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f"Sucesso - Vá para {self.n_trecho_b}?"
 
@@ -214,8 +223,11 @@ class Fase:
             self.m_energia = 10
             self.m_habilidade = 8
             self.n_trecho_a = 17
+            self.n_trecho_a = 1
             self.tem_trecho_a = True
+            self.tem_trecho_b = True
             self.texto_trecho_a = f"Ir para {self.n_trecho_a}?"
+            self.texto_trecho_b = f"Ir para {self.n_trecho_b}?"
 
         elif self.n_trecho == 11:
             self.texto_trecho = "Texto do Trecho 011\n" \
@@ -232,6 +244,7 @@ class Fase:
             self.n_trecho_b = 20
             self.tem_trecho_a = True
             self.tem_trecho_b = True
+            self.tem_testar_sorte = True
             self.texto_trecho_a = f"Se tiver sucesso vá para  {self.n_trecho_a}?"
             self.texto_trecho_b = f"Se falhar, vá para {self.n_trecho_b}?"
 
@@ -266,7 +279,7 @@ class Fase:
             self.texto_trecho_a = f"Vitória na Luta. Vá para {self.n_trecho_a}?"
 
         elif self.n_trecho == 15:
-            self.texto_trecho = "Texto do Trecho 001\n" \
+            self.texto_trecho = "Texto do Trecho 015\n" \
                                 "A Morte pelo Demônio."
 
         elif self.n_trecho == 20:
@@ -279,7 +292,7 @@ class Fase:
                                 "É o fim da tua aventura.\n"
 
         elif self.n_trecho == 16:
-            self.texto_trecho = "Texto do Trecho 001\n" \
+            self.texto_trecho = "Texto do Trecho 016\n" \
                                 "Percebes uma pequena bolsa de couro preto \n" \
                                 "presa à cintura do demônio.\n" \
                                 "Ao abri-la, encontra uma pequena \n" \
@@ -291,7 +304,7 @@ class Fase:
             self.texto_trecho_a = f"Arrombar o portão - avance para {self.n_trecho_a}?"
 
         elif self.n_trecho == 17:
-            self.texto_trecho = "Texto do Trecho 001\n" \
+            self.texto_trecho = "Texto do Trecho 017\n" \
                                 "Finalmente, alcanças a porta do castelo. \n" \
                                 "A verdadeira aventura inicia-se agora."
             self.n_trecho_a = 18
@@ -299,5 +312,5 @@ class Fase:
             self.texto_trecho_a = f"avance para {self.n_trecho_a}?"
 
         elif self.n_trecho == 18:
-            self.texto_trecho = "Texto do Trecho 001\n" \
+            self.texto_trecho = "Texto do Trecho 018\n" \
                                 "Adquira o jogo completo e continue a tua jornada!"
