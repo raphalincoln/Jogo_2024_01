@@ -37,13 +37,12 @@ class Application:
         self.bt_testar_sorte = None
         self.bt_pegar_item = None
         self.bt_pegar_ouro = None
-        self.validar_trecho_a = True
-        self.validar_trecho_b = True
-        self.validar_trecho_c = True
-        self.validar_trecho_d = True
-        self.validar_trecho_e = True
+        self.validar_trecho_a = None
+        self.validar_trecho_b = None
+        self.validar_trecho_c = None
+        self.validar_trecho_d = None
+        self.validar_trecho_e = None
         self.bt_j_validar_nome = None
-
 
         # criando o Loop
         root.mainloop()
@@ -460,13 +459,12 @@ class Application:
 
         # Botão de Validação do nome
         self.bt_j_validar_nome = Button(self.personagem,
-                                   text="OK",
-                                   command=self.p_nome)
+                                        text="OK",
+                                        command=self.p_nome)
         self.bt_j_validar_nome.place(relx=0.85,
-                                rely=0.37,
-                                relwidth=0.05,
-                                relheight=0.045)
-
+                                     rely=0.37,
+                                     relwidth=0.05,
+                                     relheight=0.045)
 
         # Descrição de Energia
         lb_j_descricao_energia = Label(self.personagem,
@@ -611,6 +609,7 @@ class Application:
                                     text=self.jogador01.j_habilidade,
                                     background="#98d37e")
         lb_valor_habilidade.place(relx=0.31, rely=0.25, relwidth=0.17, relheight=0.029)
+        self.bt_criar.configure(state=DISABLED)
 
         # Exibir dados de Sorte
         lb_valor_sorte = Label(self.personagem,
@@ -738,7 +737,7 @@ class Application:
         # SalvarPersonagem
         print("Salvando Personagem")
         self.personagem.destroy()
-        self.bt_Criar.configure(state=DISABLED)
+        self.bt_criar.configure(state=DISABLED)
 
     def usar_pocao(self):
         if self.usou_pocao != True:
@@ -946,19 +945,19 @@ class Application:
                 validar_trecho_a = True
                 self.validar_trecho_a = validar_trecho_a
                 self.rd_n_trecho_a = Radiobutton(self.frame_trechos,
-                                            text=self.jogo.texto_trecho_a,
-                                            value=self.jogo.n_trecho_a,
-                                            variable=self.destino,
-                                            background="blue",
-                                            anchor=W,
-                                            command=self.exibe)
+                                                 text=self.jogo.texto_trecho_a,
+                                                 value=self.jogo.n_trecho_a,
+                                                 variable=self.destino,
+                                                 background="blue",
+                                                 anchor=W,
+                                                 command=self.exibe)
                 self.rd_n_trecho_a.place(relx=0.06,
-                                    rely=0.79,
-                                    relwidth=0.88,
-                                    relheight=0.03)
+                                         rely=0.79,
+                                         relwidth=0.88,
+                                         relheight=0.03)
                 print(self.jogo.n_trecho_a)
                 self.rd_n_trecho_a.select()  # Setar a primeira opção como defalt
-        #self.jogo.tem_trecho_a = False
+        # self.jogo.tem_trecho_a = False
 
         # Opção 2
         if self.jogo.tem_trecho_b == True:
@@ -966,18 +965,18 @@ class Application:
                 validar_trecho_b = True
                 self.validar_trecho_b = validar_trecho_b
                 self.rd_n_trecho_b = Radiobutton(self.frame_trechos,
-                                            text=self.jogo.texto_trecho_b,
-                                            value=self.jogo.n_trecho_b,
-                                            variable=self.destino,
-                                            anchor=W,
-                                            background="blue",
-                                            command=self.exibe)
+                                                 text=self.jogo.texto_trecho_b,
+                                                 value=self.jogo.n_trecho_b,
+                                                 variable=self.destino,
+                                                 anchor=W,
+                                                 background="blue",
+                                                 command=self.exibe)
                 self.rd_n_trecho_b.place(relx=0.06,
-                                    rely=0.83,
-                                    relwidth=0.88,
-                                    relheight=0.03)
+                                         rely=0.83,
+                                         relwidth=0.88,
+                                         relheight=0.03)
                 print(self.jogo.n_trecho_b)
-        #self.jogo.tem_trecho_b = False
+        # self.jogo.tem_trecho_b = False
 
         # Opção 3
         if self.jogo.tem_trecho_c == True:
@@ -985,17 +984,17 @@ class Application:
                 validar_trecho_c = True
                 self.validar_trecho_c = validar_trecho_c
                 self.rd_n_trecho_c = Radiobutton(self.frame_trechos,
-                                            text=self.jogo.texto_trecho_c,
-                                            value=self.jogo.n_trecho_c,
-                                            variable=self.destino,
-                                            background="blue",
-                                            anchor=W,
-                                            command=self.exibe)
+                                                 text=self.jogo.texto_trecho_c,
+                                                 value=self.jogo.n_trecho_c,
+                                                 variable=self.destino,
+                                                 background="blue",
+                                                 anchor=W,
+                                                 command=self.exibe)
                 self.rd_n_trecho_c.place(relx=0.06,
-                                    rely=0.87,
-                                    relwidth=0.88,
-                                    relheight=0.03)
-        #self.jogo.tem_trecho_c = False
+                                         rely=0.87,
+                                         relwidth=0.88,
+                                         relheight=0.03)
+        self.jogo.tem_trecho_c = False
 
         # Opção 4
         if self.jogo.tem_trecho_d == True:
@@ -1003,18 +1002,18 @@ class Application:
                 validar_trecho_d = True
                 self.validar_trecho_d = validar_trecho_d
                 self.rd_n_trecho_d = Radiobutton(self.frame_trechos,
-                                            text=self.jogo.texto_trecho_d,
-                                            value=self.jogo.n_trecho_d,
-                                            variable=self.destino,
-                                            background="blue",
-                                            anchor=W,
-                                            command=self.exibe)
+                                                 text=self.jogo.texto_trecho_d,
+                                                 value=self.jogo.n_trecho_d,
+                                                 variable=self.destino,
+                                                 background="blue",
+                                                 anchor=W,
+                                                 command=self.exibe)
                 self.rd_n_trecho_d.place(relx=0.06,
-                                    rely=0.91,
-                                    relwidth=0.88,
-                                    relheight=0.03)
+                                         rely=0.91,
+                                         relwidth=0.88,
+                                         relheight=0.03)
                 print(self.jogo.n_trecho_d)
-        #self.jogo.tem_trecho_d = False
+        # self.jogo.tem_trecho_d = False
 
         # Opção 5
         if self.jogo.tem_trecho_e == True:
@@ -1022,18 +1021,18 @@ class Application:
                 validar_trecho_e = True
                 self.validar_trecho_e = validar_trecho_e
                 self.rd_n_trecho_e = Radiobutton(self.frame_trechos,
-                                            text=self.jogo.texto_trecho_e,
-                                            value=self.jogo.n_trecho_e,
-                                            variable=self.destino,
-                                            background="blue",
-                                            anchor=W,
-                                            command=self.exibe)
+                                                 text=self.jogo.texto_trecho_e,
+                                                 value=self.jogo.n_trecho_e,
+                                                 variable=self.destino,
+                                                 background="blue",
+                                                 anchor=W,
+                                                 command=self.exibe)
                 self.rd_n_trecho_e.place(relx=0.06,
-                                    rely=0.95,
-                                    relwidth=0.88,
-                                    relheight=0.03)
+                                         rely=0.95,
+                                         relwidth=0.88,
+                                         relheight=0.03)
                 print(self.jogo.n_trecho_e)
-        #self.jogo.tem_trecho_e = False
+        # self.jogo.tem_trecho_e = False
 
         if self.jogo.temluta == True:
             print("tem luta teste Radio")
@@ -1048,18 +1047,18 @@ class Application:
                 self.rd_n_trecho_d.configure(state=DISABLED)
             if self.jogo.tem_trecho_e == True:
                 self.rd_n_trecho_e.configure(state=DISABLED)
-            #Criar o Radio da Luta
+            # Criar o Radio da Luta
             self.rd_n_luta = Radiobutton(self.frame_trechos,
-                                             text="Lutar contra " + self.jogo.m_nome,
-                                             value=self.jogo.n_trecho_e,
-                                             variable=self.destino,
-                                             background="blue",
-                                             anchor=W,
-                                             command=self.luta)
+                                         text="Lutar contra " + self.jogo.m_nome,
+                                         value=self.jogo.n_trecho_e,
+                                         variable=self.destino,
+                                         background="blue",
+                                         anchor=W,
+                                         command=self.luta)
             self.rd_n_luta.place(relx=0.06,
-                                     rely=0.95,
-                                     relwidth=0.88,
-                                     relheight=0.03)
+                                 rely=0.95,
+                                 relwidth=0.88,
+                                 relheight=0.03)
             self.jogo.temluta = False
         '''
         self.jogo.tem_trecho_a = False
@@ -1068,18 +1067,14 @@ class Application:
         self.jogo.tem_trecho_d = False
         self.jogo.tem_trecho_e = False
         '''
-
-        #Testardo a sorte fora de luta
+        # Testardo a sorte fora de luta
         if self.jogo.tem_testar_sorte == True:
-
             print("")
-        print ("Testar a sorte")
-        self.jogo.tem.testar.sorte = False
-
+            print("Testar a sorte")
+            self.jogo.tem_testar_sorte = False
 
         # Botões
         # Botão Cabeçalho
-
 
         self.bt_cabecalho = Button(self.frame_trechos,
                                    text="Cabeçalho",
@@ -1111,7 +1106,7 @@ class Application:
 
         # Titulo
         lb_titulo = Label(self.frame_1,
-                          text="O Feiticeiro da Montanha \nde Fogo" ,
+                          text="O Feiticeiro da Montanha \nde Fogo",
                           background='#dfe3ee',
                           font="arial")
         lb_titulo.place(relx=0.25, rely=0.08, relwidth=0.57, relheight=0.09)
@@ -1129,25 +1124,24 @@ class Application:
         lb_descricao.place(relx=0.05, rely=0.20, relwidth=0.90, relheight=0.22)
 
         # O Jogo
-        lbO_jogo = Label(self.frame_1,
-                         text="Parte história, parte jogo, \n"
-                              "este é um tipo diferente de \n "
-                              "livro. Aqui, você é o herói você precisa \n"
-                              "apenas de um lápis, uma borracha e dois \n"
-                              "dados para embarcar \n"
-                              "nesta fantástica aventura.\n "
-                         ,
-                         background='#dfe3ee')
-        lbO_jogo.place(relx=0.05, rely=0.4, relwidth=0.90, relheight=0.24)
+        lb_o_jogo = Label(self.frame_1,
+                          text="Parte história, parte jogo, \n"
+                               "este é um tipo diferente de \n "
+                               "livro. Aqui, você é o herói você precisa \n"
+                               "apenas de um lápis, uma borracha e dois \n"
+                               "dados para embarcar \n"
+                               "nesta fantástica aventura.\n ",
+                          background='#dfe3ee')
+        lb_o_jogo.place(relx=0.05, rely=0.4, relwidth=0.90, relheight=0.24)
 
         # O Jogo
-        lbO_personagem = Label(self.frame_1,
-                               text="Se estiver preparado para a Glória.\n"
-                                    "Se tiver coragem para o Desconhecido.\n"
-                                    "Se desejar ouro e Poder\n"
-                                    "Crie seu personagem e vamos à Luta",
-                               background='#dfe3ee')
-        lbO_personagem.place(relx=0.05, rely=0.6, relwidth=0.90, relheight=0.15)
+        lb_o_personagem = Label(self.frame_1,
+                                text="Se estiver preparado para a Glória.\n"
+                                     "Se tiver coragem para o Desconhecido.\n"
+                                     "Se desejar ouro e Poder\n"
+                                     "Crie seu personagem e vamos à Luta",
+                                background='#dfe3ee')
+        lb_o_personagem.place(relx=0.05, rely=0.6, relwidth=0.90, relheight=0.15)
 
         # Imagem do Feiticeiro
 
@@ -1206,15 +1200,15 @@ class Application:
         lb_intuducao.place(relx=0.05, rely=0.03, relwidth=0.90, relheight=0.95)
 
         # Botão de Criar Personagem
-        self.bt_Criar = Button(self.frame_1,
+        self.bt_criar = Button(self.frame_1,
                                text="Criar",
                                command=self.criar_personagem_tela)
-        self.bt_Criar.place(relx=0.06, rely=0.95, relwidth=0.2, relheight=0.035)
+        self.bt_criar.place(relx=0.06, rely=0.95, relwidth=0.2, relheight=0.035)
         # Botão de Regras
-        self.bt_Regras = Button(self.frame_1,
+        self.bt_regras = Button(self.frame_1,
                                 text="Regras",
                                 command=self.abrir_regras)
-        self.bt_Regras.place(relx=0.45, rely=0.95, relwidth=0.2, relheight=0.035)
+        self.bt_regras.place(relx=0.45, rely=0.95, relwidth=0.2, relheight=0.035)
         # Botão de Cancelar
         self.bt_cancelar = Button(self.frame_1,
                                   text="Cancelar",
@@ -1227,10 +1221,10 @@ class Application:
                                    command=self.exibir_cabecalho)
         self.bt_cabecalho.place(relx=0.2, rely=0.95, relwidth=0.2, relheight=0.035)
         # Botão de Iniciar História
-        self.bt_Iniciar = Button(self.frame_2,
+        self.bt_iniciar = Button(self.frame_2,
                                  text="Iniciar",
                                  command=self.start_historia)
-        self.bt_Iniciar.place(relx=0.6, rely=0.95, relwidth=0.2, relheight=0.035)
+        self.bt_iniciar.place(relx=0.6, rely=0.95, relwidth=0.2, relheight=0.035)
 
     def pegar_item(self):
         print("Botão de pegar item")
@@ -1382,7 +1376,8 @@ class Application:
                           relheight=0.14)
 
     def luta(self):
-        #self.bt_luta.configure(state=DISABLED)
+        # self.bt_luta.configure(state=DISABLED)
+        self.rd_n_luta.configure(state=DISABLED)
         self.duelo = tkinter.Toplevel()
         self.duelo.title(f"Combate contra {self.jogo.m_nome}")
         self.duelo.geometry("450x200+10+15")
@@ -1608,7 +1603,6 @@ class Application:
                                     relwidth=0.04,
                                     relheight=0.08)
 
-
         else:
             print("Seus pontos de sorte acabaram")
 
@@ -1617,7 +1611,7 @@ class Application:
         self.bt_testar_sorte.configure(state=DISABLED)
         self.j_dado_testar_sorte = dado()
         print(self.j_dado_testar_sorte)
-        if self.j_dado_testar_sorte > 4 :
+        if self.j_dado_testar_sorte > 4:
             print("deu Sorte")
             self.rd_n_trecho_a["state"] = NORMAL
         else:
@@ -1753,28 +1747,28 @@ class Application:
             print(f"{self.jogo.m_nome} morreu")
             messagebox.showinfo(title="Vitória",
                                 message=f"Vitória de {self.jogador01.j_nome}!\n"
-                                f"{self.jogo.m_nome} Morreu",
+                                        f"{self.jogo.m_nome} Morreu",
                                 )
             self.duelo.destroy()
             #self.bt_batalha.configure(state=DISABLED)
 
-            if self.validar_trecho_a == True:
+            if self.jogo.tem_trecho_a == True:
                 self.rd_n_trecho_a["stat"] = NORMAL
-                self.validar_trecho_a = False
+                self.jogo.tem_trecho_a = False
 
-            if self.validar_trecho_b == True:
+            if self.jogo.tem_trecho_b == True:
                 self.rd_n_trecho_b["stat"] = NORMAL
-                self.validar_trecho_b = False
+                self.jogo.tem_trecho_b = False
 
-            if self.validar_trecho_c == True:
+            if self.jogo.tem_trecho_c == True:
                 self.rd_n_trecho_c["stat"] = NORMAL
-                self.validar_trecho_c = False
+                self.jogo.tem_trecho_c = False
 
-            if self.validar_trecho_d == True:
+            if self.jogo.tem_trecho_d == True:
                 self.rd_n_trecho_d["stat"] = NORMAL
                 self.validar_trecho_d = False
 
-            if self.validar_trecho_e == True:
+            if self.jogo.tem_trecho_e == True:
                 self.rd_n_trecho_e["stat"] = NORMAL
                 self.validar_trecho_e = False
 

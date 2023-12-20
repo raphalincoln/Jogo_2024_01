@@ -58,7 +58,6 @@ class Fase:
         self.ouro_fase = ouro_fase
         self.livro_titulo = livro_titulo
         self.tem_testar_sorte = tem_testar_sorte
-
         self.livro_titulo = "O Feiticeiro da Montanha \n" \
                         "de Fogo!"
     def livro(self):
