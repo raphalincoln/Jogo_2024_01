@@ -59,7 +59,8 @@ class Fase:
         self.livro_titulo = livro_titulo
         self.tem_testar_sorte = tem_testar_sorte
         self.livro_titulo = "O Feiticeiro da Montanha \n" \
-                        "de Fogo!"
+                            "de Fogo!"
+
     def livro(self):
         if self.n_trecho == 1:
             self.texto_trecho = "Texto do Trecho 001\n" \
@@ -101,7 +102,7 @@ class Fase:
             self.tem_trecho_b = True
             self.tem_testar_sorte = True
             self.texto_trecho_a = f"Se tiver sucesso vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f"Se falhar vá para {self.n_trecho_b}?"
+            self.texto_trecho_b = f"Se falhar vá para {self.n_trecho_a}?"
 
         elif self.n_trecho == 19:
             self.texto_trecho = "Texto do trecho 0019\n" \
@@ -208,8 +209,8 @@ class Fase:
             self.tem_trecho_a = True
             self.tem_trecho_b = True
             self.tem_testar_sorte = True
-            self.texto_trecho_a = f"Falha - Vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f"Sucesso - Vá para {self.n_trecho_b}?"
+            self.texto_trecho_a = f"Sucesso - Vá para {self.n_trecho_a}?"
+            self.texto_trecho_b = f"Falha - Vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 10:
             self.texto_trecho = "Texto do trecho 010\n" \
@@ -222,11 +223,8 @@ class Fase:
             self.m_energia = 10
             self.m_habilidade = 8
             self.n_trecho_a = 17
-            self.n_trecho_a = 1
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
             self.texto_trecho_a = f"Ir para {self.n_trecho_a}?"
-            self.texto_trecho_b = f"Ir para {self.n_trecho_b}?"
 
         elif self.n_trecho == 11:
             self.texto_trecho = "Texto do Trecho 011\n" \

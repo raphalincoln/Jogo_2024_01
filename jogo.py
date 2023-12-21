@@ -976,7 +976,7 @@ class Application:
                                          relwidth=0.88,
                                          relheight=0.03)
                 print(self.jogo.n_trecho_b)
-        # self.jogo.tem_trecho_b = False
+        self.jogo.tem_trecho_b = False
 
         # Opção 3
         if self.jogo.tem_trecho_c == True:
@@ -1037,7 +1037,6 @@ class Application:
         if self.jogo.temluta == True:
             print("tem luta teste Radio")
             if self.jogo.tem_trecho_a == True:
-                print("teste tem trecho A")
                 self.rd_n_trecho_a.configure(state=DISABLED)
             if self.jogo.tem_trecho_b == True:
                 self.rd_n_trecho_b.configure(state=DISABLED)
@@ -1071,6 +1070,29 @@ class Application:
         if self.jogo.tem_testar_sorte == True:
             print("")
             print("Testar a sorte")
+            if hasattr(self, 'rd_n_trecho_a') and self.rd_n_trecho_a.winfo_exists():
+                self.rd_n_trecho_a.configure(state=DISABLED)
+            if hasattr(self, 'rd_n_trecho_b') and self.rd_n_trecho_b.winfo_exists():
+                self.rd_n_trecho_b.configure(state=DISABLED)
+            if hasattr(self, 'rd_n_trecho_c') and self.rd_n_trecho_c.winfo_exists():
+                self.rd_n_trecho_c.configure(state=DISABLED)
+            if hasattr(self, 'rd_n_trecho_d') and self.rd_n_trecho_d.winfo_exists():
+                self.rd_n_trecho_d.configure(state=DISABLED)
+            if hasattr(self, 'rd_n_trecho_e') and self.rd_n_trecho_e.winfo_exists():
+                self.rd_n_trecho_e.configure(state=DISABLED)
+
+            # Criar o Radio da Sorte
+            self.rd_n_sorte = Radiobutton(self.frame_trechos,
+                                          text="Testar a Sorte",
+                                          value=self.jogo.n_trecho_e,
+                                          variable=self.destino,
+                                          background="blue",
+                                          anchor=W,
+                                          command=self.testar_sorte)
+            self.rd_n_sorte.place(relx=0.06,
+                                  rely=0.95,
+                                  relwidth=0.88,
+                                  relheight=0.03)
             self.jogo.tem_testar_sorte = False
 
         # Botões
@@ -1608,7 +1630,7 @@ class Application:
 
     def testar_sorte(self):
         print("testar a sorte fora de luta")
-        self.bt_testar_sorte.configure(state=DISABLED)
+        self.rd_n_sorte.configure(state=DISABLED)
         self.j_dado_testar_sorte = dado()
         print(self.j_dado_testar_sorte)
         if self.j_dado_testar_sorte > 4:
@@ -1616,7 +1638,7 @@ class Application:
             self.rd_n_trecho_a["state"] = NORMAL
         else:
             print("deu Azar")
-            self.rd_n_trecho_a["state"] = NORMAL
+            self.rd_n_trecho_b["state"] = NORMAL
 
     def round(self):
         self.j_dado01 = dado()
@@ -1750,7 +1772,7 @@ class Application:
                                         f"{self.jogo.m_nome} Morreu",
                                 )
             self.duelo.destroy()
-            #self.bt_batalha.configure(state=DISABLED)
+            # self.bt_batalha.configure(state=DISABLED)
 
             if self.jogo.tem_trecho_a == True:
                 self.rd_n_trecho_a["stat"] = NORMAL
