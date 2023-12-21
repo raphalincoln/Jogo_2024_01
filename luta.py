@@ -37,7 +37,7 @@ class Luta:
             # print(f'Round: {rodada}')
             m_ataque = self.m_habilidade + randint(1, 6)
             j_ataque = self.j_habilidade + randint(1, 6)
-            # print(f'O Ataque do {self.m_nome} é {m_ataque}')
+            # print(f'O Ataque do {self.m_nome} é {m_ataque} ')
             # print(f'O Ataque do {self.j_nome} é {j_ataque}')
             # print('')
             if m_ataque == j_ataque:

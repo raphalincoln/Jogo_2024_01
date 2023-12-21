@@ -67,7 +67,8 @@ class Fase:
                                 "Diante de você se ergue um colossal portão de ferro. \n" \
                                 "Ao examinar a fechadura, percebe sua alta complexidade. \n" \
                                 "O portão, adornado com pontas afiadas, desafia-te a \n" \
-                                "superá-lo com opções igualmente desafiadoras."
+                                "superá-lo com opções igualmente desafiadoras." \
+                                ""
             self.n_trecho_a = 3
             self.n_trecho_b = 2
             self.tem_trecho_a = True
@@ -80,7 +81,7 @@ class Fase:
                                 "Escalar o portão revelou-se uma tarefa menos árdua do \n" \
                                 "que imaginavas, mas as lanças posicionadas sobre ele \n" \
                                 "são ameaçadoras.\n" \
-                                "Ao atingir o topo, um sobressalto toma conta de \n" \
+                                "Ao atingir o topo, um sobressalto toma conta de  \n" \
                                 "ti ao deparar com uma colossal fera voadora, suas asas \n" \
                                 "imponentes e garras capazes de triturar ferro.\n" \
                                 "\n" \
@@ -95,7 +96,8 @@ class Fase:
         elif self.n_trecho == 3:
             self.texto_trecho = "Texto do trecho 003\n" \
                                 "Com determinação, retiras um kit de arrombamento \n" \
-                                "e inicia o trabalho na fechadura."
+                                "e inicia o trabalho na fechadura." \
+                                "Testa a sua Sorte"
             self.n_trecho_a = 9
             self.n_trecho_b = 19
             self.tem_trecho_a = True

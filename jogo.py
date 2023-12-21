@@ -1629,7 +1629,7 @@ class Application:
             print("Seus pontos de sorte acabaram")
 
     def testar_sorte(self):
-        print("testar a sorte fora de luta")
+        print("testar a sorte fora de luta ")
         self.rd_n_sorte.configure(state=DISABLED)
         self.j_dado_testar_sorte = dado()
         print(self.j_dado_testar_sorte)
