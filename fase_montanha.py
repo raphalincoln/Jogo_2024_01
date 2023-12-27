@@ -224,7 +224,7 @@ class Fase:
             self.m_nome = "Fera Voadora"
             self.m_energia = 10
             self.m_habilidade = 8
-            self.n_trecho_a = 17
+            self.n_trecho_a = 14
             self.tem_trecho_a = True
             self.texto_trecho_a = f"Ir para {self.n_trecho_a}?"
 
@@ -272,7 +272,7 @@ class Fase:
             self.n_trecho_a = 16
             self.temluta = True
             self.m_nome = "Demonio Nécro"
-            self.m_habilidade = 12
+            self.m_habilidade = 10
             self.m_energia = 6
             self.tem_trecho_a = True
             self.texto_trecho_a = f"Vitória na Luta. Vá para {self.n_trecho_a}?"

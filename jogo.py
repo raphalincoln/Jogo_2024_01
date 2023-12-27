@@ -17,6 +17,7 @@ def dado():
 
 
 class Application:
+
     def __init__(self):
         self.usou_pocao = None
         self.bt_usar_pocao = None
@@ -654,19 +655,19 @@ class Application:
         self.jogador01.j_energia_inicial = self.jogador01.j_energia
 
         # Escrever no Label de Energia
-        lb_valor_energia = Label(self.personagem,
-                                 text=self.jogador01.j_energia,
-                                 background="#98d37e")
+        self.lb_valor_energia = Label(self.personagem,
+                                      text=self.jogador01.j_energia,
+                                      background="#98d37e")
 
         # Escrever dado
-        lb_valor_energia = Label(self.personagem,
-                                 text=f"1º dado: {self.j_dado_energia1}\n"
-                                      f"2º dado: {self.j_dado_energia2}",
-                                 background="#98d37e")
-        lb_valor_energia.place(relx=0.55,
-                               rely=0.5,
-                               relwidth=0.12,
-                               relheight=0.06)
+        self.lb_valor_energia = Label(self.personagem,
+                                      text=f"1º dado: {self.j_dado_energia1}\n"
+                                           f"2º dado: {self.j_dado_energia2}",
+                                      background="#98d37e")
+        self.lb_valor_energia.place(relx=0.55,
+                                    rely=0.5,
+                                    relwidth=0.12,
+                                    relheight=0.06)
 
         self.bt_Calcular_energia.configure(state=DISABLED)
 
@@ -679,19 +680,19 @@ class Application:
         print("Habilidade: ", self.jogador01.j_habilidade)
 
         # Escrever no Label de Habilidade
-        lb_valor_habilidade = Label(self.personagem,
-                                    text=self.jogador01.j_habilidade,
-                                    background="#98d37e")
+        self.lb_valor_habilidade = Label(self.personagem,
+                                         text=self.jogador01.j_habilidade,
+                                         background="#98d37e")
         # lb_valor_habilidade.place(relx=0.30, rely=0.25, relwidth=0.193, relheight=0.029)
 
         # Escrever dado
-        lb_valor_habilidade = Label(self.personagem,
-                                    text=f"Dado: {self.j_dado_habilidade}\n",
-                                    background="#98d37e")  # 98d37e"
-        lb_valor_habilidade.place(relx=0.55,
-                                  rely=0.6,
-                                  relwidth=0.12,
-                                  relheight=0.06)
+        self.lb_valor_habilidade = Label(self.personagem,
+                                         text=f"Dado: {self.j_dado_habilidade}\n",
+                                         background="#98d37e")  # 98d37e"
+        self.lb_valor_habilidade.place(relx=0.55,
+                                       rely=0.6,
+                                       relwidth=0.12,
+                                       relheight=0.06)
         self.bt_Calcular_habilidade.configure(state=DISABLED)
         self.jogador01.j_habilidade_inicial = self.jogador01.j_habilidade
 
@@ -705,20 +706,20 @@ class Application:
         self.jogador01.j_sorte_inicial = self.jogador01.j_sorte
 
         # Escrever no Label de Sorte
-        lb_valor_sorte = Label(self.personagem,
-                               text=self.jogador01.j_sorte,
-                               background="#98d37e")
+        self.lb_valor_sorte = Label(self.personagem,
+                                    text=self.jogador01.j_sorte,
+                                    background="#98d37e")
         # lb_valor_sorte.place(relx=0.30, rely=0.29, relwidth=0.193, relheight=0.029)
 
         # Escrever dado
-        lb_valor_sorte = Label(self.personagem,
-                               text=f"Dado: {self.j_dado_sorte}\n",
-                               background="#98d37e",  # 98d37e"
-                               anchor="center")
-        lb_valor_sorte.place(relx=0.55,
-                             rely=0.7,
-                             relwidth=0.12,
-                             relheight=0.06)
+        self.lb_valor_sorte = Label(self.personagem,
+                                    text=f"Dado: {self.j_dado_sorte}\n",
+                                    background="#98d37e",  # 98d37e"
+                                    anchor="center")
+        self.lb_valor_sorte.place(relx=0.55,
+                                  rely=0.7,
+                                  relwidth=0.12,
+                                  relheight=0.06)
         self.bt_Calcular_sorte.configure(state=DISABLED)
 
         return
@@ -726,9 +727,9 @@ class Application:
     def p_nome(self):
         # Capturar Nome do personagem
         self.jogador01.j_nome = (self.ent_j_nome.get())
-        lb_j_nome = Label(self.personagem,
-                          text=self.jogador01.j_nome,
-                          background="#98d37e")  # 98d37e
+        self.lb_j_nome = Label(self.personagem,
+                               text=self.jogador01.j_nome,
+                               background="#98d37e")  # 98d37e
         # lb_j_nome.place(relx=0.297, rely=0.171, relwidth=0.20, relheight=0.032)
         print(self.jogador01.j_nome)
         self.bt_j_validar_nome.configure(state=DISABLED)
@@ -936,7 +937,17 @@ class Application:
         lb_trecho = Label(self.frame_trechos,
                           text=self.jogo.texto_trecho,
                           background="blue")
-        lb_trecho.place(relx=0.025, rely=0.04, relwidth=0.95, relheight=0.75)
+        lb_trecho.place(relx=0.025, rely=0.04, relwidth=0.95, relheight=0.7)
+
+        # Exibição das interaçoes
+        self.frame_interacao = Frame(self.frame_trechos,
+                                     bd=1,
+                                     background='red',
+                                     highlightthickness=2)
+        self.frame_interacao.place(relx=0.025,
+                                   rely=0.75,
+                                   relwidth=0.95,
+                                   relheight=0.2)
 
         # Radio do para onde ir
         # Opção 1
@@ -944,18 +955,22 @@ class Application:
             if self.jogo.n_trecho_a > 0:
                 validar_trecho_a = True
                 self.validar_trecho_a = validar_trecho_a
-                self.rd_n_trecho_a = Radiobutton(self.frame_trechos,
+                self.rd_n_trecho_a = Radiobutton(self.frame_interacao,
                                                  text=self.jogo.texto_trecho_a,
                                                  value=self.jogo.n_trecho_a,
                                                  variable=self.destino,
                                                  background="blue",
                                                  anchor=W,
                                                  command=self.exibe)
+                self.rd_n_trecho_a.grid(column=0,
+                                        row=0)
+                '''
                 self.rd_n_trecho_a.place(relx=0.06,
-                                         rely=0.79,
+                                         rely=0.1,
                                          relwidth=0.88,
-                                         relheight=0.03)
+                                         relheight=0.2)
                 print(self.jogo.n_trecho_a)
+                '''
                 self.rd_n_trecho_a.select()  # Setar a primeira opção como defalt
         # self.jogo.tem_trecho_a = False
 
@@ -964,18 +979,22 @@ class Application:
             if self.jogo.n_trecho_b > 0:
                 validar_trecho_b = True
                 self.validar_trecho_b = validar_trecho_b
-                self.rd_n_trecho_b = Radiobutton(self.frame_trechos,
+                self.rd_n_trecho_b = Radiobutton(self.frame_interacao,
                                                  text=self.jogo.texto_trecho_b,
                                                  value=self.jogo.n_trecho_b,
                                                  variable=self.destino,
                                                  anchor=W,
                                                  background="blue",
                                                  command=self.exibe)
+                self.rd_n_trecho_b.grid(column=0,
+                                        row=1)
+                '''
                 self.rd_n_trecho_b.place(relx=0.06,
                                          rely=0.83,
                                          relwidth=0.88,
                                          relheight=0.03)
                 print(self.jogo.n_trecho_b)
+                '''
         self.jogo.tem_trecho_b = False
 
         # Opção 3
@@ -983,17 +1002,21 @@ class Application:
             if self.jogo.n_trecho_c > 0:
                 validar_trecho_c = True
                 self.validar_trecho_c = validar_trecho_c
-                self.rd_n_trecho_c = Radiobutton(self.frame_trechos,
+                self.rd_n_trecho_c = Radiobutton(self.frame_interacao,
                                                  text=self.jogo.texto_trecho_c,
                                                  value=self.jogo.n_trecho_c,
                                                  variable=self.destino,
                                                  background="blue",
                                                  anchor=W,
                                                  command=self.exibe)
+                self.rd_n_trecho_c.grid(column=0,
+                                        row=2)
+                '''
                 self.rd_n_trecho_c.place(relx=0.06,
                                          rely=0.87,
                                          relwidth=0.88,
                                          relheight=0.03)
+                '''
         self.jogo.tem_trecho_c = False
 
         # Opção 4
@@ -1001,17 +1024,21 @@ class Application:
             if self.jogo.n_trecho_d > 0:
                 validar_trecho_d = True
                 self.validar_trecho_d = validar_trecho_d
-                self.rd_n_trecho_d = Radiobutton(self.frame_trechos,
+                self.rd_n_trecho_d = Radiobutton(self.frame_interacao,
                                                  text=self.jogo.texto_trecho_d,
                                                  value=self.jogo.n_trecho_d,
                                                  variable=self.destino,
                                                  background="blue",
                                                  anchor=W,
                                                  command=self.exibe)
+                self.rd_n_trecho_d.grid(column=0,
+                                        row=3)
+                '''
                 self.rd_n_trecho_d.place(relx=0.06,
                                          rely=0.91,
                                          relwidth=0.88,
                                          relheight=0.03)
+                '''
                 print(self.jogo.n_trecho_d)
         # self.jogo.tem_trecho_d = False
 
@@ -1020,17 +1047,21 @@ class Application:
             if self.jogo.n_trecho_e > 0:
                 validar_trecho_e = True
                 self.validar_trecho_e = validar_trecho_e
-                self.rd_n_trecho_e = Radiobutton(self.frame_trechos,
+                self.rd_n_trecho_e = Radiobutton(self.frame_interacao,
                                                  text=self.jogo.texto_trecho_e,
                                                  value=self.jogo.n_trecho_e,
                                                  variable=self.destino,
                                                  background="blue",
                                                  anchor=W,
                                                  command=self.exibe)
+                self.rd_n_trecho_e.grid(column=0,
+                                        row=4)
+                '''
                 self.rd_n_trecho_e.place(relx=0.06,
                                          rely=0.95,
                                          relwidth=0.88,
                                          relheight=0.03)
+                '''
                 print(self.jogo.n_trecho_e)
         # self.jogo.tem_trecho_e = False
 
@@ -1047,17 +1078,31 @@ class Application:
             if self.jogo.tem_trecho_e == True:
                 self.rd_n_trecho_e.configure(state=DISABLED)
             # Criar o Radio da Luta
-            self.rd_n_luta = Radiobutton(self.frame_trechos,
+            self.rd_n_luta = Radiobutton(self.frame_interacao,
                                          text="Lutar contra " + self.jogo.m_nome,
                                          value=self.jogo.n_trecho_e,
                                          variable=self.destino,
                                          background="blue",
                                          anchor=W,
                                          command=self.luta)
+            self.rd_n_luta.grid(column=0,
+                                row=5)
+
+            #criando a imagem da Luta
+
+            batalha_imagem = PhotoImage(file=pastaApp + "\\Feiticeiro.png")
+            lb_batalha_imagem = Label(self.frame_1,
+                                      image=batalha_imagem,
+                                      background="blue")
+            lb_batalha_imagem.photo = batalha_imagem
+            lb_batalha_imagem.place(relx=0.40, rely=0.74, relwidth=0.25, relheight=0.22)
+
+            '''           
             self.rd_n_luta.place(relx=0.06,
                                  rely=0.95,
                                  relwidth=0.88,
                                  relheight=0.03)
+            '''
             self.jogo.temluta = False
         '''
         self.jogo.tem_trecho_a = False
@@ -1082,17 +1127,21 @@ class Application:
                 self.rd_n_trecho_e.configure(state=DISABLED)
 
             # Criar o Radio da Sorte
-            self.rd_n_sorte = Radiobutton(self.frame_trechos,
+            self.rd_n_sorte = Radiobutton(self.frame_interacao,
                                           text="Testar a Sorte",
                                           value=self.jogo.n_trecho_e,
                                           variable=self.destino,
                                           background="blue",
                                           anchor=W,
                                           command=self.testar_sorte)
+            self.rd_n_sorte.grid(column=0,
+                                 row=6)
+            '''
             self.rd_n_sorte.place(relx=0.06,
                                   rely=0.95,
                                   relwidth=0.88,
                                   relheight=0.03)
+            '''
             self.jogo.tem_testar_sorte = False
 
         # Botões
@@ -1101,19 +1150,19 @@ class Application:
         self.bt_cabecalho = Button(self.frame_trechos,
                                    text="Cabeçalho",
                                    command=self.exibir_cabecalho)
-        self.bt_cabecalho.place(relx=0.2, rely=0.93, relwidth=0.2, relheight=0.035)
+        self.bt_cabecalho.place(relx=0.2, rely=0.96, relwidth=0.2, relheight=0.035)
 
         # Botão Inventario
         self.bt_inventario = Button(self.frame_trechos,
                                     text="Inventario",
                                     command=self.exibir_inventario)
-        self.bt_inventario.place(relx=0.45, rely=0.93, relwidth=0.2, relheight=0.035)
+        self.bt_inventario.place(relx=0.45, rely=0.96, relwidth=0.2, relheight=0.035)
 
         # Botão de Sair
         self.bt_sair = Button(self.frame_trechos,
                               text="Cancelar",
                               command=self.frame_trechos.destroy)
-        self.bt_sair.place(relx=0.7, rely=0.93, relwidth=0.2, relheight=0.035)
+        self.bt_sair.place(relx=0.7, rely=0.96, relwidth=0.2, relheight=0.035)
 
     def start_historia(self):
         self.jogo = Fase()
@@ -1166,7 +1215,6 @@ class Application:
         lb_o_personagem.place(relx=0.05, rely=0.6, relwidth=0.90, relheight=0.15)
 
         # Imagem do Feiticeiro
-
         feiticeiro_imagem = PhotoImage(file=pastaApp + "\\Feiticeiro.png")
         lb_feiticeiro_imagem = Label(self.frame_1,
                                      image=feiticeiro_imagem,
@@ -1404,7 +1452,19 @@ class Application:
         self.duelo.title(f"Combate contra {self.jogo.m_nome}")
         self.duelo.geometry("450x200+10+15")
         self.duelo.resizable(False, False)
-        self.duelo.configure(background="gold")
+        self.duelo.configure(background="red")
+
+        #Fotos do monstro
+        imagem02=("\\" + self.jogo.m_nome +".png")
+        batalha_imagem = PhotoImage(file=pastaApp + imagem02)
+        lb_batalha_imagem = Label(self.duelo,
+                                  image=batalha_imagem,
+                                  background="blue")
+        lb_batalha_imagem.photo = batalha_imagem
+        lb_batalha_imagem.place(relx=0.02,
+                                rely=0.15,
+                                relwidth=0.25,
+                                relheight=0.7)
 
         # Nome do jogador
         lb_batalha_j_nome = Label(self.duelo,
