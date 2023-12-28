@@ -1459,7 +1459,7 @@ class Application:
         batalha_imagem = PhotoImage(file=pastaApp + imagem02)
         lb_batalha_imagem = Label(self.duelo,
                                   image=batalha_imagem,
-                                  background="blue")
+                                  background="red")
         lb_batalha_imagem.photo = batalha_imagem
         lb_batalha_imagem.place(relx=0.02,
                                 rely=0.15,
