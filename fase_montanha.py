@@ -23,7 +23,7 @@ class Fase:
                  tem_trecho_d=False,
                  tem_trecho_e=False,
                  tem_item=False,
-                 lista_item=[""],
+                 lista_item=[],
                  item="",
                  tem_ouro=False,
                  ouro_fase=0,
@@ -169,7 +169,7 @@ class Fase:
                                 "passar pela abertura no caminho leste-oeste, \n" \
                                 "retornando um pouco. Vá para 89."
             self.tem_trecho_a = True
-            self.n_trecho_a = 7
+            self.n_trecho_a = 89
             self.texto_trecho_a = f"Seguir para Leste-Oeste - {self.n_trecho_a}?"
 
         elif self.n_trecho == 7:
@@ -195,12 +195,12 @@ class Fase:
             self.m_nome = "Bárbaro"
             self.m_habilidade = 7
             self.m_energia = 6
-            self.n_trecho_a = 273
-            self.n_trecho_b = 189
+            self.n_trecho_a = 189
+            self.n_trecho_b = 273
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.texto_trecho_a = f"Se Vencer. vá para {self.n_trecho_a}?"
-            self.texto_trecho_a = f"Se optar por fugir. vá para {self.n_trecho_b}?"
+            self.texto_trecho_a = f"Se optar em Fugir, vá para {self.n_trecho_a}?"
+            self.texto_trecho_a = f"Se Vencer. vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 9:
             self.texto_trecho = "Surpreso com o sucesso de seu próprio blefe,\n" \
@@ -241,14 +241,15 @@ class Fase:
                                 "entraram em atividade sozinhas e começaram a \n" \
                                 "trabalhar nos degraus. Você está agora assistindo\n" \
                                 " às várias ferramentas cavando e martelando, \n" \
-                                "como se fossem manuseadas por trabalhadores invisíveis. \n" \
-                                "Uma cantoria em surdina vai se tornando cada vez mais alta e \n" \
-                                "você identifica as palavras: “Rá-rá, Rá-rá, Lá vamos\n" \
-                                "nós trabalhar...” Enquanto você fica assistindo, começa \n" \
-                                "a rir - a cena é bem divertida. Você senta e fica assistindo, \n" \
-                                "conseguindo até mesmo bater um papo com algumas das ferramentas \n" \
-                                "mágicas. Ganhe 2 pontos de ENERGIA e 1 ponto de HABILIDADE \n" \
-                                "enquanto relaxa. Depois retorne pela passagem até a \n" \
+                                "como se fossem manuseadas por trabalhadores \n" \
+                                "invisíveis. Uma cantoria em surdina vai se tornando\n" \
+                                " cada vez mais alta e você identifica as palavras:\n" \
+                                " “Rá-rá, Rá-rá, Lá vamos Enquanto você fica assistindo,\n" \
+                                " começa a rir - a cena é bem divertida. Você senta e " \
+                                "fica assistindo, conseguindo até mesmo bater um papo " \
+                                "com algumas das ferramentas mágicas. Ganhe 2 pontos de \n" \
+                                "ENERGIA e 1 ponto de HABILIDADE enquanto relaxa. Depois " \
+                                "retorne pela passagem até a \n" \
                                 "encruzilhada, por onde você pode ir para o norte \n" \
                                 "(vá para 366) ou para o sul (vá para 250)."
             self.n_trecho_a = 366
@@ -299,11 +300,13 @@ class Fase:
             self.texto_trecho = "Enquanto você está sentado no banco comendo a sua\n " \
                                 "refeição, começa a se sentir profundamente relaxado, \n" \
                                 "e as dores de seu corpo parecem estar desaparecendo \n" \
-                                "aos poucos. Este lugar de descanso é encantado. Você pode\n" \
-                                "recuperar 2 pontos adicionais de ENERGIA, como também até \n" \
-                                "a quantidade normal (mas somente se isso não ultrapassar seu \n" \
-                                "índice Inicial de ENERGIA), e recuperar 1 ponto de HABILIDADE, \n" \
-                                "se algum já tiver sido perdido. Quando estiver pronto para\n" \
+                                "aos poucos. Este lugar de descanso é encantado. \n" \
+                                "Você pode recuperar 2 pontos adicionais de ENERGIA, \n" \
+                                "como também até a quantidade normal (mas somente se\n" \
+                                " isso não ultrapassar seu \n" \
+                                "índice Inicial de ENERGIA), e recuperar 1 ponto \n" \
+                                "de HABILIDADE, se algum já tiver sido perdido. \n" \
+                                "Quando estiver pronto para\n" \
                                 "continuar, siga pela passagem e vá para 367."
             self.n_trecho_a = 367
             self.tem_trecho_a = True
@@ -332,17 +335,19 @@ class Fase:
                                 "canto. Ele geme e tenta alcançá-lo, mas não pode\n" \
                                 "se aproximar. Porém não vai ser fácil cravar a\n" \
                                 "estaca em seu coração. Ao avançar, você tropeça e \n" \
-                                "cai para a frente. Por obra e graça da sorte, a estaca\n" \
-                                "voa.e atinge a criatura que solta um grito. \n" \
+                                "cai para a frente. Por obra e graça da sorte, \n" \
+                                "a estaca voa.e atinge a criatura que solta um\n " \
+                                "grito. \n" \
                                 "Teste a sua Sorte. \n" \
-                                "Se você tiver sorte, a estaca penetra no coração do Vampiro.\n" \
-                                "Se você não tiver sorte, o Vampiro sofre apenas um \n" \
-                                "ferimento leve (deduza 3 pontos de sua ENERGIA) e \n" \
-                                "atira você para o outro lado do aposento, na direção \n" \
+                                "Se você tiver sorte, a estaca penetra no coração \n" \
+                                "do Vampiro. Se você não tiver sorte, o Vampiro \n" \
+                                "sofre apenas um ferimento leve (deduza 3 pontos \n" \
+                                "de sua ENERGIA) e atira você para o outro lado do\n " \
+                                "aposento, na direção \n" \
                                 "da porta oeste. Para Fugir por ela, vá para 380. \n" \
-                                "Para continuar lutando, vá para 144. Se você teve sorte e \n" \
-                                "matou o Vampiro, pode procurar o tesouro dele – \n" \
-                                "vá para 327"
+                                "Para continuar lutando, vá para 144. Se você teve \n" \
+                                "sorte e matou o Vampiro, pode procurar o \n" \
+                                "tesouro dele – vá para 327"
             self.n_trecho_a = 327  # Sorte
             self.n_trecho_b = 144  # azar
             self.n_trecho_c = 380  # Fugir
@@ -362,8 +367,9 @@ class Fase:
                                 "de desmoronamento embaixo de seus pés e tenta \n" \
                                 "recuar, enquanto o chão desaba. Teste a sua Sorte. \n" \
                                 "Se você tiver sorte, consegue pular rapidamente \n" \
-                                "para trás antes que se abra um poço. Se você não tiver\n" \
-                                "sorte é porque foi lento demais e acaba caindo mais\n" \
+                                "para trás antes que se abra um poço. Se você " \
+                                "não tiver sorte é porque foi lento demais e acaba\n" \
+                                " caindo mais\n" \
                                 "de dois metros abaixo em um poço – perde um ponto de\n" \
                                 "ENERGIA. Se você teve sorte, é melhor voltar para\n" \
                                 "a encruzilhada (vá para 261). Se você não teve sorte, \n" \
@@ -381,7 +387,7 @@ class Fase:
                                 "Eles atacarão você, um de cada vez."
             self.n_trecho_a = 317
             self.temluta = True
-            self.m_nome = "Goblin 1"
+            self.m_nome = "Goblin"
             self.m_habilidade = 5
             self.m_energia = 5
             self.tem_trecho_a = True
@@ -394,7 +400,7 @@ class Fase:
             self.n_trecho_a = 376
             self.n_trecho_b = 291
             self.temluta = True
-            self.m_nome = "Anão 1"
+            self.m_nome = "Anão"
             self.m_habilidade = 7
             self.m_energia = 4
             self.tem_trecho_a = True
@@ -420,13 +426,24 @@ class Fase:
             self.texto_trecho_b = f"Deixar de lado, vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 22:
-            self.texto_trecho = ""
+            self.texto_trecho = "Você tateia a parede em busca de sinais de portas \n" \
+                                "secretas, mas não consegue encontrar nada. Você \n" \
+                                "pára para pensar em sua situação e um pequeno jato \n" \
+                                "de gás esguicha do teto. Você tosse e engasga, tentando \n" \
+                                "limpar os pulmões, mas cai de joelhos. Sua cabeça roda e \n" \
+                                "você desmaia no chão, perdendo a consciência. Quando a \n" \
+                                "recupera, se vê em um lugar desconhecido. Volte para 4."
             self.tem_trecho_a = True
-            self.n_trecho_a = 293
+            self.n_trecho_a = 4
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
 
         elif self.n_trecho == 23:
-            self.texto_trecho = ""
+            self.texto_trecho = "A passagem termina em uma porta sólida, e você \n" \
+                                "fica surpreso, ao ver uma saia de couro enfiada \n" \
+                                "na parte de baixo da porta. Você põe o ouvido \n" \
+                                "colado na porta, mas não ouve nada. Você prefere \n" \
+                                "entrar no aposento (vá para 326) ou retornar à \n" \
+                                "encruzilhada (vá para 229)?"
             self.tem_trecho_a = True
             self.tem_trecho_b = True
             self.n_trecho_a = 326
@@ -435,16 +452,41 @@ class Fase:
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 24:
-            self.texto_trecho = ""
+            self.texto_trecho = "Depois de ter sofrido o seu terceiro ferimento, \n " \
+                                "você repara que sua força está se esgotando. \n" \
+                                "Perca 1 ponto de HABILIDADE. Você deduz que \n" \
+                                "isto é consequência de mais outro poder mágico \n" \
+                                "deste ser repulsivo e sente um arrepio de pânico. \n" \
+                                "Você continua ou corre? Se você quiser Fugir, pague \n" \
+                                "a penalidade e vá para 360 para escapar pela porta \n" \
+                                "norte. Do contrário, a luta continua. Se você \n" \
+                                "derrotar o ser, vá para 135. Mas, de agora em \n" \
+                                "diante, perderá 1 ponto da sua HABILIDADE a cada \n" \
+                                "vez que a fera ferir você três vezes."
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 369
+            self.n_trecho_a = 360
             self.n_trecho_b = 135
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 25:
-            self.texto_trecho = ""
+            self.texto_trecho = "Os quadros pintados são retratos de homens.\n" \
+                                " Você sente Um frio na espinha ao ler a inscrição\n" \
+                                " embaixo do que está na parede oeste - é o nome de \n" \
+                                "Zagor, o Feiticeiro, cujo tesouro você está \n" \
+                                "procurando. Você olha para o retrato dele e \n" \
+                                "compreende que está medindo forças com um adversário\n" \
+                                " poderosíssimo. Você tem a sensação de estar sendo \n" \
+                                "observado e repara nos olhos penetrantes que o \n" \
+                                "seguem nos seus movimentos. Você se sente atraído\n" \
+                                " para o retrato e o medo aumenta. Perca 1 ponto de\n" \
+                                " HABILIDADE. Você tem mesmo coragem de enfrentar \n" \
+                                "e combater o Feiticeiro? Você pode sair direto pela \n" \
+                                "porta norte (vá para 90) - mas considere isso como uma \n" \
+                                "Fuga. Ou você pode também procurar em sua mochila uma \n" \
+                                "arma para usar contra o poder do Feiticeiro – \n" \
+                                "vá para 340."
             self.tem_trecho_a = True
             self.tem_trecho_b = True
             self.n_trecho_a = 90
@@ -453,32 +495,69 @@ class Fase:
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 26:
-            self.texto_trecho = ""
+            self.texto_trecho = "De repente você se lembra do pequeno livro de \n" \
+                                "capa de couro de Di Maggio e murmura suavemente as \n" \
+                                "palavras mágicas contidas em suas páginas. Você grita\n" \
+                                " alto com o Dragão e ele pára de avançar. Vira a \n" \
+                                "cabeça de lado e olha desconfiadamente para você. \n" \
+                                "Você joga uma pedra na sua cabeça, que quica em seu\n" \
+                                "nariz. A fera solta um berro raivoso e respira fundo, \n" \
+                                "provocando o som de um rugido no fundo da garganta. \n" \
+                                "O Dragão solta o ar e, entre seus dentes, você vê uma\n" \
+                                " outra bola de fogo se formando. Você se prepara e, \n" \
+                                "quando a bola de fogo sai de sua boca, grita:\n" \
+                                "Ekil Erif Ekam Erif Erif Erif Di Maggio\n" \
+                                "A bola de fogo interrompe seu avanço. Com um \n" \
+                                "berro de agonia, o Dragão tenta se livrar das\n" \
+                                " chamas em seu focinho. Mas elas continuam a queimar\n" \
+                                " ali mesmo. Gemendo de dor, o Dragão se vira e salta \n" \
+                                "para a escuridão, sacudindo a cabeça de um lado \n" \
+                                "para o outro. Vá para 371"
             self.tem_trecho_a = True
             self.n_trecho_a = 371
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
 
         elif self.n_trecho == 27:
-            self.texto_trecho = ""
+            self.texto_trecho = "A espada é encantada e o ajudará na batalha. Enquanto \n" \
+                                "você usar esta espada, poderá aumentar sua HABILIDADE \n" \
+                                "Inicial em 2 pontos. Você pode também aumentar 2 pontos\n" \
+                                " no valor atual de sua HABILIDADE. Acrescente 2 pontos \n" \
+                                "à sua SORTE por ter encontrado esta espada. Jogue fora \n" \
+                                "a sua espada velha e vá para 319. Se você preferir ficar \n" \
+                                "coma sua própria espada, deixe sua HABILIDADE como está \n" \
+                                "e fique apenas com o prêmio da SORTE."
             self.tem_trecho_a = True
             self.n_trecho_a = 319
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
 
         elif self.n_trecho == 28:
-            self.texto_trecho = ""
+            self.texto_trecho = "O poderoso Gigante está morto! Você examina a \n" \
+                                "caverna dele e acha pouca coisa que tenha utilidade,\n" \
+                                " embora uma bolsa no cinto dele contenha oito \n" \
+                                "Peças de Ouro. Você está um pouco preocupado com \n" \
+                                "relação à segunda cadeira. A quem pertence? Você \n" \
+                                "resolve sair da caverna como entrou. Vá para 351. \n" \
+                                "Mas acrescente 2 pontos à sua SORTE e 2 à sua \n" \
+                                "HABILIDADE pela sua vitória."
             self.tem_trecho_a = True
             self.n_trecho_a = 351
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
 
         elif self.n_trecho == 29:
-            self.texto_trecho = ""
+            self.texto_trecho = "A não ser pelas botas, as quais você resolve ignorar,\n" \
+                                " parece haver pouca coisa de valor na caverna. \n" \
+                                "Você decide voltar por onde veio. Vá para 375."
             self.tem_trecho_a = True
             self.n_trecho_a = 375
             self.n_trecho_b = 1
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
 
         elif self.n_trecho == 30:
-            self.texto_trecho = ""
+            self.texto_trecho = "Uma pedra solta cai e revela a presença de uma \n" \
+                                "corda presa na rocha. Se você quiser \n" \
+                                "puxá-la, vá para 67. \n" \
+                                "Se sentir que seria prudente não mexer nela, \n" \
+                                "poderá retornar à encruzilhada (vá para 267)."
             self.tem_trecho_a = True
             self.tem_trecho_b = True
             self.n_trecho_a = 67
@@ -487,23 +566,42 @@ class Fase:
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 31:
-            self.texto_trecho = ""
+            self.texto_trecho = "Se você tiver a jóia do Olho do Ciclope, segure-a \n" \
+                                "diante do Feiticeiro. Seu olhar intimidador se \n" \
+                                "transforma em uma expressão de dor. Ele obviamente \n" \
+                                "sente o poder da jóia. Subitamente os olhos dele\n" \
+                                " ficambrancos e sua expressão torna-se ausente. \n" \
+                                "A confiança cresce à medida em que você toma \n" \
+                                "consciência de que venceu a sua primeira verdadeira \n" \
+                                "batalha. Ganhe 2 pontos de HABILIDADE. Ponha a \n" \
+                                "jóia de volta em sua mochila e \n" \
+                                "saia pela porta norte. Vá para 90."
             self.tem_trecho_a = True
             self.n_trecho_a = 90
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
 
         elif self.n_trecho == 32:
-            self.texto_trecho = ""
+            self.texto_trecho = "Você joga o Queijo para o outro lado do aposento e as\n" \
+                                " Ratazanas correm atrás dele, mordendo-se e arranhando\n" \
+                                " umas às outras enquanto lutam por ele. Já que as\n" \
+                                " distraiu, você atravessa o aposento e sai pela porta da\n" \
+                                " parede norte. Vá para 124. Adicione 2 pontos \n" \
+                                "à sua SORTE pelo seu êxito."
             self.tem_trecho_a = True
             self.n_trecho_a = 124
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
 
         elif self.n_trecho == 33:
-            self.texto_trecho = ""
+            self.texto_trecho = "O ser que dormia desperta sobressaltado. Ele fica em pé e \n" \
+                                "avança sobre você desarmado. Com sua espada, você deve ser\n" \
+                                "capaz de derrotá-lo, mas seus dentes afiados parecem bem\n" \
+                                " perigosos. Você pode Fugir pela porta (vá para 320) ou\n" \
+                                " ficar e lutar contra o Orc que está atacando você. Se você \n" \
+                                "derrotar o ser, pode levar a caixa. Vá para 147."
             self.tem_trecho_a = True
             self.tem_trecho_b = True
             self.temluta = True
-            self.m_nome = "Orca"
+            self.m_nome = "Orc"
             self.m_habilidade = 6
             self.m_energia = 4
             self.n_trecho_a = 320
@@ -512,13 +610,27 @@ class Fase:
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 34:
-            self.texto_trecho = ""
+            self.texto_trecho = "Examinando as ferramentas, você encontra uma marreta\n" \
+                                " com cabeça de madeira dura e um cinzel com uma sólida\n" \
+                                " lâmina de prata. Você só pode ficar com uma das duas, \n" \
+                                "isto se estiver preparado para dispensar um dos itens\n" \
+                                " do equipamento que já está carregando. Se quiser fazer\n" \
+                                " isso, faça as correções necessárias na sua Lista de \n" \
+                                "Equipamento. O ruído na porta norte fica mais alto ainda\n" \
+                                " e você vai até lá para investigar. Vá para 96."
             self.tem_trecho_a = True
             self.n_trecho_a = 96
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
 
         elif self.n_trecho == 35:
-            self.texto_trecho = ""
+            self.texto_trecho = "Ao entrar no aposento, a porta se fecha imediatamente\n" \
+                                " atrás de você. Ao se fechar, ouve-se um estalo e um\n" \
+                                " esguicho. Do centro do teto, um jato de gás está enchendo\n" \
+                                " o aposento com um vapor acre. Você tenta respirar e\n" \
+                                " tosse convulsivamente. Você olha para a porta e depois\n" \
+                                " para a chave. Você retornará à porta e escapará\n" \
+                                " rapidamente (vá para 136) ou prenderá a respiração e \n" \
+                                "correrá para pegar a chave primeiro (vá para 361)?"
             self.tem_trecho_a = True
             self.tem_trecho_b = True
             self.n_trecho_a = 136
@@ -527,7 +639,16 @@ class Fase:
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 36:
-            self.texto_trecho = ""
+            self.texto_trecho = "A porta trancada abre-se violentamente e um mau cheiro\n" \
+                                " insuportável chega às suas narinas. Dentro do aposento, \n" \
+                                "o chão está coberto de ossos, vegetação apodrecida e lodo.\n" \
+                                " Um velho de cabelos desgrenhados, vestido de trapos,\n" \
+                                " salta sobre você gritando. Tem uma barba longa e grisalha\n" \
+                                " e sacode um velho pé de cadeira de madeira. Ele \n" \
+                                "simplesmente está louco, como parece, ou isto é algum\n" \
+                                " tipo de armadilha? Você pode gritar com ele para tentar\n" \
+                                " acalmá-lo (vá para 263) ou pegar na sua espada\n" \
+                                " e atacá-lo (vá para 353)."
             self.tem_trecho_a = True
             self.tem_trecho_b = True
             self.n_trecho_a = 263
@@ -536,7 +657,10 @@ class Fase:
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 37:
-            self.texto_trecho = ""
+            self.texto_trecho = "Em pé na encruzilhada, você pode ir\n" \
+                                " para o norte (vá para 366), \n" \
+                                "para o oeste (volte para 11) ou para o \n" \
+                                "sul (vá para 277)."
             self.tem_trecho_a = True
             self.tem_trecho_b = True
             self.n_trecho_a = 366
@@ -545,13 +669,43 @@ class Fase:
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 38:
-            self.texto_trecho = ""
+            self.texto_trecho = "Você abre a porta e encontra a dispensa de comidas do\n" \
+                                " Lobisomem, um estoque variado de ossos e carnes\n" \
+                                " apodrecidas. O cheiro provoca náuseas, embora um vidro\n" \
+                                " com ovos em salmoura pareça conter uma comida razoavelmente\n" \
+                                " decente. Se você quiser levá-lo consigo, será suficiente\n" \
+                                " para duas refeições: adicione 2 pontos às suas Provisões. \n" \
+                                "De volta ao aposento, agora você pode sair pela porta sul.\n" \
+                                " Vá para 66."
             self.tem_trecho_a = True
             self.n_trecho_a = 66
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
 
         elif self.n_trecho == 39:
-            self.texto_trecho = ""
+            self.texto_trecho = "Seu adversário fica surpreso ao ver você desaparecer na frente\n" \
+                                " dele, mas ele levanta as mãos, como se quisesse cobrir os olhos,\n" \
+                                " e vasculha o aposento com um olhar atento. Ele consegue sentir\n" \
+                                " a sua presença, mas não é capaz de saber exatamente onde você\n" \
+                                " está. Você desembainha a sua espada e avança na direção dele. \n" \
+                                "Ele inclina a cabeça e cheira o ar. Você terá que lutar com ele\n" \
+                                "à distância uma vez que, se ele puser as mãos em você, a \n" \
+                                "invisibilidade não será mais vantagem nenhuma. Mas enquanto você \n" \
+                                "permanecer invisível, terá as seguintes vantagens: \n " \
+                                "Você pode acrescentar 2 pontos ao resultado que der nos dados \n" \
+                                "quando determinar a sua Força de Ataque. \n " \
+                                "Cada ataque seu bem-sucedido causará danos ao adversário\n" \
+                                "de 3 pontos uma vez que, como ele não pode vê-lo, não\n" \
+                                "consegue se defender adequadamente. \n  " \
+                                "Cada vez que ele lhe causar um ferimento, jogue apenas \n" \
+                                "um dado. Se o número for ímpar, ele feriu você de verdade. \n" \
+                                "Se o número for 2 ou 4, o ferimento causado só vale 1 ponto.\n" \
+                                " Se você conseguir um 6, você evita o \n" \
+                                "golpe que não lhe causa dano nenhum."
+            #self.tem_testar_sorte = True
+            self.temluta = True
+            self.m_nome = "Feiticeiro"
+            self.m_habilidade = 11
+            self.m_energia = 18
             self.tem_trecho_a = True
             self.n_trecho_a = 396
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
@@ -926,7 +1080,19 @@ class Fase:
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
 
         elif self.n_trecho == 82:
-            self.texto_trecho = ""
+            self.texto_trecho = "A porta se abre para revelar um aposento pequeno e de\n" \
+                                " cheiro forte. No centro do aposento há uma mesa de madeira\n" \
+                                " instável onde está uma vela acesa. Embaixo da mesa há uma\n" \
+                                " pequena caixa de madeira. Dormindo em um colchão de palha, \n" \
+                                "no canto mais distante do aposento, está um ser baixo e robusto, \n" \
+                                "com um rosto feio e cheio de verrugas: o mesmo tipo de ser \n" \
+                                "que você encontrou dormindo no posto de sentinela. Deve ser\n" \
+                                " o guarda do turno da noite. Você pode retornar para o \n" \
+                                "corredor e seguir em frente para o norte (vá para 208)\n" \
+                                " ou insinuar-se pelo aposento para tentar pegar a caixa\n" \
+                                " sem acordar o ser. Se você quiser tentar roubar a caixa,\n" \
+                                " Teste a sua Sorte. Se você tiver sorte, ele não acordará \n" \
+                                "- vá para 147. Se não tiver, volte para 33."
             self.tem_testar_sorte = True
             self.tem_trecho_a = True
             self.tem_trecho_b = True
@@ -1107,7 +1273,7 @@ class Fase:
             self.n_trecho_c = 68
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
-            self.texto_trecho_c = f" vá para {self.n_trecho_b}?"
+            self.texto_trecho_c = f" vá para {self.n_trecho_c}?"
 
         elif self.n_trecho == 103:
             self.texto_trecho = ""
@@ -1231,8 +1397,17 @@ class Fase:
             self.texto_trecho_c = f" vá para {self.n_trecho_c}?"
 
         elif self.n_trecho == 116:
-            self.texto_trecho = ""
-            self.m_nome = "Orca"
+            self.texto_trecho = "Os dois Orcs bêbados que você está enfrentando agora\n" \
+                                " estão evidentemente espantados com a sua entrada e, \n" \
+                                "tão rápido quanto são capazes, saem em busca de armas. \n" \
+                                "Você tem que atacar um de cada vez. A bebedeira deles\n" \
+                                "] permite que você acrescente 1 ponto ao resultado do \n" \
+                                "dado quando jogar para estabelecera sua Força de Ataque, \n" \
+                                "durante cada Série de Ataques. \n" \
+                                "\n" \
+                                "Se você vencer a batalha, vá para 378. Se você quiser \n" \
+                                "Fugir durante a batalha, pode fazer isso voltando para 42"
+            self.m_nome = "Orc"
             self.m_energia = 4
             self.m_habilidade = 5
             self.tem_trecho_a = True
@@ -1292,7 +1467,6 @@ class Fase:
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
             self.texto_trecho_c = f" vá para {self.n_trecho_b}?"
-
 
         elif self.n_trecho == 123:
             self.texto_trecho = ""
@@ -1390,7 +1564,6 @@ class Fase:
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
-
         elif self.n_trecho == 135:
             self.texto_trecho = ""
             self.tem_ouro = True
@@ -1431,7 +1604,7 @@ class Fase:
                                 "certas, some seus três números. Agora vá \n" \
                                 "até a seção que possui o mesmo número que \n" \
                                 "este total, onde você descobrirá se usou \n" \
-                                "as chaves corretas.\n"\
+                                "as chaves corretas.\n" \
                                 "Se você não tiver três chaves numeradas, \n" \
                                 "então chegou ao fim de sua jornada. Você \n" \
                                 "senta na arca e chora ao tomar consciência \n" \
@@ -1469,7 +1642,6 @@ class Fase:
             self.n_trecho_a = 396
             self.n_trecho_b = 1
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-
 
         elif self.n_trecho == 143:
             self.texto_trecho = ""
@@ -1536,7 +1708,6 @@ class Fase:
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
             self.texto_trecho_c = f" vá para {self.n_trecho_c}?"
-
 
         elif self.n_trecho == 150:
             self.texto_trecho = ""
@@ -2069,7 +2240,11 @@ class Fase:
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 208:
-            self.texto_trecho = ""
+            self.texto_trecho = "Mais adiante na passagem, seguindo a parede oeste, você \n" \
+                                "vê outra porta. Você escuta com o ouvido colado nela,\n" \
+                                " mas não ouve nada. Se quiser tentar abrir esta porta,\n" \
+                                " vá para 397. Se quiser continuar na direção norte,\n" \
+                                " vá para 363."
             self.tem_trecho_a = True
             self.tem_trecho_b = True
             self.n_trecho_a = 397
@@ -2259,216 +2434,208 @@ class Fase:
         elif self.n_trecho == 228:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 85
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 229:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 69
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 230:
             self.texto_trecho = ""
+            self.temluta = True
+            self.m_nome = "Espectro"
+            self.m_habilidade = 8
+            self.m_energia = 7
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 390
+            self.n_trecho_b = 64
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 231:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 182
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 232:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 375
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 233:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 198
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 234:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 161
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 235:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 176
+            self.n_trecho_b = 5
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 236:
             self.texto_trecho = ""
+            self.temluta = True
+            self.m_nome = "Esqueleto"
+            self.m_habilidade = 6
+            self.m_energia = 5
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 395
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 237:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 285
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 238:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.tem_trecho_c = True
+            self.n_trecho_a = 70
+            self.n_trecho_b = 180
+            self.n_trecho_c = 329
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
+            self.texto_trecho_c = f" vá para {self.n_trecho_c}?"
 
         elif self.n_trecho == 239:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 88
+            self.n_trecho_b = 149
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 240:
             self.texto_trecho = ""
+            self.temluta = True
+            self.m_nome = "Serpente"
+            self.m_habilidade = 5
+            self.m_energia = 2
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 145
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 241:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 90
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 242:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 379
+            self.n_trecho_b = 139
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 243:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 128
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 244:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 143
+            self.n_trecho_b = 198
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 245:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 198
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 246:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.tem_trecho_c = True
+            self.n_trecho_a = 329
+            self.n_trecho_b = 180
+            self.n_trecho_c = 70
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
+            self.texto_trecho_c = f" vá para {self.n_trecho_c}?"
 
         elif self.n_trecho == 247:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 292
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 248:
-            self.texto_trecho = ""
+            self.texto_trecho = "O ser que acabou de acordar é um Orc! Ele se \n" \
+                                "levanta rápido e se vira para puxar uma corda\n" \
+                                " que provavelmente é a sineta do alarme. Você \n" \
+                                "tem que atacá-lo imediatamente.Se você vencer, \n" \
+                                "pode continuar seguindo a passagem vá para 301"
+            self.temluta = True
+            self.m_nome = "Orc"
+            self.m_habilidade = 6
+            self.m_energia = 5
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 301
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 249:
             self.texto_trecho = ""
+            self.temluta = True
+            self.m_nome = "Cachorro"
+            self.m_habilidade = 7
+            self.m_energia = 6
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.tem_trecho_c = True
+            self.n_trecho_a = 66
+            self.n_trecho_b = 304
+            self.n_trecho_c = 66
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
+            self.texto_trecho_c = f" vá para {self.n_trecho_c}?"
 
         elif self.n_trecho == 250:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 366
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 251:
             self.texto_trecho = ""
+            self.temluta = True
+            self.m_nome = "Morcego Gigante"
+            self.m_habilidade = 6
+            self.m_energia = 6
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 344
+            self.n_trecho_b = 399
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
@@ -2476,8 +2643,8 @@ class Fase:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 312
+            self.n_trecho_b = 226
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
@@ -2485,26 +2652,35 @@ class Fase:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.tem_trecho_c = True
+            self.n_trecho_a = 328
+            self.n_trecho_b = 125
+            self.n_trecho_c = 73
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
+            self.texto_trecho_c = f" vá para {self.n_trecho_c}?"
 
         elif self.n_trecho == 254:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.tem_trecho_c = True
+            self.tem_trecho_d = True
+            self.n_trecho_a = 352
+            self.n_trecho_b = 333
+            self.n_trecho_c = 279
+            self.n_trecho_d = 380
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
+            self.texto_trecho_c = f" vá para {self.n_trecho_c}?"
+            self.texto_trecho_d = f" vá para {self.n_trecho_d}?"
 
         elif self.n_trecho == 255:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 193
+            self.n_trecho_b = 93
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
@@ -2512,206 +2688,197 @@ class Fase:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.tem_trecho_c = True
+            self.n_trecho_a = 398
+            self.n_trecho_b = 297
+            self.n_trecho_c = 114
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
+            self.texto_trecho_c = f" vá para {self.n_trecho_c}?"
 
         elif self.n_trecho == 257:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 168
+            self.n_trecho_b = 293
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 258:
             self.texto_trecho = ""
+            self.tem_ouro = True
+            self.ouro_fase = 8
+            self.tem_item = True
+            self.item = "Chave Vermelha - 111"
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 54
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 259:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 7
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 260:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 359
+            self.n_trecho_b = 32
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 261:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 345
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 262:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 199
+            self.n_trecho_b = 251
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 263:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 314
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 264:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 80
+            self.n_trecho_b = 129
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 265:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 88
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 266:
             self.texto_trecho = ""
+            self.tem_item = True
+            self.item = "Arco e Flecha de Prata"
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 237
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 267:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.tem_trecho_c = True
+            self.tem_trecho_d = True
+            self.n_trecho_a = 312
+            self.n_trecho_b = 246
+            self.n_trecho_c = 79
+            self.n_trecho_c = 349
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
+            self.texto_trecho_c = f" vá para {self.n_trecho_c}?"
+            self.texto_trecho_c = f" vá para {self.n_trecho_d}?"
 
         elif self.n_trecho == 268:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 13
+            self.n_trecho_b = 282
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 269:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 225
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 270:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.tem_trecho_c = True
+            self.n_trecho_a = 61
+            self.n_trecho_b = 394
+            self.n_trecho_c = 375
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
+            self.texto_trecho_c = f" vá para {self.n_trecho_c}?"
 
         elif self.n_trecho == 271:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 336
+            self.n_trecho_b = 214
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 272:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 7
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 273:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 189
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 274:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.tem_trecho_c = True
+            self.n_trecho_a = 324
+            self.n_trecho_b = 356
+            self.n_trecho_c = 98
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
+            self.texto_trecho_c = f" vá para {self.n_trecho_c}?"
 
         elif self.n_trecho == 275:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 230
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 276:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 182
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 277:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.tem_trecho_c = True
+            self.n_trecho_a = 146
+            self.n_trecho_b = 366
+            self.n_trecho_c = 11
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
+            self.texto_trecho_c = f" vá para {self.n_trecho_c}?"
 
         elif self.n_trecho == 278:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 156
+            self.n_trecho_b = 92
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
@@ -2719,53 +2886,48 @@ class Fase:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.tem_trecho_c = True
+            self.n_trecho_a = 380
+            self.n_trecho_b = 17
+            self.n_trecho_c = 333
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
+            self.texto_trecho_c = f" vá para {self.n_trecho_c}?"
 
         elif self.n_trecho == 280:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 311
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 281:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 10
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 282:
             self.texto_trecho = ""
+            self.temluta = True
+            self.m_nome = "Zumbi"
+            self.m_habilidade = 7
+            self.m_energia = 6
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 115
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 283:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 251
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 284:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 46
+            self.n_trecho_b = 251
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
@@ -2773,8 +2935,8 @@ class Fase:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 213
+            self.n_trecho_b = 314
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
@@ -2782,107 +2944,133 @@ class Fase:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.tem_trecho_c = True
+            self.tem_trecho_d = True
+            self.n_trecho_a = 294
+            self.n_trecho_b = 275
+            self.n_trecho_c = 148
+            self.n_trecho_c = 107
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
+            self.texto_trecho_c = f" vá para {self.n_trecho_c}?"
+            self.texto_trecho_c = f" vá para {self.n_trecho_d}?"
 
         elif self.n_trecho == 287:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 32
+            self.n_trecho_b = 309
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 288:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 182
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 289:
             self.texto_trecho = ""
+            self.temluta = True
+            self.m_nome = "Feiriceiro"
+            self.m_habilidade = 7
+            self.m_energia = 12
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 396
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 290:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 198
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 291:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.tem_trecho_c = True
+            self.n_trecho_a = 315
+            self.n_trecho_b = 52
+            self.n_trecho_c = 227
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
+            self.texto_trecho_c = f" vá para {self.n_trecho_c}?"
 
         elif self.n_trecho == 292:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 239
+            self.n_trecho_b = 40
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 293:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 113
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 294:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.tem_trecho_c = True
+            self.n_trecho_a = 275
+            self.n_trecho_b = 148
+            self.n_trecho_c = 107
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
+            self.texto_trecho_c = f" vá para {self.n_trecho_c}?"
 
         elif self.n_trecho == 295:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 48
+            self.n_trecho_b = 161
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 296:
-            self.texto_trecho = ""
+            self.texto_trecho = "A caixa contém um pequeno livro encadernado em \n" \
+                                "couro, intitulado A Origem e Emissão do Fogo de \n" \
+                                "Dragão. Você abre o livro e começa a ler. \n" \
+                                "Felizmente está escrito na sua língua e, por \n" \
+                                "isso, provavelmente não foi compreendido pelos Orçs \n" \
+                                "- do contrário, este tesouro não estaria guardado \n" \
+                                "tão desleixadamente quanto estava. O livro foi escrito \n" \
+                                "à mão, em letra pequena, por Farrigo Di Maggio. \n" \
+                                "Nele, o autor conta a história da obra de sua \n" \
+                                "vida: a criação do feitiço do Fogo de Dragão, \n" \
+                                "com o qual se poderia enfrentar Dragões cruéis. \n" \
+                                "Você lê como, nos últimos anos, Farrigo finalmente \n" \
+                                "aperfeiçoou seu feitiço mas, na época, já estava velho \n" \
+                                "demais para fazer uso dele. Por isso ele completou \n" \
+                                "seu livro, trancou-o em uma arca e o escondeu nas \n" \
+                                "profundezas da Montanha de Fogo, com medo de que caísse\n" \
+                                " em mãos erradas. A última página dizia assim:\n " \
+                                "Você profere estas palavras lenta e suavemente.\n " \
+                                " Subitamente, as páginas parecem brilhar e,\n " \
+                                " quando este brilho desaparece, também \n " \
+                                "desaparecem as palavras nas páginas do livro.\n " \
+                                " Você repete o feitiço para si mesmo, a fim de \n " \
+                                "memorizar as palavras, e sai do aposento. \n " \
+                                "Volte para 42."
+            self.tem_item = True
+            self.item = "Livro do Fogo"
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 42
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 297:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 150
+            self.n_trecho_b = 256
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
@@ -2890,8 +3078,8 @@ class Fase:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 86
+            self.n_trecho_b = 7
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
@@ -2899,8 +3087,8 @@ class Fase:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 260
+            self.n_trecho_b = 359
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
@@ -2908,53 +3096,59 @@ class Fase:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 102
+            self.n_trecho_b = 303
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 301:
-            self.texto_trecho = ""
+            self.texto_trecho = "À sua esquerda, na parte oeste da passagem, há uma porta\n" \
+                                " de madeira rústica. Você pára junto a ela e ouve um som\n" \
+                                " áspero que poderia ser de algum tipo de criatura roncando. \n" \
+                                "Você quer abrir a porta? Em caso afirmativo, volte para 82. \n" \
+                                "Se quiser seguir adiante para o norte, volte para 208."
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 82
+            self.n_trecho_b = 208
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 302:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 198
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 303:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 128
+            self.n_trecho_b = 243
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 304:
             self.texto_trecho = ""
+            self.temluta = True
+            self.m_nome = "Lobisomem"
+            self.m_habilidade = 8
+            self.m_energia = 8
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 66
+            self.n_trecho_b = 203
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 305:
             self.texto_trecho = ""
+            self.tem_testar_sorte = True
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 162
+            self.n_trecho_b = 108
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
@@ -2962,8 +3156,8 @@ class Fase:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 161
+            self.n_trecho_b = 291
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
@@ -2971,8 +3165,8 @@ class Fase:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 134
+            self.n_trecho_b = 87
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
@@ -2980,62 +3174,68 @@ class Fase:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.tem_trecho_c = True
+            self.tem_trecho_d = True
+            self.n_trecho_a = 187
+            self.n_trecho_b = 54
+            self.n_trecho_c = 160
+            self.n_trecho_d = 354
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
+            self.texto_trecho_c = f" vá para {self.n_trecho_c}?"
+            self.texto_trecho_d = f" vá para {self.n_trecho_d}?"
 
         elif self.n_trecho == 309:
             self.texto_trecho = ""
+            self.temluta = True
+            self.m_nome = "Ratazana"
+            self.m_habilidade = 5
+            self.m_energia = 4
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 124
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 310:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 211
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 311:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.tem_trecho_c = True
+            self.n_trecho_a = 305
+            self.n_trecho_b = 178
+            self.n_trecho_c = 108
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
+            self.texto_trecho_c = f" vá para {self.n_trecho_c}?"
 
         elif self.n_trecho == 312:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 308
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 313:
+            self.tem_item = True
+            self.item = "Cricifixo"
+            self.tem_ouro = True
+            self.ouro_fase = 8
+            self.item = "Espada de Aço"
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 221
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 314:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 223
+            self.n_trecho_b = 300
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
@@ -3043,8 +3243,8 @@ class Fase:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 306
+            self.n_trecho_b = 291
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
@@ -3052,116 +3252,99 @@ class Fase:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 151
+            self.n_trecho_b = 218
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 317:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 303
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 318:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 228
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 319:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 221
+            self.n_trecho_b = 81
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 320:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 363
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 321:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 169
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 322:
             self.texto_trecho = ""
+            self.tem_item = True
+            self.item = "Chave de Cobre - 66"
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 96
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 323:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 8
+            self.n_trecho_b = 255
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 324:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 358
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 325:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 87
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 326:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 35
+            self.n_trecho_b = 229
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 327:
             self.texto_trecho = ""
+            self.ouro_fase = True
+            self.ouro_fase = 30
+            self.tem_item = True
+            self.item = "Forquilha"
+            self.item = "Livro do Vampiro"
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 380
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 328:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 73
+            self.n_trecho_b = 125
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
@@ -3169,143 +3352,156 @@ class Fase:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.tem_trecho_c = True
+            self.tem_trecho_d = True
+            self.n_trecho_a = 157
+            self.n_trecho_b = 392
+            self.n_trecho_c = 299
+            self.n_trecho_d = 238
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
+            self.texto_trecho_c = f" vá para {self.n_trecho_c}?"
+            self.texto_trecho_d = f" vá para {self.n_trecho_d}?"
 
         elif self.n_trecho == 330:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 81
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 331:
             self.texto_trecho = ""
+            self.temluta = True
+            self.m_nome = "Troll"
+            self.m_habilidade = 8
+            self.m_energia = 8
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 287
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 332:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 329
+            self.n_trecho_b = 4
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 333:
             self.texto_trecho = ""
+            self.temluta = True
+            self.m_nome = "Vampiro"
+            self.m_habilidade = 10
+            self.m_energia = 10
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 327
+            self.n_trecho_b = 224
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 334:
             self.texto_trecho = ""
+            self.tem_item = True
+            self.item = "Vela Azul"
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 292
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 335:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 182
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 336:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.tem_trecho_c = True
+            self.n_trecho_a = 66
+            self.n_trecho_b = 172
+            self.n_trecho_c = 249
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
+            self.texto_trecho_c = f" vá para {self.n_trecho_c}?"
 
         elif self.n_trecho == 337:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 267
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 338:
             self.texto_trecho = ""
+            self.temluta = True
+            self.m_nome = "Ciclope de Ferro"
+            self.m_habilidade = 10
+            self.m_energia = 10
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 75
+            self.n_trecho_b = 93
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 339:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 201
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 340:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.tem_trecho_c = True
+            self.tem_trecho_d = True
+            self.n_trecho_a = 388
+            self.n_trecho_b = 31
+            self.n_trecho_c = 241
+            self.n_trecho_d = 45
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
+            self.texto_trecho_c = f" vá para {self.n_trecho_c}?"
+            self.texto_trecho_d = f" vá para {self.n_trecho_d}?"
 
         elif self.n_trecho == 341:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.tem_trecho_c = True
+            self.tem_trecho_d = True
+            self.n_trecho_a = 46
+            self.n_trecho_b = 392
+            self.n_trecho_c = 220
+            self.n_trecho_d = 191
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
+            self.texto_trecho_c = f" vá para {self.n_trecho_c}?"
+            self.texto_trecho_d = f" vá para {self.n_trecho_d}?"
 
         elif self.n_trecho == 342:
             self.texto_trecho = ""
+            self.tem_ouro = True
+            self.ouro_fase = 2
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 7
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 343:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 92
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 344:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 56
+            self.n_trecho_b = 153
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
@@ -3313,35 +3509,29 @@ class Fase:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 381
+            self.n_trecho_b = 311
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 346:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 131
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 347:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 182
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 348:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 331
+            self.n_trecho_b = 51
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
@@ -3349,80 +3539,78 @@ class Fase:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 267
+            self.n_trecho_b = 30
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 350:
             self.texto_trecho = ""
+            self.temluta = True
+            self.m_nome = "Piranha"
+            self.m_habilidade = 5
+            self.m_energia = 5
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 7
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 351:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 76
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 352:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 74
+            self.n_trecho_b = 279
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 353:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 314
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 354:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.tem_trecho_c = True
+            self.tem_trecho_d = True
+            self.n_trecho_a = 308
+            self.n_trecho_b = 52
+            self.n_trecho_c = 14
+            self.n_trecho_d = 234
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
+            self.texto_trecho_c = f" vá para {self.n_trecho_c}?"
+            self.texto_trecho_d = f" vá para {self.n_trecho_d}?"
 
         elif self.n_trecho == 355:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 181
+            self.n_trecho_b = 256
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 356:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 358
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 357:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 269
+            self.n_trecho_b = 57
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
@@ -3430,53 +3618,60 @@ class Fase:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.tem_trecho_c = True
+            self.n_trecho_a = 142
+            self.n_trecho_b = 105
+            self.n_trecho_c = 389
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
+            self.texto_trecho_c = f" vá para {self.n_trecho_c}?"
 
         elif self.n_trecho == 359:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.tem_trecho_c = True
+            self.tem_trecho_d = True
+            self.n_trecho_a = 190
+            self.n_trecho_b = 94
+            self.n_trecho_c = 121
+            self.n_trecho_d = 385
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
+            self.texto_trecho_c = f" vá para {self.n_trecho_c}?"
+            self.texto_trecho_d = f" vá para {self.n_trecho_d}?"
 
         elif self.n_trecho == 360:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 89
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 361:
             self.texto_trecho = ""
+            self.tem_item = True
+            self.item = "Chave Dourada - 125"
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 136
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 362:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 177
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 363:
-            self.texto_trecho = ""
+            self.texto_trecho = "Seguindo pela passagem na parede oeste, você vê outra\n " \
+                                "porta semelhante. Você escuta junto à porta e faz uma \n" \
+                                "careta ao ouvir a voz mais desafinada que seus ouvidos\n" \
+                                " já conheceram! Você quer entrar no aposento para\n" \
+                                " investigar o horroroso som (vá para 370) ou seguir\n" \
+                                " adiante pela passagem (volte para 42)?"
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 370
+            self.n_trecho_b = 42
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
@@ -3484,17 +3679,21 @@ class Fase:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 256
+            self.n_trecho_b = 373
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 365:
             self.texto_trecho = ""
+            self.temluta = True
+            self.m_nome = "Orc"
+            self.m_habilidade = 6
+            self.m_energia = 4
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 183
+            self.n_trecho_b = 237
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
@@ -3502,8 +3701,8 @@ class Fase:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 89
+            self.n_trecho_b = 62
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
@@ -3511,8 +3710,8 @@ class Fase:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 235
+            self.n_trecho_b = 323
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
@@ -3520,152 +3719,151 @@ class Fase:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 142
+            self.n_trecho_b = 105
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 369:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 109
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 370:
-            self.texto_trecho = ""
+            self.texto_trecho = "A porta se abre e revela um pequeno aposento, que está sujo\n" \
+                                " e mal cuidado. Um colchão de palha se encontra em um dos\n" \
+                                " cantos. No centro do aposento há uma mesa de madeira, na\n" \
+                                " qual brilha uma vela iluminando o ambiente com sua luz\n" \
+                                " trêmula. Uma pequena caixa repousa sobre a mesa. Sentados\n " \
+                                "em volta da mesa estão dois seres pequenos, com a pele\n" \
+                                " cheia de verrugas e vestidos com armaduras de couro.\n" \
+                                " Estão tomando algum tipo de bebida forte e, pelo jeito\n" \
+                                " como se levantam cambaleantes quando você chega, \n" \
+                                "demonstram estar muito embriagados. Você pode empunhar\n" \
+                                " a sua espada e atacá-los (volte para 116) ou fechar\n" \
+                                " a porta rapidamente e correr subindo pela passagem\n" \
+                                " (volte para 42)."
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 116
+            self.n_trecho_b = 42
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 371:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 274
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 372:
             self.texto_trecho = ""
+            self.temluta = True
+            self.m_nome = "Chefe dos Orcs"
+            self.m_habilidade = 7
+            self.m_energia = 6
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 21
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 373:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 85
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 374:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 207
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 375:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 5
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 376:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 291
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 377:
             self.texto_trecho = ""
+            self.temluta = True
+            self.m_nome = "Gremilin"
+            self.m_habilidade = 5
+            self.m_energia = 7
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 196
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 378:
-            self.texto_trecho = ""
+            self.texto_trecho = "Você limpa a sua espada ensanguentada no colchão. O sangue \n" \
+                                " verde deixa uma mancha pastosa na palha. Passando\n" \
+                                " por cima dos corpos na direção da mesa, você enjoa\n" \
+                                " com o cheiro repelente dos seres mortos. Você\n" \
+                                " pega a caixa que está embaixo da mesa e a examina.\n" \
+                                " É uma pequena caixa de madeira com dobradiças \n" \
+                                "rústicas. O nome “Farrigo Di Maggio” está gravado \n" \
+                                "em uma placa de metal na tampa. Se quiser abrir a \n" \
+                                "caixa, volte para 296. Se resolver deixá-la \n" \
+                                "de lado e sair do aposento, volte para 42."
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 296
+            self.n_trecho_b = 42
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 379:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 139
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 380:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 37
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 381:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 84
+            self.n_trecho_b = 280
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 382:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 396
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 383:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.tem_trecho_c = True
+            self.n_trecho_a = 80
+            self.n_trecho_b = 264
+            self.n_trecho_c = 129
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
+            self.texto_trecho_c = f" vá para {self.n_trecho_c}?"
 
         elif self.n_trecho == 384:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 262
+            self.n_trecho_b = 307
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
@@ -3673,53 +3871,51 @@ class Fase:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.tem_trecho_c = True
+            self.n_trecho_a = 114
+            self.n_trecho_b = 297
+            self.n_trecho_c = 398
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
+            self.texto_trecho_c = f" vá para {self.n_trecho_c}?"
 
         elif self.n_trecho == 386:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 55
+            self.n_trecho_b = 166
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 387:
-            self.texto_trecho = ""
-            self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
-            self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
+            self.texto_trecho = "Morreu"
+            exit()
 
         elif self.n_trecho == 388:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 90
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 389:
             self.texto_trecho = ""
+            self.tem_testar_sorte
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 289
+            self.n_trecho_b = 112
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 390:
             self.texto_trecho = ""
+            self.tem_ouro = True
+            self.ouro_fase = 6
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 120
+            self.n_trecho_b = 393
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
@@ -3727,62 +3923,65 @@ class Fase:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.tem_trecho_c = True
+            self.n_trecho_a = 52
+            self.n_trecho_b = 362
+            self.n_trecho_c = 48
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
+            self.texto_trecho_c = f" vá para {self.n_trecho_c}?"
 
         elif self.n_trecho == 392:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 206
+            self.n_trecho_b = 329
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 393:
             self.texto_trecho = ""
+            self.tem_ouro = True
+            self.ouro_fase = 8
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 212
+            self.n_trecho_b = 369
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 394:
             self.texto_trecho = ""
+            self.temluta = True
+            self.m_nome = "Aranha"
+            self.m_habilidade = 7
+            self.m_energia = 28
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 232
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 395:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 322
+            self.n_trecho_b = 34
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 396:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 242
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 397:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 240
+            self.n_trecho_b = 363
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
@@ -3790,25 +3989,29 @@ class Fase:
             self.texto_trecho = ""
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 364
+            self.n_trecho_b = 12
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
             self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 399:
             self.texto_trecho = ""
             self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.n_trecho_a = 1
-            self.n_trecho_b = 1
+            self.n_trecho_a = 218
             self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
 
         elif self.n_trecho == 400:
-            self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.texto_trecho = ""
-            self.tem_trecho_a = True
-            self.tem_trecho_b = True
-            self.texto_trecho_a = f" vá para {self.n_trecho_a}?"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}?"
+            self.texto_trecho = "O Feiticeiro da Montanha de Fogo já não existe \n" \
+                                "mais, e agora você é o dono das riquezas do Bruxo. \n" \
+                                "pelo menos mil Peças de Ouro, além de jóias, \n" \
+                                "diamantes, rubis e pérolas estão na arca. \n" \
+                                "Escondido bem abaixo dessas coisas, você acha \n" \
+                                "o livro de encantos do Feiticeiro e, ao folheá-lo,\n" \
+                                " compreende que este compêndio é provavelmente \n" \
+                                "mais valioso do que todo o tesouro. Nele são \n" \
+                                "dadas instruções para controlar todos os segredos - e\n" \
+                                " seres - da Montanha de Fogo. Com este livro você \n" \
+                                "possui um poder ilimitado, e a segurança \n" \
+                                "de seu retorno à vila está garantida. Ou, se \n" \
+                                "você preferir, poderá permanecer por lá como senhor\n" \
+                                " do domínio da Montanha de Fogo..."
