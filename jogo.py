@@ -77,12 +77,12 @@ class Application:
         self.batalha = tkinter.Toplevel()
         self.batalha.title("Regras de Batalhas")
         self.batalha.geometry("500x580+10+15")
-        self.batalha.configure(background='white')
+        self.batalha.configure(background='#dfe3ee')
         self.batalha.resizable(False, False)
         # Titulo das Regras de batalha
         lb_regras_batalha_titulo = Label(self.batalha,
                                          text="Regras de Batalha",
-                                         background="white")
+                                         background="#dfe3ee")
         lb_regras_batalha_titulo.place(relx=0.25,
                                        rely=0.01,
                                        relwidth=0.5,
@@ -114,7 +114,7 @@ class Application:
                                              "(e na sua SORTE, caso a tenha usado) serão feitas e começará a próxima\n"
                                              "rodada de combate.\n"
                                              "O combate continua até que o valor de ENERGIA de um de "
-                                             "vocês seja reduzido\n"
+                                             "vocês seja #dfe3eeuzido\n"
                                              "a zero (morte).\n"
                                              "\n"
                                              "Escapando de uma batalha:\n"
@@ -127,7 +127,7 @@ class Application:
                                              "2 pontos de ENERGIA) enquanto você foge tal. Este é o preço \n"
                                              "da covardia. Você pode usar a SORTE neste ferimento \n"
                                              "normalmente (veja Usando a sorte em batalhas).\n",
-                                        background="white")
+                                        background="#dfe3ee")
         lb_regras_batalha_ajuda.place(relx=0.005,
                                       rely=0.067,
                                       relwidth=1,
@@ -141,14 +141,14 @@ class Application:
 
     def tela_regras_itens(self):
         self.itens = tkinter.Toplevel()
-        self.itens.configure(background='white')
+        self.itens.configure(background='#dfe3ee')
         self.itens.geometry("500x580+10+15")
         self.itens.title("Regras de Batalhas")
         self.itens.resizable(False, False)
         # Titulo das Regras de Itens
         lb_regras_itens_titulo = Label(self.itens,
                                        text="Regras de Itens",
-                                       background="white")
+                                       background="#dfe3ee")
         lb_regras_itens_titulo.place(relx=0.25,
                                      rely=0.01,
                                      relwidth=0.5,
@@ -175,7 +175,7 @@ class Application:
                                            "ponto e restaurar a SORTE ao seu novo nível inicial.\n"
                                            "Cada poção só pode ser usada uma vez durante uma aventura.\n"
                                            "Quando usar uma poção, isso será anotado em Cabeçalho.",
-                                      background="white")
+                                      background="#dfe3ee")
         lb_regras_itens_ajuda.place(relx=0.005,
                                     rely=0.067,
                                     relwidth=1,
@@ -191,12 +191,12 @@ class Application:
         self.atributos = tkinter.Toplevel()
         self.atributos.title("Regras de Atributos")
         self.atributos.geometry("500x580+10+15")
-        self.atributos.configure(background='white')
+        self.atributos.configure(background='#dfe3ee')
         self.atributos.resizable(False, False)
         # Titulo das Regras de Itens
         lb_regras_atributos_titulo = Label(self.atributos,
                                            text="Regras de Atributos",
-                                           background="white")
+                                           background="#dfe3ee")
         lb_regras_atributos_titulo.place(relx=0.25,
                                          rely=0.01,
                                          relwidth=0.5,
@@ -246,7 +246,7 @@ class Application:
                                                "restaurar a sua SORTE ao valor inicial, e aumentar o seu valor \n"
                                                "inicial de SORTE em 1 ponto.\n",
 
-                                          background="white")
+                                          background="#dfe3ee")
         lb_regras_atributos_ajuda.place(relx=0.005,
                                         rely=0.067,
                                         relwidth=1,
@@ -262,12 +262,12 @@ class Application:
         self.sorte = tkinter.Toplevel()
         self.sorte.title("Regras de Atributos")
         self.sorte.geometry("500x580+10+15")
-        self.sorte.configure(background='white')
+        self.sorte.configure(background='#dfe3ee')
         self.sorte.resizable(False, False)
         # Titulo das Regras de Itens
         lb_regras_sorte_titulo = Label(self.sorte,
                                        text="Regras de Sorte",
-                                       background="white")
+                                       background="#dfe3ee")
         lb_regras_sorte_titulo.place(relx=0.25,
                                      rely=0.01,
                                      relwidth=0.5,
@@ -292,7 +292,7 @@ class Application:
                                            "\n"
                                            "Em batalhas, você sempre tem a opção de usar a sorte \n"
                                            "para acertar um golpe mais sério em uma criatura, ou \n"
-                                           "para reduzir os efeitos de um ferimento que a criatura \n"
+                                           "para #dfe3eeuzir os efeitos de um ferimento que a criatura \n"
                                            "tenha lhe causado.\n"
                                            "Se você tiver acabado de ferir a criatura, \n"
                                            "você pode testar a sorte para aumentar o ferimento. \n"
@@ -308,7 +308,7 @@ class Application:
                                            "de dano extra (assim, em vez de sofrer 2 pontos de dano, você sofre 3).\n"
                                            "Não esqueça, será diminuído 1 ponto do seu valor de \n"
                                            "SORTE cada vez que testar a sorte.",
-                                      background="white")
+                                      background="#dfe3ee")
         lb_regras_sorte_ajuda.place(relx=0.005,
                                     rely=0.067,
                                     relwidth=1,
@@ -324,14 +324,14 @@ class Application:
         self.regra = tkinter.Toplevel()
         self.regra.title("Regras")
         self.regra.geometry("200x580+20+25")
-        self.regra.configure(background='white')
+        self.regra.configure(background='#dfe3ee')
         self.regra.resizable(True, True)
         self.regra.maxsize(width=800, height=700)
         self.regra.minsize(width=500, height=300)
         # Titulo das Regras
         lb_regras_titulo = Label(self.regra,
                                  text="Regras",
-                                 background="white")
+                                 background="#dfe3ee")
         lb_regras_titulo.place(relx=0.25,
                                rely=0.01,
                                relwidth=0.5,
@@ -348,7 +348,7 @@ class Application:
                                             "a variação \n"
                                             "nunca será maior que o valor inicial de cada atributo, excetoem momento \n"
                                             "bem especial e estará claramente descrito na página. ",
-                                       background="white")
+                                       background="#dfe3ee")
         lb_regras_apresentacao.place(relx=0.05,
                                      rely=0.055,
                                      relwidth=0.90,
@@ -357,7 +357,7 @@ class Application:
         # Titulo da criação de Personagem
         lb_regras_criacao = Label(self.regra,
                                   text="Criação de Personagem",
-                                  background="white")
+                                  background="#dfe3ee")
         lb_regras_criacao.place(relx=0.25,
                                 rely=0.26,
                                 relwidth=0.5,
@@ -378,7 +378,7 @@ class Application:
                                              " reais no mundo\n"
                                              "de fantasia que você está prestes a explorar.\n"
                                              "Para criar o personagem, clique em “Criar” na tela inicial",
-                                        background="white")
+                                        background="#dfe3ee")
         lb_regras_apresentacao2.place(relx=0.05,
                                       rely=0.30,
                                       relwidth=0.9,
@@ -420,13 +420,13 @@ class Application:
         self.personagem = tkinter.Toplevel()
         self.personagem.title("Criação de Pesonagem")
         self.personagem.geometry("500x580+10+15")
-        self.personagem.configure(background='#98d37e')
+        self.personagem.configure(background='#dfe3ee')
         self.personagem.resizable(False, False)
 
         # Titulo da Criação de Persongem
         lb_j_titulo_sorte = Label(self.personagem,
                                   text="Crie Seu Personagem",
-                                  background="#98d37e",
+                                  background="#dfe3ee",
                                   font="arial")
         lb_j_titulo_sorte.place(relx=0.25,
                                 rely=0.01,
@@ -437,7 +437,7 @@ class Application:
         cabecalho_imagem = PhotoImage(file=pastaApp + "\\FundoCabeçalhoPNG.png")
         lb_j_cabecalho_imagem = Label(self.personagem,
                                       image=cabecalho_imagem,
-                                      background="#98d37e")
+                                      background="#dfe3ee")
         lb_j_cabecalho_imagem.photo = cabecalho_imagem
         lb_j_cabecalho_imagem.place(relx=0.02,
                                     rely=0.1,
@@ -447,7 +447,7 @@ class Application:
         # Descrição do Nome
         lb_j_descricao_nome = Label(self.personagem,
                                     text='Qual será o nome do seu Guerreiro',
-                                    background="#98d37e")
+                                    background="#dfe3ee")
         lb_j_descricao_nome.place(relx=0.1,
                                   rely=0.37,
                                   relwidth=0.5,
@@ -473,7 +473,7 @@ class Application:
         lb_j_descricao_energia = Label(self.personagem,
                                        text='Para Definir sua Energia\n'
                                             'Vamos jogar 2 dados e somar 12 a eles',
-                                       background="#98d37e")
+                                       background="#dfe3ee")
         lb_j_descricao_energia.place(relx=0.1,
                                      rely=0.5,
                                      relwidth=0.4,
@@ -483,7 +483,7 @@ class Application:
         lb_j_descricao_habilidade = Label(self.personagem,
                                           text='Para Definir sua Habilidade\n'
                                                'Vamos jogar 1 dado e somar 6 a ele',
-                                          background="#98d37e")
+                                          background="#dfe3ee")
         lb_j_descricao_habilidade.place(relx=0.1,
                                         rely=0.6,
                                         relwidth=0.4,
@@ -493,7 +493,7 @@ class Application:
         lb_j_descricao_sorte = Label(self.personagem,
                                      text='Para Definir sua Sorte\n'
                                           'Vamos jogar 1 dado e somar 6 a ele',
-                                     background="#98d37e")
+                                     background="#dfe3ee")
         lb_j_descricao_sorte.place(relx=0.1,
                                    rely=0.7,
                                    relwidth=0.4,
@@ -529,7 +529,7 @@ class Application:
         # Apresentação Botão Radio de Poção
         lb_escolhapocao = Label(self.personagem,
                                 text="Escolha uma Poção",
-                                background="#98d37e")
+                                background="#dfe3ee")
         lb_escolhapocao.place(relx=0.3,
                               rely=0.80,
                               relwidth=0.25,
@@ -542,7 +542,7 @@ class Application:
                                        text="Poção de Energia",
                                        value="Energia",
                                        variable=self.pocao,
-                                       background="#98d37e")
+                                       background="#dfe3ee")
         rd_pocao_energia.place(relx=0.6,
                                rely=0.75,
                                relwidth=0.3,
@@ -553,7 +553,7 @@ class Application:
                                           text="Poção de Habilidade",
                                           value="Habilidade",
                                           variable=self.pocao,
-                                          background="#98d37e")
+                                          background="#dfe3ee")
         rd_pocao_habilidade.place(relx=0.6,
                                   rely=0.80,
                                   relwidth=0.3,
@@ -564,7 +564,7 @@ class Application:
                                      text="Poção de Sorte",
                                      value="Sorte",
                                      variable=self.pocao,
-                                     background="#98d37e")
+                                     background="#dfe3ee")
         rd_pocao_sorte.place(relx=0.6,
                              rely=0.85,
                              relwidth=0.3,
@@ -597,7 +597,7 @@ class Application:
         self.jogador01.j_nome = (self.ent_j_nome.get())
         lb_j_nome = Label(self.personagem,
                           text=self.jogador01.j_nome,
-                          background="#98d37e")  # 98d37e
+                          background="#dfe3ee")  # 98d37e
         lb_j_nome.place(relx=0.31, rely=0.171, relwidth=0.17, relheight=0.032)
         lb_j_nome.place(relx=0.31, rely=0.171, relwidth=0.17, relheight=0.032)
 
@@ -606,49 +606,49 @@ class Application:
         # Exibir dados de Energia
         lb_valor_energia = Label(self.personagem,
                                  text=self.jogador01.j_energia,
-                                 background="#98d37e")
+                                 background="#dfe3ee")
         lb_valor_energia.place(relx=0.31, rely=0.21, relwidth=0.17, relheight=0.029)
 
         # Exibir dados de Habilidade
         lb_valor_habilidade = Label(self.personagem,
                                     text=self.jogador01.j_habilidade,
-                                    background="#98d37e")
+                                    background="#dfe3ee")
         lb_valor_habilidade.place(relx=0.31, rely=0.25, relwidth=0.17, relheight=0.029)
 
 
         # Exibir dados de Sorte
         lb_valor_sorte = Label(self.personagem,
                                text=self.jogador01.j_sorte,
-                               background="#98d37e")
+                               background="#dfe3ee")
         lb_valor_sorte.place(relx=0.31, rely=0.29, relwidth=0.17, relheight=0.029)
 
         # Exibir Status
         self.jogador01.j_status = 'Vivo'
         lb_j_status = Label(self.personagem,
                             text=self.jogador01.j_status,
-                            background="#98d37e")  # 98d37e
-        lb_j_status.place(relx=0.66, rely=0.171, relwidth=0.20, relheight=0.032)
+                            background="#dfe3ee")  # 98d37e
+        lb_j_status.place(relx=0.7, rely=0.171, relwidth=0.20, relheight=0.032)
 
         # Exibir Ouro
         self.jogador01.j_ouro = int(600)
         lb_j_ouro = Label(self.personagem,
                           text=f'{self.jogador01.j_ouro} Peças',
-                          background="#98d37e")  # 98d37e
-        lb_j_ouro.place(relx=0.66, rely=0.21, relwidth=0.20, relheight=0.032)
+                          background="#dfe3ee")  # 98d37e
+        lb_j_ouro.place(relx=0.7, rely=0.21, relwidth=0.20, relheight=0.032)
 
         # Exibir Provisões
         self.jogador01.j_provisao = int(10)
         lb_j_provisoes = Label(self.personagem,
                                text=self.jogador01.j_provisao,
-                               background="#98d37e")  # 98d37e
-        lb_j_provisoes.place(relx=0.66, rely=0.25, relwidth=0.20, relheight=0.032)
+                               background="#dfe3ee")  # 98d37e
+        lb_j_provisoes.place(relx=0.7, rely=0.25, relwidth=0.20, relheight=0.032)
 
         # Exibir Poção
         self.jogador01.j_pocao = self.pocao.get()
         lb_j_pocao = Label(self.personagem,
                            text=self.jogador01.j_pocao,
-                           background="#98d37e")  # 98d37e
-        lb_j_pocao.place(relx=0.66, rely=0.29, relwidth=0.20, relheight=0.032)
+                           background="#dfe3ee")  # 98d37e
+        lb_j_pocao.place(relx=0.7, rely=0.29, relwidth=0.20, relheight=0.032)
 
     def calcular_energia(self):
         # Dados de Energia
@@ -661,13 +661,13 @@ class Application:
         # Escrever no Label de Energia
         self.lb_valor_energia = Label(self.personagem,
                                       text=self.jogador01.j_energia,
-                                      background="#98d37e")
+                                      background="#dfe3ee")
 
         # Escrever dado
         self.lb_valor_energia = Label(self.personagem,
                                       text=f"1º dado: {self.j_dado_energia1}\n"
                                            f"2º dado: {self.j_dado_energia2}",
-                                      background="#98d37e")
+                                      background="#dfe3ee")
         self.lb_valor_energia.place(relx=0.55,
                                     rely=0.5,
                                     relwidth=0.12,
@@ -686,13 +686,13 @@ class Application:
         # Escrever no Label de Habilidade
         self.lb_valor_habilidade = Label(self.personagem,
                                          text=self.jogador01.j_habilidade,
-                                         background="#98d37e")
+                                         background="#dfe3ee")
         # lb_valor_habilidade.place(relx=0.30, rely=0.25, relwidth=0.193, relheight=0.029)
 
         # Escrever dado
         self.lb_valor_habilidade = Label(self.personagem,
                                          text=f"Dado: {self.j_dado_habilidade}\n",
-                                         background="#98d37e")  # 98d37e"
+                                         background="#dfe3ee")  # 98d37e"
         self.lb_valor_habilidade.place(relx=0.55,
                                        rely=0.6,
                                        relwidth=0.12,
@@ -712,13 +712,13 @@ class Application:
         # Escrever no Label de Sorte
         self.lb_valor_sorte = Label(self.personagem,
                                     text=self.jogador01.j_sorte,
-                                    background="#98d37e")
+                                    background="#dfe3ee")
         # lb_valor_sorte.place(relx=0.30, rely=0.29, relwidth=0.193, relheight=0.029)
 
         # Escrever dado
         self.lb_valor_sorte = Label(self.personagem,
                                     text=f"Dado: {self.j_dado_sorte}\n",
-                                    background="#98d37e",  # 98d37e"
+                                    background="#dfe3ee",  # 98d37e"
                                     anchor="center")
         self.lb_valor_sorte.place(relx=0.55,
                                   rely=0.7,
@@ -733,7 +733,7 @@ class Application:
         self.jogador01.j_nome = (self.ent_j_nome.get())
         self.lb_j_nome = Label(self.personagem,
                                text=self.jogador01.j_nome,
-                               background="#98d37e")  # 98d37e
+                               background="#dfe3ee")  # 98d37e
         # lb_j_nome.place(relx=0.297, rely=0.171, relwidth=0.20, relheight=0.032)
         print(self.jogador01.j_nome)
         self.bt_j_validar_nome.configure(state=DISABLED)
@@ -768,7 +768,7 @@ class Application:
                 # Atualizar sorte do jogador
                 lb_batalha_j_nome = Label(self.inventario,
                                           text=self.jogador01.j_sorte,
-                                          background="gold"
+                                          background="#dfe3ee"
                                           )
                 lb_batalha_j_nome.place(relx=0.47,
                                         rely=0.83,
@@ -786,7 +786,7 @@ class Application:
                 print("Comendo Provisão")
                 self.jogador01.j_provisao = self.jogador01.j_provisao - 1
                 self.lb_provisao = Label(self.inventario,
-                                         background="gold",
+                                         background="#dfe3ee",
                                          text=f"Provisão = {self.jogador01.j_provisao}",
                                          font="arial",
                                          anchor="w")
@@ -799,7 +799,7 @@ class Application:
                 self.jogador01.j_energia = self.jogador01.j_energia + 4
                 lb_batalha_j_nome = Label(self.inventario,
                                           text=self.jogador01.j_energia,
-                                          background="gold"
+                                          background="#dfe3ee"
                                           )
                 lb_batalha_j_nome.place(relx=0.27,
                                         rely=0.83,
@@ -925,7 +925,7 @@ class Application:
         self.frame_trechos = Frame(self.root,
                                    bd=1,
                                    background='#dfe3ee',
-                                   highlightbackground='gold',
+                                   highlightbackground='#dfe3ee',
                                    highlightthickness=2)
         self.frame_trechos.place(relx=0.51, rely=0.026, relwidth=0.475, relheight=0.96)
         print(f'Você esta na fase {self.jogo.n_trecho}')
@@ -942,13 +942,13 @@ class Application:
         # Exibição do Texto de Trechos
         lb_trecho = Label(self.frame_trechos,
                           text=self.jogo.texto_trecho,
-                          background="blue")
+                          background="#dfe3ee")
         lb_trecho.place(relx=0.025, rely=0.04, relwidth=0.95, relheight=0.7)
 
         # Exibição das interaçoes
         self.frame_interacao = Frame(self.frame_trechos,
                                      bd=1,
-                                     background='red',
+                                     background='#dfe3ee',
                                      highlightthickness=2)
         self.frame_interacao.place(relx=0.025,
                                    rely=0.75,
@@ -965,7 +965,7 @@ class Application:
                                                  text=self.jogo.texto_trecho_a,
                                                  value=self.jogo.n_trecho_a,
                                                  variable=self.destino,
-                                                 background="blue",
+                                                 background="#dfe3ee",
                                                  anchor=W,
                                                  command=self.exibe)
                 self.rd_n_trecho_a.grid(column=0,
@@ -990,7 +990,7 @@ class Application:
                                                  value=self.jogo.n_trecho_b,
                                                  variable=self.destino,
                                                  anchor=W,
-                                                 background="blue",
+                                                 background="#dfe3ee",
                                                  command=self.exibe)
                 self.rd_n_trecho_b.grid(column=0,
                                         row=1)
@@ -1012,7 +1012,7 @@ class Application:
                                                  text=self.jogo.texto_trecho_c,
                                                  value=self.jogo.n_trecho_c,
                                                  variable=self.destino,
-                                                 background="blue",
+                                                 background="#dfe3ee",
                                                  anchor=W,
                                                  command=self.exibe)
                 self.rd_n_trecho_c.grid(column=0,
@@ -1034,7 +1034,7 @@ class Application:
                                                  text=self.jogo.texto_trecho_d,
                                                  value=self.jogo.n_trecho_d,
                                                  variable=self.destino,
-                                                 background="blue",
+                                                 background="#dfe3ee",
                                                  anchor=W,
                                                  command=self.exibe)
                 self.rd_n_trecho_d.grid(column=0,
@@ -1057,7 +1057,7 @@ class Application:
                                                  text=self.jogo.texto_trecho_e,
                                                  value=self.jogo.n_trecho_e,
                                                  variable=self.destino,
-                                                 background="blue",
+                                                 background="#dfe3ee",
                                                  anchor=W,
                                                  command=self.exibe)
                 self.rd_n_trecho_e.grid(column=0,
@@ -1088,7 +1088,7 @@ class Application:
                                          text="Lutar contra " + self.jogo.m_nome,
                                          value=self.jogo.n_trecho_e,
                                          variable=self.destino,
-                                         background="blue",
+                                         background="#dfe3ee",
                                          anchor=W,
                                          command=self.luta)
             self.rd_n_luta.grid(column=0,
@@ -1098,7 +1098,7 @@ class Application:
             batalha_imagem = PhotoImage(file=pastaApp + "\\Feiticeiro.png")
             lb_batalha_imagem = Label(self.frame_1,
                                       image=batalha_imagem,
-                                      background="blue")
+                                      background="#dfe3ee")
             lb_batalha_imagem.photo = batalha_imagem
             lb_batalha_imagem.place(relx=0.40, rely=0.74, relwidth=0.25, relheight=0.22)
 
@@ -1130,7 +1130,7 @@ class Application:
                                           text="Testar a Sorte",
                                           value=self.jogo.n_trecho_e,
                                           variable=self.destino,
-                                          background="blue",
+                                          background="#dfe3ee",
                                           anchor=W,
                                           command=self.testar_sorte)
             self.rd_n_sorte.grid(column=0,
@@ -1247,7 +1247,7 @@ class Application:
         feiticeiro_imagem = PhotoImage(file=pastaApp + "\\Feiticeiro.png")
         lb_feiticeiro_imagem = Label(self.frame_1,
                                      image=feiticeiro_imagem,
-                                     background="blue")
+                                     background="#dfe3ee")
         lb_feiticeiro_imagem.photo = feiticeiro_imagem
         lb_feiticeiro_imagem.place(relx=0.40, rely=0.74, relwidth=0.25, relheight=0.22)
 
@@ -1360,10 +1360,10 @@ class Application:
         self.inventario.title(f"Inventário do Jogador")
         self.inventario.geometry("450x200+10+15")
         self.inventario.resizable(False, False)
-        self.inventario.configure(background="blue")
+        self.inventario.configure(background="#dfe3ee")
 
         lb_inventario = Label(self.inventario,
-                              background="gold",
+                              background="#dfe3ee",
                               text="Inventario",
                               font="arial")
         lb_inventario.place(relx=0.12,
@@ -1372,7 +1372,7 @@ class Application:
                             relheight=0.1)
         # Provisão
         lb_provisao = Label(self.inventario,
-                            background="gold",
+                            background="#dfe3ee",
                             text=f"Provisão = {self.jogador01.j_provisao}",
                             font="arial",
                             anchor="w")
@@ -1390,7 +1390,7 @@ class Application:
                                relheight=0.1)
         # Poção
         self.lb_pocao = Label(self.inventario,
-                              background="gold",
+                              background="#dfe3ee",
                               text=f"Poção = {self.jogador01.j_pocao}",
                               font="arial",
                               anchor="w")
@@ -1411,7 +1411,7 @@ class Application:
         # Nome do jogador
         lb_batalha_j_nome = Label(self.inventario,
                                   text=self.jogador01.j_nome,
-                                  background="gold")
+                                  background="#dfe3ee")
         lb_batalha_j_nome.place(relx=0.07,
                                 rely=0.83,
                                 relwidth=0.1,
@@ -1420,7 +1420,7 @@ class Application:
         # Energia do jogador
         lb_batalha_j_nome = Label(self.inventario,
                                   text=self.jogador01.j_energia,
-                                  background="gold"
+                                  background="#dfe3ee"
                                   )
         lb_batalha_j_nome.place(relx=0.27,
                                 rely=0.83,
@@ -1430,7 +1430,7 @@ class Application:
         # Habilidade do jogador
         lb_batalha_j_nome = Label(self.inventario,
                                   text=self.jogador01.j_habilidade,
-                                  background="gold"
+                                  background="#dfe3ee"
                                   )
         lb_batalha_j_nome.place(relx=0.37,
                                 rely=0.83,
@@ -1440,7 +1440,7 @@ class Application:
         # Sorte do jogador
         lb_batalha_j_nome = Label(self.inventario,
                                   text=self.jogador01.j_sorte,
-                                  background="gold"
+                                  background="#dfe3ee"
                                   )
         lb_batalha_j_nome.place(relx=0.47,
                                 rely=0.83,
@@ -1449,7 +1449,7 @@ class Application:
 
         # Itens label
         lbfra_inventario = LabelFrame(self.inventario,
-                                      background="blue",
+                                      background="#dfe3ee",
                                       text="Itens!!")
         lbfra_inventario.place(relx=0.48,
                                rely=0.06,
@@ -1459,7 +1459,7 @@ class Application:
         # itens itens dentro
         lb_j_itens = Label(self.inventario,
                            text=self.jogo.lista_item,
-                           background="blue",
+                           background="#dfe3ee",
                            anchor=NW)
         lb_j_itens.place(relx=0.49,
                          rely=0.135,
@@ -1482,14 +1482,14 @@ class Application:
         self.duelo.title(f"Combate contra {self.jogo.m_nome}")
         self.duelo.geometry("450x200+10+15")
         self.duelo.resizable(False, False)
-        self.duelo.configure(background="red")
+        self.duelo.configure(background="#dfe3ee")
 
         # Fotos do monstro
         imagem02 = ("\\" + self.jogo.m_nome + ".png")
         batalha_imagem = PhotoImage(file=pastaApp + imagem02)
         lb_batalha_imagem = Label(self.duelo,
                                   image=batalha_imagem,
-                                  background="red")
+                                  background="#dfe3ee")
         lb_batalha_imagem.photo = batalha_imagem
         lb_batalha_imagem.place(relx=0.02,
                                 rely=0.15,
@@ -1499,7 +1499,7 @@ class Application:
         # Nome do jogador
         lb_batalha_j_nome = Label(self.duelo,
                                   text=self.jogador01.j_nome,
-                                  background="gold"
+                                  background="#dfe3ee"
                                   )
         lb_batalha_j_nome.place(relx=0.10,
                                 rely=0.05,
@@ -1509,7 +1509,7 @@ class Application:
         # Energia do jogador
         lb_batalha_j_nome = Label(self.duelo,
                                   text=self.jogador01.j_energia,
-                                  background="gold"
+                                  background="#dfe3ee"
                                   )
         lb_batalha_j_nome.place(relx=0.30,
                                 rely=0.05,
@@ -1519,7 +1519,7 @@ class Application:
         # Habilidade do jogador
         lb_batalha_j_nome = Label(self.duelo,
                                   text=self.jogador01.j_habilidade,
-                                  background="gold"
+                                  background="#dfe3ee"
                                   )
         lb_batalha_j_nome.place(relx=0.4,
                                 rely=0.05,
@@ -1529,7 +1529,7 @@ class Application:
         # Sorte do jogador
         lb_batalha_j_nome = Label(self.duelo,
                                   text=self.jogador01.j_sorte,
-                                  background="gold"
+                                  background="#dfe3ee"
                                   )
         lb_batalha_j_nome.place(relx=0.5,
                                 rely=0.05,
@@ -1539,7 +1539,7 @@ class Application:
         # Nome do monstro
         lb_batalha_m_nome = Label(self.duelo,
                                   text=self.jogo.m_nome,
-                                  background="gold"
+                                  background="#dfe3ee"
                                   )
         lb_batalha_m_nome.place(relx=0.30,
                                 rely=0.2,
@@ -1549,7 +1549,7 @@ class Application:
         # Energia do Monstro
         lb_batalha_m_energia = Label(self.duelo,
                                      text=f"Energia {self.jogo.m_energia}",
-                                     background="gold")
+                                     background="#dfe3ee")
         lb_batalha_m_energia.place(relx=0.30,
                                    rely=0.3,
                                    relwidth=0.2,
@@ -1558,7 +1558,7 @@ class Application:
         # Habilidade do Monstro
         lb_batalha_m_habilidade = Label(self.duelo,
                                         text=f"Habilidade {self.jogo.m_habilidade}",
-                                        background="gold"
+                                        background="#dfe3ee"
                                         )
         lb_batalha_m_habilidade.place(relx=0.30,
                                       rely=0.40,
@@ -1568,7 +1568,7 @@ class Application:
         # Escrever primeiro dado do jogador
         self.j_dado01 = 0
         self.lb_j_dado01 = Label(self.duelo,
-                                 background="gold",
+                                 background="#dfe3ee",
                                  text=f"{self.jogador01.j_nome}\n1º dado\n{self.j_dado01}")
         self.lb_j_dado01.place(relx=0.60,
                                rely=0.1,
@@ -1578,7 +1578,7 @@ class Application:
         # Escrever Segundo dado do jogador
         self.j_dado02 = 0
         self.lb_j_dado02 = Label(self.duelo,
-                                 background="gold",
+                                 background="#dfe3ee",
                                  text=f"2º dado\n{self.j_dado02}")
         self.lb_j_dado02.place(relx=0.60,
                                rely=0.34,
@@ -1588,7 +1588,7 @@ class Application:
         # Escrever primeiro dado do Monstro
         self.m_dado01 = 0
         self.lb_m_dado01 = Label(self.duelo,
-                                 background="gold",
+                                 background="#dfe3ee",
                                  text=f"{self.jogo.m_nome}\n 1º dado\n{self.m_dado01}")
         self.lb_m_dado01.place(relx=0.8,
                                rely=0.1,
@@ -1598,7 +1598,7 @@ class Application:
         # Escrever Segundo dado do Monstro
         self.m_dado02 = 0
         self.lb_j_dado02 = Label(self.duelo,
-                                 background="gold",
+                                 background="#dfe3ee",
                                  text=f"2º dado\n{self.m_dado02}")
         self.lb_j_dado02.place(relx=0.8,
                                rely=0.34,
@@ -1609,7 +1609,7 @@ class Application:
         self.m_ataque = 0
         self.lb_m_ataque = Label(self.duelo,
                                  text=f"Ataque do Monstro\n{self.m_ataque}",
-                                 background="gold")
+                                 background="#dfe3ee")
         self.lb_m_ataque.place(relx=0.74,
                                rely=0.50,
                                relwidth=0.25,
@@ -1619,7 +1619,7 @@ class Application:
         self.j_ataque = 0
         self.lb_j_ataque = Label(self.duelo,
                                  text=f"Ataque do Jogador\n{self.j_ataque}",
-                                 background="gold")
+                                 background="#dfe3ee")
         self.lb_j_ataque.place(relx=0.47,
                                rely=0.50,
                                relwidth=0.25,
@@ -1628,7 +1628,7 @@ class Application:
         # Atualizar a Energia do Monstro
         lb_batalha_m_energia = Label(self.duelo,
                                      text=f"Energia {self.jogo.m_energia}",
-                                     background="gold")
+                                     background="#dfe3ee")
         lb_batalha_m_energia.place(relx=0.30,
                                    rely=0.3,
                                    relwidth=0.2,
@@ -1637,7 +1637,7 @@ class Application:
         # Atualizar a Energia do jogador
         lb_batalha_j_nome = Label(self.duelo,
                                   text=self.jogador01.j_energia,
-                                  background="gold"
+                                  background="#dfe3ee"
                                   )
         lb_batalha_j_nome.place(relx=0.30,
                                 rely=0.05,
@@ -1689,7 +1689,7 @@ class Application:
             # Energia do Monstro
             lb_batalha_m_energia = Label(self.duelo,
                                          text=f"Energia {self.jogo.m_energia}",
-                                         background="gold")
+                                         background="#dfe3ee")
             lb_batalha_m_energia.place(relx=0.30,
                                        rely=0.3,
                                        relwidth=0.2,
@@ -1698,7 +1698,7 @@ class Application:
             # Energia do jogador
             lb_batalha_j_nome = Label(self.duelo,
                                       text=self.jogador01.j_energia,
-                                      background="gold"
+                                      background="#dfe3ee"
                                       )
             lb_batalha_j_nome.place(relx=0.30,
                                     rely=0.05,
@@ -1708,7 +1708,7 @@ class Application:
             # Sorte do jogador
             lb_batalha_j_nome = Label(self.duelo,
                                       text=self.jogador01.j_sorte,
-                                      background="gold"
+                                      background="#dfe3ee"
                                       )
             lb_batalha_j_nome.place(relx=0.5,
                                     rely=0.05,
@@ -1741,7 +1741,7 @@ class Application:
 
         # Escrever primeiro dado do jogador
         self.lb_j_dado01 = Label(self.duelo,
-                                 background="gold",
+                                 background="#dfe3ee",
                                  text=f"{self.jogador01.j_nome}\n1º dado\n{self.j_dado01}")
         self.lb_j_dado01.place(relx=0.60,
                                rely=0.1,
@@ -1750,7 +1750,7 @@ class Application:
 
         # Escrever Segundo dado do jogador
         self.lb_j_dado02 = Label(self.duelo,
-                                 background="gold",
+                                 background="#dfe3ee",
                                  text=f"2º dado\n{self.j_dado02}")
         self.lb_j_dado02.place(relx=0.60,
                                rely=0.34,
@@ -1759,7 +1759,7 @@ class Application:
 
         # Escrever primeiro dado do Monstro
         self.lb_m_dado01 = Label(self.duelo,
-                                 background="gold",
+                                 background="#dfe3ee",
                                  text=f"{self.jogo.m_nome}\n 1º dado\n{self.m_dado01}")
         self.lb_m_dado01.place(relx=0.8,
                                rely=0.1,
@@ -1768,7 +1768,7 @@ class Application:
 
         # Escrever Segundo dado do Monstro
         self.lb_j_dado02 = Label(self.duelo,
-                                 background="gold",
+                                 background="#dfe3ee",
                                  text=f"2º dado\n{self.m_dado02}")
         self.lb_j_dado02.place(relx=0.8,
                                rely=0.34,
@@ -1778,7 +1778,7 @@ class Application:
         # Atualizar ataque do jogador
         self.lb_j_ataque = Label(self.duelo,
                                  text=f"Ataque do Jogador\n{self.j_ataque}",
-                                 background="gold")
+                                 background="#dfe3ee")
         self.lb_j_ataque.place(relx=0.47,
                                rely=0.50,
                                relwidth=0.25,
@@ -1787,7 +1787,7 @@ class Application:
         # Atualizar ataque do monstro
         self.lb_m_ataque = Label(self.duelo,
                                  text=f"Ataque do Monstro\n{self.m_ataque}",
-                                 background="gold")
+                                 background="#dfe3ee")
         self.lb_m_ataque.place(relx=0.74,
                                rely=0.50,
                                relwidth=0.25,
@@ -1806,7 +1806,7 @@ class Application:
         if self.m_ataque == self.j_ataque:
             self.lb_b_resultado = Label(self.duelo,
                                         text=f"Round Empatado",
-                                        background="gold")
+                                        background="#dfe3ee")
             self.lb_b_resultado.place(relx=0.6,
                                       rely=0.64,
                                       relwidth=0.25,
@@ -1816,7 +1816,7 @@ class Application:
         elif self.m_ataque < self.j_ataque:  # menor
             self.lb_b_resultado = Label(self.duelo,
                                         text=f"Vitória de {self.jogador01.j_nome}",
-                                        background="gold")
+                                        background="#dfe3ee")
             self.lb_b_resultado.place(relx=0.6,
                                       rely=0.64,
                                       relwidth=0.25,
@@ -1827,7 +1827,7 @@ class Application:
         elif self.m_ataque > self.j_ataque:  # maior
             self.lb_b_resultado = Label(self.duelo,
                                         text=f"Vitória de {self.jogo.m_nome}",
-                                        background="gold")
+                                        background="#dfe3ee")
             self.lb_b_resultado.place(relx=0.6,
                                       rely=0.64,
                                       relwidth=0.25,
@@ -1839,7 +1839,7 @@ class Application:
         # Energia do Monstro
         lb_batalha_m_energia = Label(self.duelo,
                                      text=f"Energia {self.jogo.m_energia}",
-                                     background="gold")
+                                     background="#dfe3ee")
         lb_batalha_m_energia.place(relx=0.30,
                                    rely=0.3,
                                    relwidth=0.2,
@@ -1848,7 +1848,7 @@ class Application:
         # Energia do jogador
         lb_batalha_j_nome = Label(self.duelo,
                                   text=self.jogador01.j_energia,
-                                  background="gold"
+                                  background="#dfe3ee"
                                   )
         lb_batalha_j_nome.place(relx=0.30,
                                 rely=0.05,
