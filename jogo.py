@@ -44,6 +44,8 @@ class Application:
         self.validar_trecho_d = None
         self.validar_trecho_e = None
         self.bt_j_validar_nome = None
+        self.alterar_sorte = None
+        self.alterar_valor = None
 
         # criando o Loop
         root.mainloop()
@@ -972,7 +974,7 @@ class Application:
                 print(self.jogo.n_trecho_a)
                 '''
                 self.rd_n_trecho_a.select()  # Setar a primeira opção como defalt
-        # self.jogo.tem_trecho_a = False
+                self.jogo.tem_trecho_a = False
 
         # Opção 2
         if self.jogo.tem_trecho_b == True:
@@ -995,7 +997,7 @@ class Application:
                                          relheight=0.03)
                 print(self.jogo.n_trecho_b)
                 '''
-        self.jogo.tem_trecho_b = False
+                self.jogo.tem_trecho_b = False
 
         # Opção 3
         if self.jogo.tem_trecho_c == True:
@@ -1017,7 +1019,7 @@ class Application:
                                          relwidth=0.88,
                                          relheight=0.03)
                 '''
-        self.jogo.tem_trecho_c = False
+                self.jogo.tem_trecho_c = False
 
         # Opção 4
         if self.jogo.tem_trecho_d == True:
@@ -1040,7 +1042,7 @@ class Application:
                                          relheight=0.03)
                 '''
                 print(self.jogo.n_trecho_d)
-        # self.jogo.tem_trecho_d = False
+                self.jogo.tem_trecho_d = False
 
         # Opção 5
         if self.jogo.tem_trecho_e == True:
@@ -1063,7 +1065,7 @@ class Application:
                                          relheight=0.03)
                 '''
                 print(self.jogo.n_trecho_e)
-        # self.jogo.tem_trecho_e = False
+                self.jogo.tem_trecho_e = False
 
         if self.jogo.temluta == True:
             print("tem luta teste Radio")
@@ -1088,8 +1090,7 @@ class Application:
             self.rd_n_luta.grid(column=0,
                                 row=5)
 
-            #criando a imagem da Luta
-
+            # criando a imagem da Luta
             batalha_imagem = PhotoImage(file=pastaApp + "\\Feiticeiro.png")
             lb_batalha_imagem = Label(self.frame_1,
                                       image=batalha_imagem,
@@ -1104,13 +1105,7 @@ class Application:
                                  relheight=0.03)
             '''
             self.jogo.temluta = False
-        '''
-        self.jogo.tem_trecho_a = False
-        self.jogo.tem_trecho_b = False
-        self.jogo.tem_trecho_c = False
-        self.jogo.tem_trecho_d = False
-        self.jogo.tem_trecho_e = False
-        '''
+
         # Testardo a sorte fora de luta
         if self.jogo.tem_testar_sorte == True:
             print("")
@@ -1143,6 +1138,36 @@ class Application:
                                   relheight=0.03)
             '''
             self.jogo.tem_testar_sorte = False
+
+        # Pegando ouro da história
+        if self.jogo.tem_ouro == True:
+            print("Pegar Ouro")
+            self.jogador01.j_ouro = self.jogador01.j_ouro + self.jogo.ouro_fase
+            self.jogo.tem_ouro = False
+
+        # alterando pontos de status
+        if self.jogo.alterar_valor == True:
+            print("alterar status")
+            self.jogador01.j_sorte = self.jogador01.j_sorte + self.jogo.alterar_sorte
+            self.jogo.alterar_sorte = 0
+            self.jogador01.j_energia = self.jogador01.j_energia + self.jogo.alterar_energia
+            self.jogo.alterar_energia = 0
+            self.jogador01.j_habilidade = self.jogador01.j_habilidade + self.jogo.alterar_habilidade
+            self.jogo.alterar_habilidade = 0
+            self.jogo.alterar_valor = False
+
+        # Item
+        if self.jogo.tem_item == True:
+            print ("Pegar Item Novo")
+            if self.jogo.item in self.jogo.lista_item:
+                print(f"Voce ja possui {self.jogo.item}")
+                # self.bt_pegar_item.configure(state=DISABLED)
+            else:
+                self.jogo.lista_item.append(self.jogo.item)
+                print(f"Você pegou {self.jogo.item}")
+                print(f"voce adiquiriu {self.jogo.lista_item[self.jogo.contador]}")
+                self.jogo.contador = self.jogo.contador + 1
+        self.jogo.tem_item = False
 
         # Botões
         # Botão Cabeçalho
@@ -1454,8 +1479,8 @@ class Application:
         self.duelo.resizable(False, False)
         self.duelo.configure(background="red")
 
-        #Fotos do monstro
-        imagem02=("\\" + self.jogo.m_nome +".png")
+        # Fotos do monstro
+        imagem02 = ("\\" + self.jogo.m_nome + ".png")
         batalha_imagem = PhotoImage(file=pastaApp + imagem02)
         lb_batalha_imagem = Label(self.duelo,
                                   image=batalha_imagem,
@@ -1693,7 +1718,7 @@ class Application:
         self.rd_n_sorte.configure(state=DISABLED)
         self.j_dado_testar_sorte = dado()
         print(self.j_dado_testar_sorte)
-        if self.j_dado_testar_sorte > 4:
+        if self.j_dado_testar_sorte >= 4:
             print("deu Sorte")
             self.rd_n_trecho_a["state"] = NORMAL
         else:
