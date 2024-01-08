@@ -602,6 +602,7 @@ class Application:
         lb_j_nome.place(relx=0.31, rely=0.171, relwidth=0.17, relheight=0.032)
 
         self.bt_criar.configure(state=DISABLED)
+        self.bt_criar_personagem.configure(state=DISABLED)
 
         # Exibir dados de Energia
         lb_valor_energia = Label(self.personagem,
@@ -745,6 +746,10 @@ class Application:
 
         # Habilitar botão de inicio de História
         self.bt_iniciar.configure(state=NORMAL)
+
+
+        #Desabiligar botão de criar personagem:
+
 
     def usar_pocao(self):
         if self.usou_pocao != True:
@@ -1299,10 +1304,10 @@ class Application:
         lb_intuducao.place(relx=0.05, rely=0.03, relwidth=0.90, relheight=0.95)
 
         # Botão de Criar Personagem
-        self.bt_criar = Button(self.frame_1,
+        self.bt_criar_personagem = Button(self.frame_1,
                                text="Criar Personagem",
                                command=self.criar_personagem_tela)
-        self.bt_criar.place(relx=0.06, rely=0.95, relwidth=0.35, relheight=0.035)
+        self.bt_criar_personagem.place(relx=0.06, rely=0.95, relwidth=0.35, relheight=0.035)
         # Botão de Regras
         self.bt_regras = Button(self.frame_1,
                                 text="Regras",
