@@ -3940,9 +3940,9 @@ class Fase:
             self.texto_trecho_a = f" vá para {self.n_trecho_a}"
 
         elif self.n_trecho == 378:
-            self.texto_trecho = "Você limpa a sua espada ensanguentada no colchão. " \
-                                "O sangue  verde deixa uma mancha pastosa na palha. " \
-                                "Passando por cima dos corpos na direção da mesa, " \
+            self.texto_trecho = "Você limpa a sua espada ensanguentada no colchão. \n" \
+                                "O sangue  verde deixa uma mancha pastosa na palha. \n" \
+                                "Passando por cima dos corpos na direção da mesa, \n" \
                                 "você enjoa com o cheiro repelente dos seres mortos. Você\n" \
                                 " pega a caixa que está embaixo da mesa e a examina.\n" \
                                 " É uma pequena caixa de madeira com dobradiças \n" \
