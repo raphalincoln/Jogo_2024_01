@@ -1733,7 +1733,7 @@ class Fase:
             self.alterar_valor = True
             self.alterar_sorte = 2
             self.tem_ouro = True
-            self.ouro_fase = -1
+            self.ouro_fase = 1
             self.tem_trecho_a = True
             self.n_trecho_a = 208
             self.texto_trecho_a = f" vá para {self.n_trecho_a}"
@@ -3625,9 +3625,19 @@ class Fase:
             self.texto_trecho_a = f" vá para {self.n_trecho_a}"
 
         elif self.n_trecho == 343:
-            self.texto_trecho = ""
+            self.texto_trecho = "A porta abre de repente e você se sente cair \n" \
+                                "em um aposento. Mas seu coração acelera ao \n" \
+                                "compreender que você não está caindo no chão, \n" \
+                                "mas mergulhando em uma espécie de poço! Por sorte, \n" \
+                                "o poço não é particularmente fundo e você bate no chão \n" \
+                                "a menos de dois metros abaixo. Perca 1 ponto de \n" \
+                                "ENERGIA pelas escoriações que sofreu, suba para a \n" \
+                                "superfície do poço e saia do aposento pela porta, \n" \
+                                "dirigindo-se para o oeste. Volte para 92"
             self.tem_trecho_a = True
             self.n_trecho_a = 92
+            self.alterar_valor = True
+            self.alterar_habilidade = -1
             self.texto_trecho_a = f" vá para {self.n_trecho_a}"
 
         elif self.n_trecho == 344:

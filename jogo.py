@@ -574,7 +574,7 @@ class Application:
 
         # Botão de Criar Personagem
         self.bt_criar = Button(self.personagem,
-                          text="Criar !",
+                          text="Criar",
                           command=self.criar_personagem)
         self.bt_criar.place(relx=0.15, rely=0.95, relwidth=0.2, relheight=0.035)
 
@@ -1078,6 +1078,17 @@ class Application:
 
         if self.jogo.temluta == True:
             print("tem luta teste Radio")
+            if hasattr(self, 'rd_n_trecho_a') and self.rd_n_trecho_a.winfo_exists():
+                self.rd_n_trecho_a.configure(state=DISABLED)
+            if hasattr(self, 'rd_n_trecho_b') and self.rd_n_trecho_b.winfo_exists():
+                self.rd_n_trecho_b.configure(state=DISABLED)
+            if hasattr(self, 'rd_n_trecho_c') and self.rd_n_trecho_c.winfo_exists():
+                self.rd_n_trecho_c.configure(state=DISABLED)
+            if hasattr(self, 'rd_n_trecho_d') and self.rd_n_trecho_d.winfo_exists():
+                self.rd_n_trecho_d.configure(state=DISABLED)
+            if hasattr(self, 'rd_n_trecho_e') and self.rd_n_trecho_e.winfo_exists():
+                self.rd_n_trecho_e.configure(state=DISABLED)
+            '''
             if self.jogo.tem_trecho_a == True:
                 self.rd_n_trecho_a.configure(state=DISABLED)
             if self.jogo.tem_trecho_b == True:
@@ -1088,6 +1099,7 @@ class Application:
                 self.rd_n_trecho_d.configure(state=DISABLED)
             if self.jogo.tem_trecho_e == True:
                 self.rd_n_trecho_e.configure(state=DISABLED)
+            '''
             # Criar o Radio da Luta
             self.rd_n_luta = Radiobutton(self.frame_interacao,
                                          text="Lutar contra " + self.jogo.m_nome,
@@ -1098,6 +1110,7 @@ class Application:
                                          command=self.luta)
             self.rd_n_luta.grid(column=0,
                                 row=5)
+
 
             # criando a imagem da Luta
             batalha_imagem = PhotoImage(file=pastaApp + "\\Feiticeiro.png")
@@ -1869,6 +1882,18 @@ class Application:
             self.duelo.destroy()
             # self.bt_batalha.configure(state=DISABLED)
 
+            if hasattr(self, 'rd_n_trecho_a') and self.rd_n_trecho_a.winfo_exists():
+                self.rd_n_trecho_a.configure(state=NORMAL)
+            if hasattr(self, 'rd_n_trecho_b') and self.rd_n_trecho_b.winfo_exists():
+                self.rd_n_trecho_b.configure(state=NORMAL)
+            if hasattr(self, 'rd_n_trecho_c') and self.rd_n_trecho_c.winfo_exists():
+                self.rd_n_trecho_c.configure(state=NORMAL)
+            if hasattr(self, 'rd_n_trecho_d') and self.rd_n_trecho_d.winfo_exists():
+                self.rd_n_trecho_d.configure(state=NORMAL)
+            if hasattr(self, 'rd_n_trecho_e') and self.rd_n_trecho_e.winfo_exists():
+                self.rd_n_trecho_e.configure(state=NORMAL)
+            '''
+            
             if self.jogo.tem_trecho_a == True:
                 self.rd_n_trecho_a["stat"] = NORMAL
                 self.jogo.tem_trecho_a = False
@@ -1888,7 +1913,7 @@ class Application:
             if self.jogo.tem_trecho_e == True:
                 self.rd_n_trecho_e["stat"] = NORMAL
                 self.validar_trecho_e = False
-
+            '''
             self.duelo.destroy()
 
         if self.jogador01.j_energia < 1:
