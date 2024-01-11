@@ -3,13 +3,11 @@ import os
 from random import randint
 from tkinter import *
 from tkinter import messagebox
-
 from fase_montanha import Fase
 from jogador_Montanha import Jogador
 
 pastaApp = os.path.dirname(__file__)
 root = Tk()
-
 
 def dado():
     jogar_dado = randint(1, 6)
@@ -1184,6 +1182,13 @@ class Application:
                 print("Não tenho item a ser solto")
             self.jogo.soltar_item = False
 
+        #Pegar Provisão
+        if self.jogo.altera_provisao == True:
+            print("Pegar provisão")
+            self.jogador01.j_provisao = self.jogador01.j_provisao + self.jogo.alterar_provisao
+            self.jogo.altera_provisao = False
+        else:
+            print("Não tem provisão")
         # Botões
         # Botão Cabeçalho
 
@@ -1668,199 +1673,9 @@ class Application:
 
         print(self.jogo.tem_multiluta)
         print(self.jogo.quantas_lutas)
-        #self.jogo.quantas_lutas = self.jogo.quantas_lutas - 1
 
         # Desfecho da tela
         self.frame_2.destroy()
-
-    '''
-    def luta2(self):
-        self.rd_n_luta.configure(state=DISABLED)
-        self.duelo = tkinter.Toplevel()
-        self.duelo.title(f"Combate contra {self.jogo.m_nome1}")
-        self.duelo.geometry("450x200+10+15")
-        self.duelo.resizable(False, False)
-        self.duelo.configure(background="#dfe3ee")
-
-        # Fotos do monstro
-        imagem02 = ("\\" + self.jogo.m_nome1 + ".png")
-        batalha_imagem = PhotoImage(file=pastaApp + imagem02)
-        lb_batalha_imagem = Label(self.duelo,
-                                  image=batalha_imagem,
-                                  background="#dfe3ee")
-        lb_batalha_imagem.photo = batalha_imagem
-        lb_batalha_imagem.place(relx=0.02,
-                                rely=0.15,
-                                relwidth=0.25,
-                                relheight=0.7)
-
-        # Nome do jogador
-        lb_batalha_j_nome = Label(self.duelo,
-                                  text=self.jogador01.j_nome,
-                                  background="#dfe3ee"
-                                  )
-        lb_batalha_j_nome.place(relx=0.10,
-                                rely=0.05,
-                                relwidth=0.1,
-                                relheight=0.08)
-
-        # Energia do jogador
-        lb_batalha_j_nome = Label(self.duelo,
-                                  text=self.jogador01.j_energia,
-                                  background="#dfe3ee"
-                                  )
-        lb_batalha_j_nome.place(relx=0.30,
-                                rely=0.05,
-                                relwidth=0.04,
-                                relheight=0.08)
-
-        # Habilidade do jogador
-        lb_batalha_j_nome = Label(self.duelo,
-                                  text=self.jogador01.j_habilidade,
-                                  background="#dfe3ee"
-                                  )
-        lb_batalha_j_nome.place(relx=0.4,
-                                rely=0.05,
-                                relwidth=0.04,
-                                relheight=0.08)
-
-        # Sorte do jogador
-        lb_batalha_j_nome = Label(self.duelo,
-                                  text=self.jogador01.j_sorte,
-                                  background="#dfe3ee"
-                                  )
-        lb_batalha_j_nome.place(relx=0.5,
-                                rely=0.05,
-                                relwidth=0.04,
-                                relheight=0.08)
-
-        # Nome do monstro
-        lb_batalha_m_nome = Label(self.duelo,
-                                  text=self.jogo.m_nome1,
-                                  background="#dfe3ee"
-                                  )
-        lb_batalha_m_nome.place(relx=0.30,
-                                rely=0.2,
-                                relwidth=0.2,
-                                relheight=0.08)
-
-        # Energia do Monstro
-        lb_batalha_m_energia = Label(self.duelo,
-                                     text=f"Energia {self.jogo.m_energia1}",
-                                     background="#dfe3ee")
-        lb_batalha_m_energia.place(relx=0.30,
-                                   rely=0.3,
-                                   relwidth=0.2,
-                                   relheight=0.08)
-
-        # Habilidade do Monstro
-        lb_batalha_m_habilidade = Label(self.duelo,
-                                        text=f"Habilidade {self.jogo.m_habilidade1}",
-                                        background="#dfe3ee"
-                                        )
-        lb_batalha_m_habilidade.place(relx=0.30,
-                                      rely=0.40,
-                                      relwidth=0.2,
-                                      relheight=0.08)
-
-        # Escrever primeiro dado do jogador
-        self.j_dado01 = 0
-        self.lb_j_dado01 = Label(self.duelo,
-                                 background="#dfe3ee",
-                                 text=f"{self.jogador01.j_nome}\n1º dado\n{self.j_dado01}")
-        self.lb_j_dado01.place(relx=0.60,
-                               rely=0.1,
-                               relwidth=0.13,
-                               relheight=0.22)
-
-        # Escrever Segundo dado do jogador
-        self.j_dado02 = 0
-        self.lb_j_dado02 = Label(self.duelo,
-                                 background="#dfe3ee",
-                                 text=f"2º dado\n{self.j_dado02}")
-        self.lb_j_dado02.place(relx=0.60,
-                               rely=0.34,
-                               relwidth=0.13,
-                               relheight=0.14)
-
-        # Escrever primeiro dado do Monstro
-        self.m_dado01 = 0
-        self.lb_m_dado01 = Label(self.duelo,
-                                 background="#dfe3ee",
-                                 text=f"{self.jogo.m_nome1}\n 1º dado\n{self.m_dado01}")
-        self.lb_m_dado01.place(relx=0.8,
-                               rely=0.1,
-                               relwidth=0.13,
-                               relheight=0.22)
-
-        # Escrever Segundo dado do Monstro
-        self.m_dado02 = 0
-        self.lb_j_dado02 = Label(self.duelo,
-                                 background="#dfe3ee",
-                                 text=f"2º dado\n{self.m_dado02}")
-        self.lb_j_dado02.place(relx=0.8,
-                               rely=0.34,
-                               relwidth=0.13,
-                               relheight=0.14)
-
-        # Escrever Ataque do Monstro
-        self.m_ataque = 0
-        self.lb_m_ataque = Label(self.duelo,
-                                 text=f"Ataque do Monstro\n{self.m_ataque}",
-                                 background="#dfe3ee")
-        self.lb_m_ataque.place(relx=0.74,
-                               rely=0.50,
-                               relwidth=0.25,
-                               relheight=0.14)
-
-        # Escrever ataque do Jogador
-        self.j_ataque = 0
-        self.lb_j_ataque = Label(self.duelo,
-                                 text=f"Ataque do Jogador\n{self.j_ataque}",
-                                 background="#dfe3ee")
-        self.lb_j_ataque.place(relx=0.47,
-                               rely=0.50,
-                               relwidth=0.25,
-                               relheight=0.14)
-
-        # Atualizar a Energia do Monstro
-        lb_batalha_m_energia = Label(self.duelo,
-                                     text=f"Energia {self.jogo.m_energia1}",
-                                     background="#dfe3ee")
-        lb_batalha_m_energia.place(relx=0.30,
-                                   rely=0.3,
-                                   relwidth=0.2,
-                                   relheight=0.08)
-
-        # Atualizar a Energia do jogador
-        lb_batalha_j_nome = Label(self.duelo,
-                                  text=self.jogador01.j_energia,
-                                  background="#dfe3ee"
-                                  )
-        lb_batalha_j_nome.place(relx=0.30,
-                                rely=0.05,
-                                relwidth=0.04,
-                                relheight=0.08)
-
-        # Botão Batalha
-        self.bt_batalha = Button(self.duelo,
-                                 text="Batalhar",
-                                 command=self.round)
-        self.bt_batalha.place(relx=0.37, rely=0.8, relwidth=0.2, relheight=0.12)
-
-        # Botão de Sair
-        self.bt_sair = Button(self.duelo,
-                              text="Cancelar",
-                              command=self.duelo.destroy)
-        self.bt_sair.place(relx=0.75, rely=0.8, relwidth=0.2, relheight=0.12)
-
-        print(self.jogo.tem_multiluta)
-        print(self.jogo.quantas_lutas)
-        self.jogo.quantas_lutas = self.jogo.quantas_lutas - 1
-
-        # Desfecho da tela
-        self.frame_2.destroy()
-    '''
 
     def testar_sorte_luta(self):
         self.bt_testar_sorte_luta.configure(state=DISABLED)
@@ -2066,7 +1881,7 @@ class Application:
             self.duelo.destroy()
             #
             #
-            #No Futuro tentar fazer isso com Tupla ou biblioteca
+            # No Futuro tentar fazer isso com Tupla ou biblioteca
             #
             #
             if self.jogo.quantas_lutas > 0:

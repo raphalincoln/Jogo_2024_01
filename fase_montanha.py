@@ -48,7 +48,9 @@ class Fase:
                  alterar_valor=False,
                  alterar_energia=0,
                  alterar_habilidade=0,
-                 alterar_sorte=0):
+                 alterar_sorte=0,
+                 altera_provisao=False,
+                 alterar_provisao=0):
         self.n_trecho = n_trecho
         self.texto_trecho = texto_trecho
         self.n_trecho_a = n_trecho_a
@@ -100,6 +102,8 @@ class Fase:
         self.m_habilidade2 = m_habilidade2
         self.m_habilidade3 = m_habilidade3
         self.m_habilidade4 = m_habilidade4
+        self.altera_provisao = altera_provisao
+        self.alterar_provisao = alterar_provisao
 
     def livro(self):
         if self.n_trecho == 1:
@@ -1038,6 +1042,8 @@ class Fase:
             self.tem_trecho_b = True
             self.n_trecho_a = 301
             self.n_trecho_b = 248
+            self.altera_provisao = True
+            self.alterar_provisao = -1
             self.texto_trecho_a = f"Sorte - Vá para {self.n_trecho_a}"
             self.texto_trecho_b = f"Azar - Vá para {self.n_trecho_b}"
 
