@@ -574,14 +574,15 @@ class Application:
 
         # Botão de Criar Personagem
         self.bt_criar = Button(self.personagem,
-                          text="Criar",
-                          command=self.criar_personagem)
+                               text="Criar",
+                               command=self.criar_personagem)
         self.bt_criar.place(relx=0.15, rely=0.95, relwidth=0.2, relheight=0.035)
 
         # Botão de Salvar Personagem
         self.bt_salvar = Button(self.personagem,
-                           text="Salvar",
-                           command=self.salvar_personagem)
+                                text="Salvar",
+                                command=self.salvar_personagem,
+                                state=DISABLED)
         self.bt_salvar.place(relx=0.42, rely=0.95, relwidth=0.2, relheight=0.035)
 
         # Botão de sair da Criação de Personagem
@@ -603,6 +604,7 @@ class Application:
 
         self.bt_criar.configure(state=DISABLED)
         self.bt_criar_personagem.configure(state=DISABLED)
+        self.bt_salvar.configure(state=NORMAL)
 
         # Exibir dados de Energia
         lb_valor_energia = Label(self.personagem,
@@ -615,7 +617,6 @@ class Application:
                                     text=self.jogador01.j_habilidade,
                                     background="#dfe3ee")
         lb_valor_habilidade.place(relx=0.31, rely=0.25, relwidth=0.17, relheight=0.029)
-
 
         # Exibir dados de Sorte
         lb_valor_sorte = Label(self.personagem,
@@ -747,9 +748,7 @@ class Application:
         # Habilitar botão de inicio de História
         self.bt_iniciar.configure(state=NORMAL)
 
-
-        #Desabiligar botão de criar personagem:
-
+        # Desabiligar botão de criar personagem:
 
     def usar_pocao(self):
         if self.usou_pocao != True:
@@ -1088,18 +1087,7 @@ class Application:
                 self.rd_n_trecho_d.configure(state=DISABLED)
             if hasattr(self, 'rd_n_trecho_e') and self.rd_n_trecho_e.winfo_exists():
                 self.rd_n_trecho_e.configure(state=DISABLED)
-            '''
-            if self.jogo.tem_trecho_a == True:
-                self.rd_n_trecho_a.configure(state=DISABLED)
-            if self.jogo.tem_trecho_b == True:
-                self.rd_n_trecho_b.configure(state=DISABLED)
-            if self.jogo.tem_trecho_c == True:
-                self.rd_n_trecho_c.configure(state=DISABLED)
-            if self.jogo.tem_trecho_d == True:
-                self.rd_n_trecho_d.configure(state=DISABLED)
-            if self.jogo.tem_trecho_e == True:
-                self.rd_n_trecho_e.configure(state=DISABLED)
-            '''
+
             # Criar o Radio da Luta
             self.rd_n_luta = Radiobutton(self.frame_interacao,
                                          text="Lutar contra " + self.jogo.m_nome,
@@ -1111,7 +1099,6 @@ class Application:
             self.rd_n_luta.grid(column=0,
                                 row=5)
 
-
             # criando a imagem da Luta
             batalha_imagem = PhotoImage(file=pastaApp + "\\Feiticeiro.png")
             lb_batalha_imagem = Label(self.frame_1,
@@ -1120,11 +1107,13 @@ class Application:
             lb_batalha_imagem.photo = batalha_imagem
             lb_batalha_imagem.place(relx=0.40, rely=0.74, relwidth=0.25, relheight=0.22)
 
-            '''           
-            self.rd_n_luta.place(relx=0.06,
-                                 rely=0.95,
-                                 relwidth=0.88,
-                                 relheight=0.03)
+            '''
+            if self.jogo.tem_multiluta == True:
+                print(self.jogo.quantas_lutas)
+            else:
+                print("Luta Unica")
+
+            self.jogo.tem_multiluta = False
             '''
             self.jogo.temluta = False
 
@@ -1153,12 +1142,6 @@ class Application:
                                           command=self.testar_sorte)
             self.rd_n_sorte.grid(column=0,
                                  row=6)
-            '''
-            self.rd_n_sorte.place(relx=0.06,
-                                  rely=0.95,
-                                  relwidth=0.88,
-                                  relheight=0.03)
-            '''
             self.jogo.tem_testar_sorte = False
 
         # Pegando ouro da história
@@ -1178,9 +1161,9 @@ class Application:
             self.jogo.alterar_habilidade = 0
             self.jogo.alterar_valor = False
 
-        # Item
+        # Pegar Item
         if self.jogo.tem_item == True:
-            print ("Pegar Item Novo")
+            print("Pegar Item Novo")
             if self.jogo.item in self.jogo.lista_item:
                 print(f"Voce ja possui {self.jogo.item}")
                 # self.bt_pegar_item.configure(state=DISABLED)
@@ -1189,7 +1172,17 @@ class Application:
                 print(f"Você pegou {self.jogo.item}")
                 print(f"voce adiquiriu {self.jogo.lista_item[self.jogo.contador]}")
                 self.jogo.contador = self.jogo.contador + 1
-        self.jogo.tem_item = False
+            self.jogo.tem_item = False
+
+        # Soltar Item
+        if self.jogo.soltar_item == True:
+            print("Soltar item")
+            if self.jogo.item_a_soltar in self.jogo.lista_item:
+                self.jogo.lista_item.remove(self.jogo.item)
+                print("tenho item a ser solto")
+            else:
+                print("Não tenho item a ser solto")
+            self.jogo.soltar_item = False
 
         # Botões
         # Botão Cabeçalho
@@ -1318,8 +1311,8 @@ class Application:
 
         # Botão de Criar Personagem
         self.bt_criar_personagem = Button(self.frame_1,
-                               text="Criar Personagem",
-                               command=self.criar_personagem_tela)
+                                          text="Criar Personagem",
+                                          command=self.criar_personagem_tela)
         self.bt_criar_personagem.place(relx=0.06, rely=0.95, relwidth=0.35, relheight=0.035)
         # Botão de Regras
         self.bt_regras = Button(self.frame_1,
@@ -1494,7 +1487,6 @@ class Application:
                           relheight=0.14)
 
     def luta(self):
-        # self.bt_luta.configure(state=DISABLED)
         self.rd_n_luta.configure(state=DISABLED)
         self.duelo = tkinter.Toplevel()
         self.duelo.title(f"Combate contra {self.jogo.m_nome}")
@@ -1674,9 +1666,201 @@ class Application:
                               command=self.duelo.destroy)
         self.bt_sair.place(relx=0.75, rely=0.8, relwidth=0.2, relheight=0.12)
 
+        print(self.jogo.tem_multiluta)
+        print(self.jogo.quantas_lutas)
+        #self.jogo.quantas_lutas = self.jogo.quantas_lutas - 1
+
         # Desfecho da tela
         self.frame_2.destroy()
-        # self.trechos()
+
+    '''
+    def luta2(self):
+        self.rd_n_luta.configure(state=DISABLED)
+        self.duelo = tkinter.Toplevel()
+        self.duelo.title(f"Combate contra {self.jogo.m_nome1}")
+        self.duelo.geometry("450x200+10+15")
+        self.duelo.resizable(False, False)
+        self.duelo.configure(background="#dfe3ee")
+
+        # Fotos do monstro
+        imagem02 = ("\\" + self.jogo.m_nome1 + ".png")
+        batalha_imagem = PhotoImage(file=pastaApp + imagem02)
+        lb_batalha_imagem = Label(self.duelo,
+                                  image=batalha_imagem,
+                                  background="#dfe3ee")
+        lb_batalha_imagem.photo = batalha_imagem
+        lb_batalha_imagem.place(relx=0.02,
+                                rely=0.15,
+                                relwidth=0.25,
+                                relheight=0.7)
+
+        # Nome do jogador
+        lb_batalha_j_nome = Label(self.duelo,
+                                  text=self.jogador01.j_nome,
+                                  background="#dfe3ee"
+                                  )
+        lb_batalha_j_nome.place(relx=0.10,
+                                rely=0.05,
+                                relwidth=0.1,
+                                relheight=0.08)
+
+        # Energia do jogador
+        lb_batalha_j_nome = Label(self.duelo,
+                                  text=self.jogador01.j_energia,
+                                  background="#dfe3ee"
+                                  )
+        lb_batalha_j_nome.place(relx=0.30,
+                                rely=0.05,
+                                relwidth=0.04,
+                                relheight=0.08)
+
+        # Habilidade do jogador
+        lb_batalha_j_nome = Label(self.duelo,
+                                  text=self.jogador01.j_habilidade,
+                                  background="#dfe3ee"
+                                  )
+        lb_batalha_j_nome.place(relx=0.4,
+                                rely=0.05,
+                                relwidth=0.04,
+                                relheight=0.08)
+
+        # Sorte do jogador
+        lb_batalha_j_nome = Label(self.duelo,
+                                  text=self.jogador01.j_sorte,
+                                  background="#dfe3ee"
+                                  )
+        lb_batalha_j_nome.place(relx=0.5,
+                                rely=0.05,
+                                relwidth=0.04,
+                                relheight=0.08)
+
+        # Nome do monstro
+        lb_batalha_m_nome = Label(self.duelo,
+                                  text=self.jogo.m_nome1,
+                                  background="#dfe3ee"
+                                  )
+        lb_batalha_m_nome.place(relx=0.30,
+                                rely=0.2,
+                                relwidth=0.2,
+                                relheight=0.08)
+
+        # Energia do Monstro
+        lb_batalha_m_energia = Label(self.duelo,
+                                     text=f"Energia {self.jogo.m_energia1}",
+                                     background="#dfe3ee")
+        lb_batalha_m_energia.place(relx=0.30,
+                                   rely=0.3,
+                                   relwidth=0.2,
+                                   relheight=0.08)
+
+        # Habilidade do Monstro
+        lb_batalha_m_habilidade = Label(self.duelo,
+                                        text=f"Habilidade {self.jogo.m_habilidade1}",
+                                        background="#dfe3ee"
+                                        )
+        lb_batalha_m_habilidade.place(relx=0.30,
+                                      rely=0.40,
+                                      relwidth=0.2,
+                                      relheight=0.08)
+
+        # Escrever primeiro dado do jogador
+        self.j_dado01 = 0
+        self.lb_j_dado01 = Label(self.duelo,
+                                 background="#dfe3ee",
+                                 text=f"{self.jogador01.j_nome}\n1º dado\n{self.j_dado01}")
+        self.lb_j_dado01.place(relx=0.60,
+                               rely=0.1,
+                               relwidth=0.13,
+                               relheight=0.22)
+
+        # Escrever Segundo dado do jogador
+        self.j_dado02 = 0
+        self.lb_j_dado02 = Label(self.duelo,
+                                 background="#dfe3ee",
+                                 text=f"2º dado\n{self.j_dado02}")
+        self.lb_j_dado02.place(relx=0.60,
+                               rely=0.34,
+                               relwidth=0.13,
+                               relheight=0.14)
+
+        # Escrever primeiro dado do Monstro
+        self.m_dado01 = 0
+        self.lb_m_dado01 = Label(self.duelo,
+                                 background="#dfe3ee",
+                                 text=f"{self.jogo.m_nome1}\n 1º dado\n{self.m_dado01}")
+        self.lb_m_dado01.place(relx=0.8,
+                               rely=0.1,
+                               relwidth=0.13,
+                               relheight=0.22)
+
+        # Escrever Segundo dado do Monstro
+        self.m_dado02 = 0
+        self.lb_j_dado02 = Label(self.duelo,
+                                 background="#dfe3ee",
+                                 text=f"2º dado\n{self.m_dado02}")
+        self.lb_j_dado02.place(relx=0.8,
+                               rely=0.34,
+                               relwidth=0.13,
+                               relheight=0.14)
+
+        # Escrever Ataque do Monstro
+        self.m_ataque = 0
+        self.lb_m_ataque = Label(self.duelo,
+                                 text=f"Ataque do Monstro\n{self.m_ataque}",
+                                 background="#dfe3ee")
+        self.lb_m_ataque.place(relx=0.74,
+                               rely=0.50,
+                               relwidth=0.25,
+                               relheight=0.14)
+
+        # Escrever ataque do Jogador
+        self.j_ataque = 0
+        self.lb_j_ataque = Label(self.duelo,
+                                 text=f"Ataque do Jogador\n{self.j_ataque}",
+                                 background="#dfe3ee")
+        self.lb_j_ataque.place(relx=0.47,
+                               rely=0.50,
+                               relwidth=0.25,
+                               relheight=0.14)
+
+        # Atualizar a Energia do Monstro
+        lb_batalha_m_energia = Label(self.duelo,
+                                     text=f"Energia {self.jogo.m_energia1}",
+                                     background="#dfe3ee")
+        lb_batalha_m_energia.place(relx=0.30,
+                                   rely=0.3,
+                                   relwidth=0.2,
+                                   relheight=0.08)
+
+        # Atualizar a Energia do jogador
+        lb_batalha_j_nome = Label(self.duelo,
+                                  text=self.jogador01.j_energia,
+                                  background="#dfe3ee"
+                                  )
+        lb_batalha_j_nome.place(relx=0.30,
+                                rely=0.05,
+                                relwidth=0.04,
+                                relheight=0.08)
+
+        # Botão Batalha
+        self.bt_batalha = Button(self.duelo,
+                                 text="Batalhar",
+                                 command=self.round)
+        self.bt_batalha.place(relx=0.37, rely=0.8, relwidth=0.2, relheight=0.12)
+
+        # Botão de Sair
+        self.bt_sair = Button(self.duelo,
+                              text="Cancelar",
+                              command=self.duelo.destroy)
+        self.bt_sair.place(relx=0.75, rely=0.8, relwidth=0.2, relheight=0.12)
+
+        print(self.jogo.tem_multiluta)
+        print(self.jogo.quantas_lutas)
+        self.jogo.quantas_lutas = self.jogo.quantas_lutas - 1
+
+        # Desfecho da tela
+        self.frame_2.destroy()
+    '''
 
     def testar_sorte_luta(self):
         self.bt_testar_sorte_luta.configure(state=DISABLED)
@@ -1880,41 +2064,52 @@ class Application:
                                         f"{self.jogo.m_nome} Morreu",
                                 )
             self.duelo.destroy()
-            # self.bt_batalha.configure(state=DISABLED)
 
-            if hasattr(self, 'rd_n_trecho_a') and self.rd_n_trecho_a.winfo_exists():
-                self.rd_n_trecho_a.configure(state=NORMAL)
-            if hasattr(self, 'rd_n_trecho_b') and self.rd_n_trecho_b.winfo_exists():
-                self.rd_n_trecho_b.configure(state=NORMAL)
-            if hasattr(self, 'rd_n_trecho_c') and self.rd_n_trecho_c.winfo_exists():
-                self.rd_n_trecho_c.configure(state=NORMAL)
-            if hasattr(self, 'rd_n_trecho_d') and self.rd_n_trecho_d.winfo_exists():
-                self.rd_n_trecho_d.configure(state=NORMAL)
-            if hasattr(self, 'rd_n_trecho_e') and self.rd_n_trecho_e.winfo_exists():
-                self.rd_n_trecho_e.configure(state=NORMAL)
-            '''
-            
-            if self.jogo.tem_trecho_a == True:
-                self.rd_n_trecho_a["stat"] = NORMAL
-                self.jogo.tem_trecho_a = False
+            if self.jogo.quantas_lutas > 0:
+                if self.jogo.quantas_lutas == 1:
+                    print("Tratar para segunda luta")
+                    self.jogo.m_nome = self.jogo.m_nome1
+                    self.jogo.m_energia = self.jogo.m_energia1
+                    self.jogo.m_habilidade = self.jogo.m_habilidade1
+                    self.jogo.quantas_lutas = self.jogo.quantas_lutas - 1
+                    self.luta()
+                if self.jogo.quantas_lutas == 2:
+                    print("Tratar para terceira luta")
+                    self.jogo.m_nome = self.jogo.m_nome2
+                    self.jogo.m_energia = self.jogo.m_energia2
+                    self.jogo.m_habilidade = self.jogo.m_habilidade2
+                    self.jogo.quantas_lutas = self.jogo.quantas_lutas - 1
+                    self.luta()
+                if self.jogo.quantas_lutas == 3:
+                    print("Tratar para quarta luta")
+                    self.jogo.m_nome = self.jogo.m_nome3
+                    self.jogo.m_energia = self.jogo.m_energia3
+                    self.jogo.m_habilidade = self.jogo.m_habilidade3
+                    self.jogo.quantas_lutas = self.jogo.quantas_lutas - 1
+                    self.luta()
+                if self.jogo.quantas_lutas == 4:
+                    print("Tratar para quinta luta")
+                    self.jogo.m_nome = self.jogo.m_nome4
+                    self.jogo.m_energia = self.jogo.m_energia4
+                    self.jogo.m_habilidade = self.jogo.m_habilidade4
+                    self.jogo.quantas_lutas = self.jogo.quantas_lutas - 1
+                    self.luta()
+            else:
+                self.duelo.destroy()
+                self.jogo.quantas_lutas = 0
+                print("Não tem outra luta")
 
-            if self.jogo.tem_trecho_b == True:
-                self.rd_n_trecho_b["stat"] = NORMAL
-                self.jogo.tem_trecho_b = False
-
-            if self.jogo.tem_trecho_c == True:
-                self.rd_n_trecho_c["stat"] = NORMAL
-                self.jogo.tem_trecho_c = False
-
-            if self.jogo.tem_trecho_d == True:
-                self.rd_n_trecho_d["stat"] = NORMAL
-                self.validar_trecho_d = False
-
-            if self.jogo.tem_trecho_e == True:
-                self.rd_n_trecho_e["stat"] = NORMAL
-                self.validar_trecho_e = False
-            '''
-            self.duelo.destroy()
+                if hasattr(self, 'rd_n_trecho_a') and self.rd_n_trecho_a.winfo_exists():
+                    self.rd_n_trecho_a.configure(state=NORMAL)
+                if hasattr(self, 'rd_n_trecho_b') and self.rd_n_trecho_b.winfo_exists():
+                    self.rd_n_trecho_b.configure(state=NORMAL)
+                if hasattr(self, 'rd_n_trecho_c') and self.rd_n_trecho_c.winfo_exists():
+                    self.rd_n_trecho_c.configure(state=NORMAL)
+                if hasattr(self, 'rd_n_trecho_d') and self.rd_n_trecho_d.winfo_exists():
+                    self.rd_n_trecho_d.configure(state=NORMAL)
+                if hasattr(self, 'rd_n_trecho_e') and self.rd_n_trecho_e.winfo_exists():
+                    self.rd_n_trecho_e.configure(state=NORMAL)
+                self.duelo.destroy()
 
         if self.jogador01.j_energia < 1:
             print(f"{self.jogador01.j_nome} morreu \n Tente de Novo")

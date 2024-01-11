@@ -13,9 +13,23 @@ class Fase:
                  texto_trecho_d="",
                  texto_trecho_e="",
                  m_nome="",
+                 m_nome1="",
+                 m_nome2="",
+                 m_nome3="",
+                 m_nome4="",
                  m_energia=0,
+                 m_energia1=0,
+                 m_energia2=0,
+                 m_energia3=0,
+                 m_energia4=0,
                  m_habilidade=0,
+                 m_habilidade1=0,
+                 m_habilidade2=0,
+                 m_habilidade3=0,
+                 m_habilidade4=0,
                  tem_luta=False,
+                 tem_multiluta=False,
+                 quantas_lutas=0,
                  tem_trecho_a=False,
                  tem_trecho_b=False,
                  tem_trecho_c=False,
@@ -24,6 +38,8 @@ class Fase:
                  tem_item=False,
                  lista_item=[],
                  item="",
+                 soltar_item=False,
+                 item_a_soltar="",
                  tem_ouro=False,
                  ouro_fase=0,
                  contador=0,
@@ -54,7 +70,11 @@ class Fase:
         self.m_energia = m_energia
         self.m_habilidade = m_habilidade
         self.temluta = tem_luta
+        self.tem_multiluta = tem_multiluta
+        self.quantas_lutas = quantas_lutas
         self.tem_item = tem_item
+        self.soltar_item = soltar_item
+        self.item_a_soltar = item_a_soltar
         self.lista_item = lista_item
         self.item = item
         self.contador = contador
@@ -68,6 +88,18 @@ class Fase:
         self.alterar_energia = alterar_energia
         self.alterar_habilidade = alterar_habilidade
         self.alterar_sorte = alterar_sorte
+        self.m_nome1 = m_nome1
+        self.m_nome2 = m_nome2
+        self.m_nome3 = m_nome3
+        self.m_nome4 = m_nome4
+        self.m_energia1 = m_energia1
+        self.m_energia2 = m_energia2
+        self.m_energia3 = m_energia3
+        self.m_energia4 = m_energia4
+        self.m_habilidade1 = m_habilidade1
+        self.m_habilidade2 = m_habilidade2
+        self.m_habilidade3 = m_habilidade3
+        self.m_habilidade4 = m_habilidade4
 
     def livro(self):
         if self.n_trecho == 1:
@@ -98,7 +130,7 @@ class Fase:
                                  " a movimentação de pés minúsculos: muito provavelmente,"
                                  " ratazanas. Você adentra a caverna. Depois de uns poucos\n"
                                  "metros, chega logo a uma encruzilhada.")
-            self.n_trecho_a = 71
+            self.n_trecho_a = 116 # coloquei 116 para teste depois voltar para 71
             self.n_trecho_b = 278
             self.tem_trecho_a = True
             self.tem_trecho_b = True
@@ -1418,7 +1450,7 @@ class Fase:
 
         elif self.n_trecho == 116:
             self.texto_trecho = "Os dois Orcs bêbados que você está enfrentando agora\n" \
-                                " estão evidentemente espantados com a sua entrada e, \n" \
+                                "estão evidentemente espantados com a sua entrada e, \n" \
                                 "tão rápido quanto são capazes, saem em busca de armas. \n" \
                                 "Você tem que atacar um de cada vez. A bebedeira deles\n" \
                                 "permite que você acrescente 1 ponto ao resultado do \n" \
@@ -1428,9 +1460,21 @@ class Fase:
                                 "Se você vencer a batalha, vá para 378. Se você quiser \n" \
                                 "Fugir durante a batalha, pode fazer isso voltando para 42"
             self.temluta = True
-            self.m_nome = "Orc"
+            self.tem_multiluta = True
+            self.quantas_lutas = 2
+
+            self.m_nome = "Orc Bebado 1"
             self.m_energia = 4
             self.m_habilidade = 5
+
+            self.m_nome1 = "Orc Bebado 2"
+            self.m_energia1 = 5
+            self.m_habilidade1 = 5
+
+            self.m_nome2 = "Orc Bebado 3"
+            self.m_energia2 = 6
+            self.m_habilidade2 = 6
+
             self.tem_trecho_a = True
             self.tem_trecho_b = True
             self.n_trecho_a = 378
@@ -3413,7 +3457,10 @@ class Fase:
             self.texto_trecho_b = f" vá para {self.n_trecho_b}"
 
         elif self.n_trecho == 320:
-            self.texto_trecho = ""
+            self.texto_trecho = "Você sai correndo do aposento e fecha a porta com \n" \
+                                "violência ao passar. Você vira na direção norte \n" \
+                                "subindo a passagem, onde vê uma porta \n" \
+                                "de aparência semelhante. Vá para 363"
             self.tem_trecho_a = True
             self.n_trecho_a = 363
             self.texto_trecho_a = f" vá para {self.n_trecho_a}"
