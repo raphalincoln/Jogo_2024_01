@@ -130,7 +130,7 @@ class Fase:
                                  " a movimentação de pés minúsculos: muito provavelmente,"
                                  " ratazanas. Você adentra a caverna. Depois de uns poucos\n"
                                  "metros, chega logo a uma encruzilhada.")
-            self.n_trecho_a = 116 # coloquei 116 para teste depois voltar para 71
+            self.n_trecho_a = 71
             self.n_trecho_b = 278
             self.tem_trecho_a = True
             self.tem_trecho_b = True
@@ -1461,7 +1461,7 @@ class Fase:
                                 "Fugir durante a batalha, pode fazer isso voltando para 42"
             self.temluta = True
             self.tem_multiluta = True
-            self.quantas_lutas = 2
+            self.quantas_lutas = 1
 
             self.m_nome = "Orc Bebado 1"
             self.m_energia = 4
@@ -1470,10 +1470,6 @@ class Fase:
             self.m_nome1 = "Orc Bebado 2"
             self.m_energia1 = 5
             self.m_habilidade1 = 5
-
-            self.m_nome2 = "Orc Bebado 3"
-            self.m_energia2 = 6
-            self.m_habilidade2 = 6
 
             self.tem_trecho_a = True
             self.tem_trecho_b = True

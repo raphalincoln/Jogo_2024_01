@@ -2064,7 +2064,11 @@ class Application:
                                         f"{self.jogo.m_nome} Morreu",
                                 )
             self.duelo.destroy()
-
+            #
+            #
+            #No Futuro tentar fazer isso com Tupla ou biblioteca
+            #
+            #
             if self.jogo.quantas_lutas > 0:
                 if self.jogo.quantas_lutas == 1:
                     print("Tratar para segunda luta")
