@@ -50,7 +50,8 @@ class Fase:
                  alterar_habilidade=0,
                  alterar_sorte=0,
                  altera_provisao=False,
-                 alterar_provisao=0):
+                 alterar_provisao=0,
+                 desistir = False):
         self.n_trecho = n_trecho
         self.texto_trecho = texto_trecho
         self.n_trecho_a = n_trecho_a
@@ -104,6 +105,7 @@ class Fase:
         self.m_habilidade4 = m_habilidade4
         self.altera_provisao = altera_provisao
         self.alterar_provisao = alterar_provisao
+        self.desistir = desistir
 
     def livro(self):
         if self.n_trecho == 1:
@@ -126,12 +128,12 @@ class Fase:
                                  "há uma escura entrada de caverna. Você pega sua espada,\n "
                                  "levanta-se e considera que perigos podem estar à sua frente.\n"
                                  " Mas, com determinação, você recoloca a sua espada na \n"
-                                 "bainha e se aproxima da caverna.Você dá uma primeira "
+                                 "bainha e se aproxima da caverna.Você dá uma primeira \n"
                                  "olhada na penumbra e vê-paredes escuras e úmidas com \n"
                                  "poças de água no chão de pedra à sua frente. O ar é frio\n"
                                  " e úmido. Você acende a sua lanterna e avança cautelosamente\n"
                                  "pela escuridão. Teias de aranha tocam seu rosto e você ouve\n"
-                                 " a movimentação de pés minúsculos: muito provavelmente,"
+                                 " a movimentação de pés minúsculos: muito provavelmente,\n"
                                  " ratazanas. Você adentra a caverna. Depois de uns poucos\n"
                                  "metros, chega logo a uma encruzilhada.")
             self.n_trecho_a = 71
@@ -1042,8 +1044,7 @@ class Fase:
             self.tem_trecho_b = True
             self.n_trecho_a = 301
             self.n_trecho_b = 248
-            self.altera_provisao = True
-            self.alterar_provisao = -1
+            self.desistir = True
             self.texto_trecho_a = f"Sorte - Vá para {self.n_trecho_a}"
             self.texto_trecho_b = f"Azar - Vá para {self.n_trecho_b}"
 
@@ -1144,7 +1145,7 @@ class Fase:
                                 "(vá para 208) ou insinuar-se pelo aposento \n" \
                                 "para tentar pegar a caixa sem acordar o ser. Se \n" \
                                 "você quiser tentar roubar a caixa,\n" \
-                                " Teste a sua Sorte. Se você tiver sorte, ele não " \
+                                " Teste a sua Sorte. Se você tiver sorte, ele não \n" \
                                 "acordará- vá para 147. Se não tiver, volte para 33.\n"
             self.tem_testar_sorte = True
             self.tem_trecho_a = True
@@ -3220,7 +3221,7 @@ class Fase:
                                 "aperfeiçoou seu feitiço mas, na época, já estava velho \n" \
                                 "demais para fazer uso dele. Por isso ele completou \n" \
                                 "seu livro, trancou-o em uma arca e o escondeu nas \n" \
-                                "profundezas da Montanha de Fogo, com medo de que " \
+                                "profundezas da Montanha de Fogo, com medo de que \n" \
                                 "caísse em mãos erradas. A última página dizia assim:\n" \
                                 "Subitamente, as páginas parecem brilhar e,\n " \
                                 "Você profere estas palavras lenta e suavemente.\n " \

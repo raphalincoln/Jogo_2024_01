@@ -9,6 +9,7 @@ from jogador_Montanha import Jogador
 pastaApp = os.path.dirname(__file__)
 root = Tk()
 
+
 def dado():
     jogar_dado = randint(1, 6)
     return jogar_dado
@@ -51,10 +52,10 @@ class Application:
     def tela(self):
         self.root.title("O Feiticeiro da Montanha de Fogo")
         self.root.configure(background='#1e3743')
-        self.root.geometry("700x600+10+15")
+        self.root.geometry("380x600+10+15")
         self.root.resizable(True, True)
         self.root.maxsize(width=800, height=700)
-        self.root.minsize(width=500, height=300)
+        self.root.minsize(width=200, height=300)
 
     def frames_da_tela(self):
         self.frame_1 = Frame(self.root,
@@ -62,14 +63,7 @@ class Application:
                              background='#dfe3ee',
                              highlightbackground='#dfe3ee',
                              highlightthickness=2)
-        self.frame_1.place(relx=0.02, rely=0.026, relwidth=0.475, relheight=0.96)
-
-        self.frame_2 = Frame(self.root,
-                             bd=4,
-                             background='#dfe3ee',
-                             highlightbackground='#dfe3ee',
-                             highlightthickness=6)
-        self.frame_2.place(relx=0.51, rely=0.026, relwidth=0.475, relheight=0.96)
+        self.frame_1.place(relx=0.01, rely=0.01, relwidth=0.98, relheight=0.98)
 
     def tela_regras_batal(self):
         self.batalha = tkinter.Toplevel()
@@ -737,16 +731,79 @@ class Application:
         # lb_j_nome.place(relx=0.297, rely=0.171, relwidth=0.20, relheight=0.032)
         print(self.jogador01.j_nome)
         self.bt_j_validar_nome.configure(state=DISABLED)
+        self.ent_j_nome.configure(state=DISABLED)
 
     def salvar_personagem(self):
         # SalvarPersonagem
         print("Salvando Personagem")
         self.personagem.destroy()
+        self.frame_1.destroy()
 
         # Habilitar botão de inicio de História
         self.bt_iniciar.configure(state=NORMAL)
 
-        # Desabiligar botão de criar personagem:
+        # Criar o Frame 2 onde tem a introdução do jogo
+        self.frame_2 = Frame(self.root,
+                             bd=4,
+                             background='#dfe3ee',
+                             highlightbackground='#dfe3ee',
+                             highlightthickness=6)
+        self.frame_2.place(relx=0.01, rely=0.01, relwidth=0.99, relheight=0.99)
+
+        # Botão de Iniciar a História
+
+        self.bt_iniciar = Button(self.frame_2,
+                                 text="Iniciar",
+                                 command=self.start_historia,
+                                 state=NORMAL)
+        self.bt_iniciar.place(relx=0.4, rely=0.95, relwidth=0.2, relheight=0.035)
+        # (relx=0.51, rely=0.026, relwidth=0.475, relheight=0.96)
+        # Inicio da História
+        lb_intuducao = Label(self.frame_2,
+                             text=("INTRODUÇÃO\n"
+                                   "\n"
+                                   "Apenas um aventureiro muito tolo embarcaria em uma missão\n"
+                                   " perigosa sem primeiro reunir tantas informações quanto \n"
+                                   " possível sobre seu destino e os perigos que ele contém. \n"
+                                   " Antes de chegar à Montanha de Fogo, você passou vários \n"
+                                   " dias com os habitantes de uma aldeia local, a dois dias\n"
+                                   " de viagem do sopé. Sendo uma pessoa carismática, você \n"
+                                   " teve facilidad em entrosar-se com os aldeões. Embora \n"
+                                   " eles tenham contado muitas histórias sobre o misterioso\n"
+                                   " santuário do Feiticeiro, você não tem certeza se todas \n"
+                                   " ou alguma delas baseiam-se em fatos. Os aldeões viram \n"
+                                   " muitos aventureiros passar em viagem para a montanha, \n"
+                                   " mas poucos retornaram. Você tem certeza de que a \n"
+                                   " jornada à frente será perigosa. Dos poucos que \n"
+                                   " conseguiram retornar à aldeia, nenhum pensou em voltar \n"
+                                   " à Montanha de Fogo.\n"
+                                   "Parece haver alguma verdade nos boatos de que o tesouro\n"
+                                   " do Feiticeiro fica guardado em um magnífico baú com \n"
+                                   " duas fechaduras, e que as chaves destas são protegidas \n"
+                                   " por várias criaturas dentro da masmorra. O próprio \n"
+                                   " Feiticeiro é extremamente poderoso. Alguns o descrevem\n"
+                                   " como um velho, outros como um jovem. Alguns dizem que\n"
+                                   " seu poder vem de um baralho encantado, outros, de um \n"
+                                   " par de luvas de seda negra.\n"
+                                   "A entrada da montanha é guardada por um grupo de goblins, \n"
+                                   "estúpidas criaturas verruguentas que gostam mesmo é de \n"
+                                   "comer e beber. Nas proximidades das câmaras internas, \n"
+                                   "as criaturas se tornam mais perigosas. Para alcançar \n"
+                                   "as câmaras internas você deve atravessar um rio. \n"
+                                   "O serviço de balsa é confiável, mas o balseiro gosta\n"
+                                   "de uma barganha, e você deve ter uma peça de ouro para \n"
+                                   "pagar pela viagem. Os aldeões também o encorajam a\n"
+                                   " manter um bom mapa de sua busca, pois sem um você \n"
+                                   " acabará perdido e sem esperanças dentro da montanha.\n"
+                                   "Quando finalmente chega seu dia de partir, toda a \n"
+                                   "aldeia aparece para desejar uma boa viagem. Lágrimas\n"
+                                   " vêm aos olhos de muitas mulheres, jovens ou velhas.\n"
+                                   " Você não consegue deixar de se perguntar se são \n"
+                                   " lágrimas de pena, derramadas por olhos que jamais \n"
+                                   " voltarão a vê-lo...\n"),
+                             font=("arial", 7),
+                             background='#dfe3ee')
+        lb_intuducao.place(relx=0.05, rely=0.01, relwidth=0.90, relheight=0.92)
 
     def usar_pocao(self):
         if self.usou_pocao != True:
@@ -923,13 +980,16 @@ class Application:
                            relwidth=0.25,
                            relheight=0.12)
 
+    def desistir(self):
+        self.duelo.destroy()
+
     def iniciar_historia(self):
         self.frame_trechos = Frame(self.root,
                                    bd=1,
                                    background='#dfe3ee',
                                    highlightbackground='#dfe3ee',
                                    highlightthickness=2)
-        self.frame_trechos.place(relx=0.51, rely=0.026, relwidth=0.475, relheight=0.96)
+        self.frame_trechos.place(relx=0.01, rely=0.01, relwidth=0.99, relheight=0.99)
         print(f'Você esta na fase {self.jogo.n_trecho}')
 
         # Int Var e botoes
@@ -1098,21 +1158,15 @@ class Application:
                                 row=5)
 
             # criando a imagem da Luta
+            '''
             batalha_imagem = PhotoImage(file=pastaApp + "\\Feiticeiro.png")
             lb_batalha_imagem = Label(self.frame_1,
                                       image=batalha_imagem,
                                       background="#dfe3ee")
             lb_batalha_imagem.photo = batalha_imagem
             lb_batalha_imagem.place(relx=0.40, rely=0.74, relwidth=0.25, relheight=0.22)
-
             '''
-            if self.jogo.tem_multiluta == True:
-                print(self.jogo.quantas_lutas)
-            else:
-                print("Luta Unica")
 
-            self.jogo.tem_multiluta = False
-            '''
             self.jogo.temluta = False
 
         # Testardo a sorte fora de luta
@@ -1182,13 +1236,18 @@ class Application:
                 print("Não tenho item a ser solto")
             self.jogo.soltar_item = False
 
-        #Pegar Provisão
+        # Pegar Provisão
         if self.jogo.altera_provisao == True:
             print("Pegar provisão")
             self.jogador01.j_provisao = self.jogador01.j_provisao + self.jogo.alterar_provisao
             self.jogo.altera_provisao = False
         else:
             print("Não tem provisão")
+
+        # Desistir
+        if self.jogo.desistir == True:
+            print("Quero Desistir")
+            self.jogo.desistir = False
         # Botões
         # Botão Cabeçalho
 
@@ -1266,7 +1325,7 @@ class Application:
                                      background="#dfe3ee")
         lb_feiticeiro_imagem.photo = feiticeiro_imagem
         lb_feiticeiro_imagem.place(relx=0.40, rely=0.74, relwidth=0.25, relheight=0.22)
-
+        '''
         # Inicio da História
         lb_intuducao = Label(self.frame_2,
                              text=("INTRODUÇÃO\n"
@@ -1313,6 +1372,7 @@ class Application:
                              font=("arial", 7),
                              background='#dfe3ee')
         lb_intuducao.place(relx=0.05, rely=0.03, relwidth=0.90, relheight=0.95)
+        '''
 
         # Botão de Criar Personagem
         self.bt_criar_personagem = Button(self.frame_1,
@@ -1331,16 +1391,18 @@ class Application:
         self.bt_cancelar.place(relx=0.75, rely=0.95, relwidth=0.2, relheight=0.035)
 
         # Botão de Exibir cabeçalho
+        '''
         self.bt_cabecalho = Button(self.frame_2,
-                                   text="Cabeçalho",
+                                   text="Cabeçalho f",
                                    command=self.exibir_cabecalho)
         self.bt_cabecalho.place(relx=0.2, rely=0.95, relwidth=0.2, relheight=0.035)
+        '''
         # Botão de Iniciar História
+
         self.bt_iniciar = Button(self.frame_2,
                                  text="Iniciar",
                                  command=self.start_historia,
                                  state=DISABLED)
-        self.bt_iniciar.place(relx=0.6, rely=0.95, relwidth=0.2, relheight=0.035)
 
     def pegar_item(self):
         print("Botão de pegar item")
@@ -1939,7 +2001,6 @@ class Application:
             self.criar_personagem()
         self.sorte = False
         print("")
-
         return ()
 
 
