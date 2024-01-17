@@ -1177,28 +1177,40 @@ class Application:
             if hasattr(self, 'rd_n_trecho_e') and self.rd_n_trecho_e.winfo_exists():
                 self.rd_n_trecho_e.configure(state=DISABLED)
 
-            # Criar o Radio da Luta
-            self.rd_n_luta = Radiobutton(self.frame_interacao,
-                                         text="Lutar contra " + self.jogo.m_nome,
-                                         value=self.jogo.n_trecho_e,
-                                         variable=self.destino,
-                                         background="#dfe3ee",
-                                         anchor=W,
-                                         command=self.luta)
-            self.rd_n_luta.grid(column=0,
-                                row=5)
 
-            # criando a imagem da Luta
-            '''
-            batalha_imagem = PhotoImage(file=pastaApp + "\\Feiticeiro.png")
-            lb_batalha_imagem = Label(self.frame_1,
-                                      image=batalha_imagem,
-                                      background="#dfe3ee")
-            lb_batalha_imagem.photo = batalha_imagem
-            lb_batalha_imagem.place(relx=0.40, rely=0.74, relwidth=0.25, relheight=0.22)
-            '''
+            # Teste de Fuga Fugri sempre tem que ser no A
+            if self.jogo.tem_fuga == True:
+                resultado = messagebox.askyesno("Chance de Fuga", "Você deseja fugir?")
+                if resultado:
+                    print("Você escolheu Fugir")
+                    self.rd_n_trecho_a.configure(state=NORMAL)
+                else:
+                    print("Você escolheu Lutar")
+                    # Criar o Radio da Luta/fuga
+                    self.rd_n_luta = Radiobutton(self.frame_interacao,
+                                                 text="Lutar contra " + self.jogo.m_nome,
+                                                 value=self.jogo.n_trecho_e,
+                                                 variable=self.destino,
+                                                 background="#dfe3ee",
+                                                 anchor=W,
+                                                 command=self.luta)
+                    self.rd_n_luta.grid(column=0,
+                                        row=5)
+                    self.rd_n_trecho_a.configure(state=DISABLED)
+            else:
+                # Criar o Radio da Luta sem fuga
+                self.rd_n_luta = Radiobutton(self.frame_interacao,
+                                             text="Lutar contra " + self.jogo.m_nome,
+                                             value=self.jogo.n_trecho_e,
+                                             variable=self.destino,
+                                             background="#dfe3ee",
+                                             anchor=W,
+                                             command=self.luta)
+                self.rd_n_luta.grid(column=0,
+                                    row=5)
 
             self.jogo.temluta = False
+            self.jogo.tem_fuga = False
 
         # Testardo a sorte fora de luta
         if self.jogo.tem_testar_sorte == True:
@@ -1720,6 +1732,15 @@ class Application:
         print(self.jogo.tem_multiluta)
         print(self.jogo.quantas_lutas)
 
+        # Teste de Fuga
+        if self.jogo.tem_fuga == True:
+            print("Tem fuga")
+            print("Fuja para ", self.jogo.destino_fuga)
+
+            self.jogo.tem_fuga = False
+        else:
+            print("Não tem Fuga")
+
         # Desfecho da tela
         self.frame_2.destroy()
 
@@ -1862,6 +1883,9 @@ class Application:
                                            command=self.testar_sorte_luta)
         self.bt_testar_sorte_luta.place(relx=0.57, rely=0.8, relwidth=0.18, relheight=0.12)
 
+        #Contador de Roud
+        #self.contador_de_round = self.contador_de_round + 1
+
         self.calcular_round()
 
     def calcular_round(self):
@@ -1963,6 +1987,7 @@ class Application:
                 self.duelo.destroy()
                 self.jogo.quantas_lutas = 0
                 print("Não tem outra luta")
+
 
                 if hasattr(self, 'rd_n_trecho_a') and self.rd_n_trecho_a.winfo_exists():
                     self.rd_n_trecho_a.configure(state=NORMAL)

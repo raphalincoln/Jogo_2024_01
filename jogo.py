@@ -411,8 +411,8 @@ class Application:
         self.jogador01 = Jogador
         self.personagem = tkinter.Toplevel()
         self.personagem.title("Criação de Pesonagem")
-        self.personagem.geometry("500x580+10+15")
-        self.personagem.configure(background='#dfe3ee')
+        self.personagem.geometry("380x600+10+15")
+        self.personagem.configure(background="#dfe3ee")
         self.personagem.resizable(False, False)
 
         # Titulo da Criação de Persongem
@@ -426,29 +426,52 @@ class Application:
                                 relheight=0.045)
 
         # Fundo do Cabeçalho
-        cabecalho_imagem = PhotoImage(file=pastaApp + "\\FundoCabeçalhoPNG.png")
+        cabecalho_imagem = PhotoImage(file=pastaApp + "\\FundoCabeçalh0v1.png")
         lb_j_cabecalho_imagem = Label(self.personagem,
                                       image=cabecalho_imagem,
                                       background="#dfe3ee")
         lb_j_cabecalho_imagem.photo = cabecalho_imagem
         lb_j_cabecalho_imagem.place(relx=0.02,
-                                    rely=0.1,
+                                    rely=0.05,
                                     relwidth=0.96,
                                     relheight=0.25)
 
+        # Personagem 1
+        self.personagem1 = PhotoImage(file=pastaApp + "\\Personagem 1v1.png")
+        lb_j_personagem1 = Label(self.personagem,
+                                 image=self.personagem1,
+                                 background="#dfe3ee")
+        lb_j_personagem1.photo = self.personagem1
+        lb_j_personagem1.place(relx=0.02,
+                               rely=0.68,
+                               relwidth=0.4,
+                               relheight=0.25)
+
+        # Personagem 2
+        self.personagem2 = PhotoImage(file=pastaApp + "\\Personagem 2v1.png")
+        lb_j_personagem2 = Label(self.personagem,
+                                 image=self.personagem2,
+                                 background="#dfe3ee")
+        lb_j_personagem2.photo = self.personagem2
+        lb_j_personagem2.place(relx=0.54,
+                               rely=0.68,
+                               relwidth=0.4,
+                               relheight=0.25)
+
         # Descrição do Nome
         lb_j_descricao_nome = Label(self.personagem,
-                                    text='Qual será o nome do seu Guerreiro',
+                                    text='Qual será o nome '
+                                         'do seu Guerreiro?',
                                     background="#dfe3ee")
-        lb_j_descricao_nome.place(relx=0.1,
-                                  rely=0.37,
+        lb_j_descricao_nome.place(relx=0.04,
+                                  rely=0.3,
                                   relwidth=0.5,
                                   relheight=0.045)
 
         # Entrada do Nome
         self.ent_j_nome = Entry(self.personagem)
         self.ent_j_nome.place(relx=0.575,
-                              rely=0.37,
+                              rely=0.3,
                               relwidth=0.25,
                               relheight=0.045)
 
@@ -457,18 +480,18 @@ class Application:
                                         text="OK",
                                         command=self.p_nome)
         self.bt_j_validar_nome.place(relx=0.85,
-                                     rely=0.37,
-                                     relwidth=0.05,
+                                     rely=0.3,
+                                     relwidth=0.1,
                                      relheight=0.045)
 
         # Descrição de Energia
         lb_j_descricao_energia = Label(self.personagem,
                                        text='Para Definir sua Energia\n'
-                                            'Vamos jogar 2 dados e somar 12 a eles',
+                                            'Jogar 2 dados e somar 12 a eles',
                                        background="#dfe3ee")
-        lb_j_descricao_energia.place(relx=0.1,
-                                     rely=0.5,
-                                     relwidth=0.4,
+        lb_j_descricao_energia.place(relx=0.01,
+                                     rely=0.35,
+                                     relwidth=0.5,
                                      relheight=0.06)
 
         # Descrição de Habilidade
@@ -476,9 +499,9 @@ class Application:
                                           text='Para Definir sua Habilidade\n'
                                                'Vamos jogar 1 dado e somar 6 a ele',
                                           background="#dfe3ee")
-        lb_j_descricao_habilidade.place(relx=0.1,
-                                        rely=0.6,
-                                        relwidth=0.4,
+        lb_j_descricao_habilidade.place(relx=0.01,
+                                        rely=0.42,
+                                        relwidth=0.5,
                                         relheight=0.06)
 
         # Descrição de Sorte
@@ -486,9 +509,9 @@ class Application:
                                      text='Para Definir sua Sorte\n'
                                           'Vamos jogar 1 dado e somar 6 a ele',
                                      background="#dfe3ee")
-        lb_j_descricao_sorte.place(relx=0.1,
-                                   rely=0.7,
-                                   relwidth=0.4,
+        lb_j_descricao_sorte.place(relx=0.01,
+                                   rely=0.49,
+                                   relwidth=0.5,
                                    relheight=0.06)
 
         # Botão de Jogar Dados de Energia
@@ -496,7 +519,7 @@ class Application:
                                           text="Calcular Energia",
                                           command=self.calcular_energia)
         self.bt_Calcular_energia.place(relx=0.70,
-                                       rely=0.5,
+                                       rely=0.36,
                                        relwidth=0.24,
                                        relheight=0.045)
 
@@ -505,7 +528,7 @@ class Application:
                                              text="Calcular Habilidade",
                                              command=self.calcular_habilidade)
         self.bt_Calcular_habilidade.place(relx=0.70,
-                                          rely=0.6,
+                                          rely=0.425,
                                           relwidth=0.24,
                                           relheight=0.045)
 
@@ -514,7 +537,7 @@ class Application:
                                         text="Calcular Sorte",
                                         command=self.calcular_sorte)
         self.bt_Calcular_sorte.place(relx=0.70,
-                                     rely=0.7,
+                                     rely=0.495,
                                      relwidth=0.24,
                                      relheight=0.045)
 
@@ -522,10 +545,10 @@ class Application:
         lb_escolhapocao = Label(self.personagem,
                                 text="Escolha uma Poção",
                                 background="#dfe3ee")
-        lb_escolhapocao.place(relx=0.3,
-                              rely=0.80,
-                              relwidth=0.25,
-                              relheight=0.06)
+        lb_escolhapocao.place(relx=0,
+                              rely=0.57,
+                              relwidth=1,
+                              relheight=0.045)
 
         self.pocao = StringVar()
 
@@ -535,8 +558,8 @@ class Application:
                                        value="Energia",
                                        variable=self.pocao,
                                        background="#dfe3ee")
-        rd_pocao_energia.place(relx=0.6,
-                               rely=0.75,
+        rd_pocao_energia.place(relx=0,
+                               rely=0.6,
                                relwidth=0.3,
                                relheight=0.07)
 
@@ -546,9 +569,9 @@ class Application:
                                           value="Habilidade",
                                           variable=self.pocao,
                                           background="#dfe3ee")
-        rd_pocao_habilidade.place(relx=0.6,
-                                  rely=0.80,
-                                  relwidth=0.3,
+        rd_pocao_habilidade.place(relx=0.3,
+                                  rely=0.6,
+                                  relwidth=0.4,
                                   relheight=0.07)
 
         # Radio - Sorte
@@ -557,8 +580,8 @@ class Application:
                                      value="Sorte",
                                      variable=self.pocao,
                                      background="#dfe3ee")
-        rd_pocao_sorte.place(relx=0.6,
-                             rely=0.85,
+        rd_pocao_sorte.place(relx=0.7,
+                             rely=0.6,
                              relwidth=0.3,
                              relheight=0.07)
 
@@ -591,8 +614,7 @@ class Application:
         lb_j_nome = Label(self.personagem,
                           text=self.jogador01.j_nome,
                           background="#dfe3ee")  # 98d37e
-        lb_j_nome.place(relx=0.31, rely=0.171, relwidth=0.17, relheight=0.032)
-        lb_j_nome.place(relx=0.31, rely=0.171, relwidth=0.17, relheight=0.032)
+        lb_j_nome.place(relx=0.30, rely=0.12, relwidth=0.17, relheight=0.032)
 
         self.bt_criar.configure(state=DISABLED)
         self.bt_criar_personagem.configure(state=DISABLED)
@@ -602,47 +624,52 @@ class Application:
         lb_valor_energia = Label(self.personagem,
                                  text=self.jogador01.j_energia,
                                  background="#dfe3ee")
-        lb_valor_energia.place(relx=0.31, rely=0.21, relwidth=0.17, relheight=0.029)
+        lb_valor_energia.place(relx=0.30, rely=0.16, relwidth=0.17, relheight=0.029)
 
         # Exibir dados de Habilidade
         lb_valor_habilidade = Label(self.personagem,
                                     text=self.jogador01.j_habilidade,
                                     background="#dfe3ee")
-        lb_valor_habilidade.place(relx=0.31, rely=0.25, relwidth=0.17, relheight=0.029)
+        lb_valor_habilidade.place(relx=0.30, rely=0.20, relwidth=0.17, relheight=0.029)
 
         # Exibir dados de Sorte
         lb_valor_sorte = Label(self.personagem,
                                text=self.jogador01.j_sorte,
                                background="#dfe3ee")
-        lb_valor_sorte.place(relx=0.31, rely=0.29, relwidth=0.17, relheight=0.029)
+        lb_valor_sorte.place(relx=0.30, rely=0.24, relwidth=0.17, relheight=0.029)
 
         # Exibir Status
         self.jogador01.j_status = 'Vivo'
         lb_j_status = Label(self.personagem,
                             text=self.jogador01.j_status,
                             background="#dfe3ee")  # 98d37e
-        lb_j_status.place(relx=0.7, rely=0.171, relwidth=0.20, relheight=0.032)
+        lb_j_status.place(relx=0.75, rely=0.12, relwidth=0.20, relheight=0.032)
 
         # Exibir Ouro
         self.jogador01.j_ouro = int(600)
         lb_j_ouro = Label(self.personagem,
                           text=f'{self.jogador01.j_ouro} Peças',
                           background="#dfe3ee")  # 98d37e
-        lb_j_ouro.place(relx=0.7, rely=0.21, relwidth=0.20, relheight=0.032)
+        lb_j_ouro.place(relx=0.75, rely=0.16, relwidth=0.20, relheight=0.032)
 
         # Exibir Provisões
         self.jogador01.j_provisao = int(10)
         lb_j_provisoes = Label(self.personagem,
                                text=self.jogador01.j_provisao,
                                background="#dfe3ee")  # 98d37e
-        lb_j_provisoes.place(relx=0.7, rely=0.25, relwidth=0.20, relheight=0.032)
+        lb_j_provisoes.place(relx=0.75, rely=0.2, relwidth=0.20, relheight=0.032)
 
         # Exibir Poção
         self.jogador01.j_pocao = self.pocao.get()
         lb_j_pocao = Label(self.personagem,
                            text=self.jogador01.j_pocao,
                            background="#dfe3ee")  # 98d37e
-        lb_j_pocao.place(relx=0.7, rely=0.29, relwidth=0.20, relheight=0.032)
+        lb_j_pocao.place(relx=0.75, rely=0.24, relwidth=0.20, relheight=0.032)
+        '''
+        self.calcular_energia()
+        self.calcular_sorte()
+        self.calcular_habilidade()
+        self.p_nome()'''
 
     def calcular_energia(self):
         # Dados de Energia
@@ -662,9 +689,9 @@ class Application:
                                       text=f"1º dado: {self.j_dado_energia1}\n"
                                            f"2º dado: {self.j_dado_energia2}",
                                       background="#dfe3ee")
-        self.lb_valor_energia.place(relx=0.55,
-                                    rely=0.5,
-                                    relwidth=0.12,
+        self.lb_valor_energia.place(relx=0.52,
+                                    rely=0.35,
+                                    relwidth=0.16,
                                     relheight=0.06)
 
         self.bt_Calcular_energia.configure(state=DISABLED)
@@ -688,9 +715,10 @@ class Application:
                                          text=f"Dado: {self.j_dado_habilidade}\n",
                                          background="#dfe3ee")  # 98d37e"
         self.lb_valor_habilidade.place(relx=0.55,
-                                       rely=0.6,
+                                       rely=0.42,
                                        relwidth=0.12,
-                                       relheight=0.06)
+                                       # anchor=S,
+                                       relheight=0.04)
         self.bt_Calcular_habilidade.configure(state=DISABLED)
         self.jogador01.j_habilidade_inicial = self.jogador01.j_habilidade
 
@@ -712,10 +740,10 @@ class Application:
         # Escrever dado
         self.lb_valor_sorte = Label(self.personagem,
                                     text=f"Dado: {self.j_dado_sorte}\n",
-                                    background="#dfe3ee",  # 98d37e"
-                                    anchor="center")
+                                    background="#dfe3ee", )
+        # anchor="center")
         self.lb_valor_sorte.place(relx=0.55,
-                                  rely=0.7,
+                                  rely=0.49,
                                   relwidth=0.12,
                                   relheight=0.06)
         self.bt_Calcular_sorte.configure(state=DISABLED)
@@ -804,6 +832,8 @@ class Application:
                              font=("arial", 7),
                              background='#dfe3ee')
         lb_intuducao.place(relx=0.05, rely=0.01, relwidth=0.90, relheight=0.92)
+
+        # Desabiligar botão de criar personagem:
 
     def usar_pocao(self):
         if self.usou_pocao != True:
@@ -990,6 +1020,7 @@ class Application:
                                    highlightbackground='#dfe3ee',
                                    highlightthickness=2)
         self.frame_trechos.place(relx=0.01, rely=0.01, relwidth=0.99, relheight=0.99)
+        # (relx=0.51, rely=0.026, relwidth=0.475, relheight=0.96)
         print(f'Você esta na fase {self.jogo.n_trecho}')
 
         # Int Var e botoes
@@ -1146,28 +1177,40 @@ class Application:
             if hasattr(self, 'rd_n_trecho_e') and self.rd_n_trecho_e.winfo_exists():
                 self.rd_n_trecho_e.configure(state=DISABLED)
 
-            # Criar o Radio da Luta
-            self.rd_n_luta = Radiobutton(self.frame_interacao,
-                                         text="Lutar contra " + self.jogo.m_nome,
-                                         value=self.jogo.n_trecho_e,
-                                         variable=self.destino,
-                                         background="#dfe3ee",
-                                         anchor=W,
-                                         command=self.luta)
-            self.rd_n_luta.grid(column=0,
-                                row=5)
 
-            # criando a imagem da Luta
-            '''
-            batalha_imagem = PhotoImage(file=pastaApp + "\\Feiticeiro.png")
-            lb_batalha_imagem = Label(self.frame_1,
-                                      image=batalha_imagem,
-                                      background="#dfe3ee")
-            lb_batalha_imagem.photo = batalha_imagem
-            lb_batalha_imagem.place(relx=0.40, rely=0.74, relwidth=0.25, relheight=0.22)
-            '''
+            # Teste de Fuga Fugri sempre tem que ser no A
+            if self.jogo.tem_fuga == True:
+                resultado = messagebox.askyesno("Chance de Fuga", "Você deseja fugir?")
+                if resultado:
+                    print("Você escolheu Fugir")
+                    self.rd_n_trecho_a.configure(state=NORMAL)
+                else:
+                    print("Você escolheu Lutar")
+                    # Criar o Radio da Luta/fuga
+                    self.rd_n_luta = Radiobutton(self.frame_interacao,
+                                                 text="Lutar contra " + self.jogo.m_nome,
+                                                 value=self.jogo.n_trecho_e,
+                                                 variable=self.destino,
+                                                 background="#dfe3ee",
+                                                 anchor=W,
+                                                 command=self.luta)
+                    self.rd_n_luta.grid(column=0,
+                                        row=5)
+                    self.rd_n_trecho_a.configure(state=DISABLED)
+            else:
+                # Criar o Radio da Luta sem fuga
+                self.rd_n_luta = Radiobutton(self.frame_interacao,
+                                             text="Lutar contra " + self.jogo.m_nome,
+                                             value=self.jogo.n_trecho_e,
+                                             variable=self.destino,
+                                             background="#dfe3ee",
+                                             anchor=W,
+                                             command=self.luta)
+                self.rd_n_luta.grid(column=0,
+                                    row=5)
 
             self.jogo.temluta = False
+            self.jogo.tem_fuga = False
 
         # Testardo a sorte fora de luta
         if self.jogo.tem_testar_sorte == True:
@@ -1325,54 +1368,6 @@ class Application:
                                      background="#dfe3ee")
         lb_feiticeiro_imagem.photo = feiticeiro_imagem
         lb_feiticeiro_imagem.place(relx=0.40, rely=0.74, relwidth=0.25, relheight=0.22)
-        '''
-        # Inicio da História
-        lb_intuducao = Label(self.frame_2,
-                             text=("INTRODUÇÃO\n"
-                                   "\n"
-                                   "Apenas um aventureiro muito tolo embarcaria em uma missão\n"
-                                   " perigosa sem primeiro reunir tantas informações quanto \n"
-                                   " possível sobre seu destino e os perigos que ele contém. \n"
-                                   " Antes de chegar à Montanha de Fogo, você passou vários \n"
-                                   " dias com os habitantes de uma aldeia local, a dois dias\n"
-                                   " de viagem do sopé. Sendo uma pessoa carismática, você \n"
-                                   " teve facilidad em entrosar-se com os aldeões. Embora \n"
-                                   " eles tenham contado muitas histórias sobre o misterioso\n"
-                                   " santuário do Feiticeiro, você não tem certeza se todas \n"
-                                   " ou alguma delas baseiam-se em fatos. Os aldeões viram \n"
-                                   " muitos aventureiros passar em viagem para a montanha, \n"
-                                   " mas poucos retornaram. Você tem certeza de que a \n"
-                                   " jornada à frente será perigosa. Dos poucos que \n"
-                                   " conseguiram retornar à aldeia, nenhum pensou em voltar \n"
-                                   " à Montanha de Fogo.\n"
-                                   "Parece haver alguma verdade nos boatos de que o tesouro\n"
-                                   " do Feiticeiro fica guardado em um magnífico baú com \n"
-                                   " duas fechaduras, e que as chaves destas são protegidas \n"
-                                   " por várias criaturas dentro da masmorra. O próprio \n"
-                                   " Feiticeiro é extremamente poderoso. Alguns o descrevem\n"
-                                   " como um velho, outros como um jovem. Alguns dizem que\n"
-                                   " seu poder vem de um baralho encantado, outros, de um \n"
-                                   " par de luvas de seda negra.\n"
-                                   "A entrada da montanha é guardada por um grupo de goblins, \n"
-                                   "estúpidas criaturas verruguentas que gostam mesmo é de \n"
-                                   "comer e beber. Nas proximidades das câmaras internas, \n"
-                                   "as criaturas se tornam mais perigosas. Para alcançar \n"
-                                   "as câmaras internas você deve atravessar um rio. \n"
-                                   "O serviço de balsa é confiável, mas o balseiro gosta\n"
-                                   "de uma barganha, e você deve ter uma peça de ouro para \n"
-                                   "pagar pela viagem. Os aldeões também o encorajam a\n"
-                                   " manter um bom mapa de sua busca, pois sem um você \n"
-                                   " acabará perdido e sem esperanças dentro da montanha.\n"
-                                   "Quando finalmente chega seu dia de partir, toda a \n"
-                                   "aldeia aparece para desejar uma boa viagem. Lágrimas\n"
-                                   " vêm aos olhos de muitas mulheres, jovens ou velhas.\n"
-                                   " Você não consegue deixar de se perguntar se são \n"
-                                   " lágrimas de pena, derramadas por olhos que jamais \n"
-                                   " voltarão a vê-lo...\n"),
-                             font=("arial", 7),
-                             background='#dfe3ee')
-        lb_intuducao.place(relx=0.05, rely=0.03, relwidth=0.90, relheight=0.95)
-        '''
 
         # Botão de Criar Personagem
         self.bt_criar_personagem = Button(self.frame_1,
@@ -1403,6 +1398,7 @@ class Application:
                                  text="Iniciar",
                                  command=self.start_historia,
                                  state=DISABLED)
+        # self.bt_iniciar.place(relx=0.2, rely=0.95, relwidth=0.2, relheight=0.035)
 
     def pegar_item(self):
         print("Botão de pegar item")
@@ -1736,6 +1732,15 @@ class Application:
         print(self.jogo.tem_multiluta)
         print(self.jogo.quantas_lutas)
 
+        # Teste de Fuga
+        if self.jogo.tem_fuga == True:
+            print("Tem fuga")
+            print("Fuja para ", self.jogo.destino_fuga)
+
+            self.jogo.tem_fuga = False
+        else:
+            print("Não tem Fuga")
+
         # Desfecho da tela
         self.frame_2.destroy()
 
@@ -1878,6 +1883,9 @@ class Application:
                                            command=self.testar_sorte_luta)
         self.bt_testar_sorte_luta.place(relx=0.57, rely=0.8, relwidth=0.18, relheight=0.12)
 
+        #Contador de Roud
+        #self.contador_de_round = self.contador_de_round + 1
+
         self.calcular_round()
 
     def calcular_round(self):
@@ -1980,6 +1988,7 @@ class Application:
                 self.jogo.quantas_lutas = 0
                 print("Não tem outra luta")
 
+
                 if hasattr(self, 'rd_n_trecho_a') and self.rd_n_trecho_a.winfo_exists():
                     self.rd_n_trecho_a.configure(state=NORMAL)
                 if hasattr(self, 'rd_n_trecho_b') and self.rd_n_trecho_b.winfo_exists():
@@ -2001,6 +2010,7 @@ class Application:
             self.criar_personagem()
         self.sorte = False
         print("")
+
         return ()
 
 

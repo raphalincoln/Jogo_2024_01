@@ -51,7 +51,9 @@ class Fase:
                  alterar_sorte=0,
                  altera_provisao=False,
                  alterar_provisao=0,
-                 desistir = False):
+                 desistir = False,
+                 tem_fuga=False,
+                 destino_fuga=0):
         self.n_trecho = n_trecho
         self.texto_trecho = texto_trecho
         self.n_trecho_a = n_trecho_a
@@ -106,6 +108,8 @@ class Fase:
         self.altera_provisao = altera_provisao
         self.alterar_provisao = alterar_provisao
         self.desistir = desistir
+        self.tem_fuga = tem_fuga
+        self.destino_fuga = destino_fuga
 
     def livro(self):
         if self.n_trecho == 1:
@@ -360,17 +364,18 @@ class Fase:
         elif self.n_trecho == 16:
             self.texto_trecho = "Você desembainha a sua espada\n" \
                                 "e, ao fazê-lo, o Ogro o Ouve\n" \
-                                "e se prepara para atacar:\n"
-            self.n_trecho_a = 50
-            self.n_trecho_b = 269
+                                "e se prepara para atacar:\n" \
+                                "Lutar vá para 50 ou fugir, vá para 269"
+            self.n_trecho_a = 269
+            self.n_trecho_b = 50
             self.temluta = True
             self.m_nome = "Ogro"
             self.m_habilidade = 8
             self.m_energia = 10
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.texto_trecho_a = f"Vencer o Ogro - Vá para {self.n_trecho_a}"
-            self.texto_trecho_a = f"Fugir - Avance para {self.n_trecho_a}"
+            self.texto_trecho_a = f"Fugir - Vá para {self.n_trecho_a}"
+            self.texto_trecho_b = f"Lutar - Vá para {self.n_trecho_b}"
 
         elif self.n_trecho == 17:
             self.texto_trecho = "Usando a estaca de madeira e a marreta\n" \
@@ -393,16 +398,16 @@ class Fase:
                                 "Para continuar lutando, vá para 144. Se você teve \n" \
                                 "sorte e matou o Vampiro, pode procurar o \n" \
                                 "tesouro dele – vá para 327"
-            self.n_trecho_a = 327  # Sorte
-            self.n_trecho_b = 144  # azar
-            self.n_trecho_c = 380  # Fugir
+            self.n_trecho_a = 380  # Fugir
+            self.n_trecho_b = 327  # Sorte
+            self.n_trecho_c = 144  # azar
             self.tem_trecho_a = True
             self.tem_trecho_b = True
             self.tem_trecho_c = True
             self.tem_testar_sorte = True
-            self.texto_trecho_a = f"Sorte - Matou o Vampiro - Vá para {self.n_trecho_a}"
-            self.texto_trecho_b = f"Azar - Feriu o vampiro e vai lutar - {self.n_trecho_b}"
-            self.texto_trecho_c = f"Azar - Fugir {self.n_trecho_c}"
+            self.texto_trecho_a = f"Fugir - Fugir {self.n_trecho_a}"
+            self.texto_trecho_b = f"Sorte - Matou o Vampiro - Vá para {self.n_trecho_b}"
+            self.texto_trecho_c = f"Azar - Feriu o vampiro e vai lutar - {self.n_trecho_c}"
 
         elif self.n_trecho == 18:
             self.texto_trecho = "Você anda para o oeste pela passagem. \n" \
@@ -442,8 +447,8 @@ class Fase:
             self.texto_trecho = "O confronto começa. Você tem sua espada, \n" \
                                 "eles têm suas armas. Eles atacam você, \n" \
                                 "um de cada vez:\n"
-            self.n_trecho_a = 376
-            self.n_trecho_b = 291
+            self.n_trecho_b = 376
+            self.n_trecho_a = 291
             self.temluta = True
             self.m_nome = "Anão"
             self.m_habilidade = 7
@@ -451,8 +456,8 @@ class Fase:
             self.tem_trecho_a = True
             self.tem_trecho_b = True
 
-            self.texto_trecho_a = f"Se Vencer, vá para {self.n_trecho_a}"
-            self.texto_trecho_b = f"Se fugir, vá para {self.n_trecho_b}"
+            self.texto_trecho_b = f"Se Vencer, vá para {self.n_trecho_a}"
+            self.texto_trecho_a = f"Se fugir, vá para {self.n_trecho_b}"
 
         elif self.n_trecho == 21:
             self.tem_trecho_a = True
@@ -512,8 +517,8 @@ class Fase:
             self.tem_trecho_b = True
             self.n_trecho_a = 360
             self.n_trecho_b = 135
-            self.texto_trecho_a = f" vá para {self.n_trecho_a}"
-            self.texto_trecho_b = f" vá para {self.n_trecho_b}"
+            self.texto_trecho_a = f"Fugir - vá para {self.n_trecho_a}"
+            self.texto_trecho_b = f"Lutar - vá para {self.n_trecho_b}"
 
         elif self.n_trecho == 25:
             self.texto_trecho = "Os quadros pintados são retratos de homens.\n" \
@@ -1467,6 +1472,8 @@ class Fase:
                                 "Se você vencer a batalha, vá para 378. Se você quiser \n" \
                                 "Fugir durante a batalha, pode fazer isso voltando para 42"
             self.temluta = True
+            self.tem_fuga = True
+            self.destino_fuga = 42
             self.tem_multiluta = True
             self.quantas_lutas = 1
 
@@ -1480,10 +1487,10 @@ class Fase:
 
             self.tem_trecho_a = True
             self.tem_trecho_b = True
-            self.n_trecho_a = 378
-            self.n_trecho_b = 42
-            self.texto_trecho_a = f" vá para {self.n_trecho_a}"
+            self.n_trecho_b = 378
+            self.n_trecho_a = 42
             self.texto_trecho_b = f" vá para {self.n_trecho_b}"
+            self.texto_trecho_a = f" vá para {self.n_trecho_a}"
 
         elif self.n_trecho == 117:
             self.texto_trecho = ""
